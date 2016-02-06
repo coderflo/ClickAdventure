@@ -1,5 +1,5 @@
 object ClickAdventure: TClickAdventure
-  Left = 363
+  Left = 344
   Height = 434
   Top = 117
   Width = 665
