@@ -45,12 +45,38 @@ begin
 
   // TODO: update GUI to new room ones
 
+  // TODO: make buttons invisible and back visible only when riddle is solved
+  ClickAdventure.buttonNorth.Visible := (room.north <> nil);
+  ClickAdventure.buttonEast.Visible := (room.east <> nil);
+  ClickAdventure.buttonSouth.Visible := (room.south <> nil);
+  ClickAdventure.buttonWest.Visible := (room.west <> nil);
+
 end;
 
 { TClickAdventure }
 
 procedure TClickAdventure.onRoomNavigationButtonClicked(Sender: TObject);
 begin
+
+  if(Sender = buttonNorth) then
+  begin
+    changeRoom(currentRoom.north);
+  end;
+
+  if(Sender = buttonEast) then
+  begin
+    changeRoom(currentRoom.east);
+  end;
+
+  if(Sender = buttonSouth) then
+  begin
+    changeRoom(currentRoom.south);
+  end;
+
+  if(Sender = buttonWest) then
+  begin
+    changeRoom(currentRoom.west);
+  end;
 
 end;
 
