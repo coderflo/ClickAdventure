@@ -5,10 +5,19 @@ unit Unit1;
 interface
 
 uses
-  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs;
+  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls;
 
 type
+
+  { TClickAdventure }
+
   TClickAdventure = class(TForm)
+    buttonNorth: TButton; // north,east,... are code names only
+    buttonEast: TButton;
+    buttonWest: TButton;
+    buttonSouth: TButton;
+
+    procedure onRoomNavigationButtonClicked(Sender: TObject);
   private
     { private declarations }
   public
@@ -25,12 +34,25 @@ type
 
 var
   ClickAdventure: TClickAdventure;
+  currentRoom: TRoom;
 
 implementation
 
 {$R *.lfm}
 
+procedure changeRoom(room: TRoom);
+begin
 
+  // TODO: update GUI to new room ones
+
+end;
+
+{ TClickAdventure }
+
+procedure TClickAdventure.onRoomNavigationButtonClicked(Sender: TObject);
+begin
+
+end;
 
 end.
 

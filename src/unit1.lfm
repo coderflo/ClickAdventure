@@ -1,8 +1,46 @@
 object ClickAdventure: TClickAdventure
-  Left = 608
+  Left = 363
   Height = 434
-  Top = 121
+  Top = 117
   Width = 665
   Caption = 'ClickAdventure'
+  ClientHeight = 434
+  ClientWidth = 665
   LCLVersion = '1.4.4.0'
+  object buttonNorth: TButton
+    Left = 464
+    Height = 42
+    Top = 224
+    Width = 92
+    Caption = 'Go north'
+    OnClick = onRoomNavigationButtonClicked
+    TabOrder = 0
+  end
+  object buttonEast: TButton
+    Left = 560
+    Height = 42
+    Top = 272
+    Width = 92
+    Caption = 'Go east'
+    OnClick = onRoomNavigationButtonClicked
+    TabOrder = 1
+  end
+  object buttonSouth: TButton
+    Left = 464
+    Height = 42
+    Top = 320
+    Width = 92
+    Caption = 'Go south'
+    OnClick = onRoomNavigationButtonClicked
+    TabOrder = 2
+  end
+  object buttonWest: TButton
+    Left = 368
+    Height = 42
+    Top = 272
+    Width = 92
+    Caption = 'Go west'
+    OnClick = onRoomNavigationButtonClicked
+    TabOrder = 3
+  end
 end
