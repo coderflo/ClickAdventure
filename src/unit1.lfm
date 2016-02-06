@@ -1,0 +1,8 @@
+object ClickAdventure: TClickAdventure
+  Left = 707
+  Height = 240
+  Top = 120
+  Width = 320
+  Caption = 'ClickAdventure'
+  LCLVersion = '1.4.4.0'
+end
