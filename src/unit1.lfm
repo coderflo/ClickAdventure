@@ -90,4 +90,14 @@ object ClickAdventure: TClickAdventure
     ReadOnly = True
     TabOrder = 8
   end
+  object roomDescription: TMemo
+    Left = 16
+    Height = 246
+    Top = 11
+    Width = 340
+    Lines.Strings = (
+      'roomDescription'
+    )
+    TabOrder = 9
+  end
 end

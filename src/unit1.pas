@@ -16,6 +16,7 @@ type
     buttonEast: TButton;
     buttonWest: TButton;
     buttonSouth: TButton;
+    roomDescription: TMemo;
     riddleText: TMemo;
     riddleButtonOne: TButton;
     riddleButtonTwo: TButton;
@@ -33,6 +34,8 @@ type
 type
   TRoom = class
     // TODO: add field for backgroundImage
+    descriptionBeforeRiddle:string;
+    descriptionAfterRiddle:string;
     north,east,south,west:TRoom;
     labelNorth,labelEast,labelSouth,labelWest:string;
 
@@ -53,7 +56,17 @@ implementation
 procedure changeRoom(room: TRoom);
 begin
 
+  currentRoom := room;
+
   // TODO: update GUI to new room ones
+
+  // show room description
+  ClickAdventure.roomDescription.Lines.Clear;
+
+  if(room.descriptionBeforeRiddle <> nil) then
+  begin
+    ClickAdventure.roomDescription.Lines.Add(room.descriptionBeforeRiddle);
+  end;
 
   // hide room navigation buttons
   ClickAdventure.buttonNorth.Visible:=false;
@@ -61,47 +74,65 @@ begin
   ClickAdventure.buttonSouth.Visible:=false;
   ClickAdventure.buttonWest.Visible:=false;
 
-  ClickAdventure.riddleText.Visible:=true;
-  ClickAdventure.riddleText.Lines.Clear;
-  ClickAdventure.riddleText.Lines.Add(room.riddleQuestion);
-
-  // show riddle answers if necessary
-
-  if(room.riddleOptionOne <> nil) then
+  if(room.riddleQuestion <> nil) then
   begin
-    ClickAdventure.riddleButtonOne.Visible:=true;
-    ClickAdventure.riddleButtonOne.Caption:=room.riddleOptionOne;
-  end;
 
-  if(room.riddleOptionTwo <> nil) then
+    // show riddle
+
+    ClickAdventure.riddleText.Visible:=true;
+    ClickAdventure.riddleText.Lines.Clear;
+    ClickAdventure.riddleText.Lines.Add(room.riddleQuestion);
+
+    // show riddle answers if necessary
+
+    if(room.riddleOptionOne <> nil) then
+    begin
+      ClickAdventure.riddleButtonOne.Visible:=true;
+      ClickAdventure.riddleButtonOne.Caption:=room.riddleOptionOne;
+    end;
+
+    if(room.riddleOptionTwo <> nil) then
+    begin
+      ClickAdventure.riddleButtonTwo.Visible:=true;
+      ClickAdventure.riddleButtonTwo.Caption:=room.riddleOptionTwo;
+    end;
+
+    if(room.riddleOptionThree <> nil) then
+    begin
+      ClickAdventure.riddleButtonThree.Visible:=true;
+      ClickAdventure.riddleButtonThree.Caption:=room.riddleOptionThree;
+    end;
+
+    if(room.riddleOptionFour <> nil) then
+    begin
+      ClickAdventure.riddleButtonFour.Visible:=true;
+      ClickAdventure.riddleButtonFour.Caption:=room.riddleOptionFour;
+    end;
+
+  end
+  else
   begin
-    ClickAdventure.riddleButtonTwo.Visible:=true;
-    ClickAdventure.riddleButtonTwo.Caption:=room.riddleOptionTwo;
+    onRiddleSolved();
   end;
-
-  if(room.riddleOptionThree <> nil) then
-  begin
-    ClickAdventure.riddleButtonThree.Visible:=true;
-    ClickAdventure.riddleButtonThree.Caption:=room.riddleOptionThree;
-  end;
-
-  if(room.riddleOptionFour <> nil) then
-  begin
-    ClickAdventure.riddleButtonFour.Visible:=true;
-    ClickAdventure.riddleButtonFour.Caption:=room.riddleOptionFour;
-  end;
-
-  currentRoom := room;
 
 end;
 
 procedure onRiddleSolved();
 begin
 
+  // hide riddle options
+
   ClickAdventure.riddleButtonOne.Visible:=false;
   ClickAdventure.riddleButtonTwo.Visible:=false;
   ClickAdventure.riddleButtonThree.Visible:=false;
   ClickAdventure.riddleButtonFour.Visible:=false;
+
+  // add room description
+
+  if(currentRoom.descriptionAfterRiddle <> nil) then
+  begin
+    ClickAdventure.roomDescription.Lines.Add(currentRoom.descriptionAfterRiddle);
+  end;
 
   // make room navigation buttons visible
   ClickAdventure.buttonNorth.Visible := (currentRoom.north <> nil);
