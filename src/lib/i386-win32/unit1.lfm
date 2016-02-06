@@ -43,4 +43,61 @@ object ClickAdventure: TClickAdventure
     OnClick = onRoomNavigationButtonClicked
     TabOrder = 3
   end
+  object riddleButtonOne: TButton
+    Left = 16
+    Height = 44
+    Top = 376
+    Width = 102
+    Caption = 'Answer 1'
+    OnClick = onRiddleButtonClicked
+    TabOrder = 4
+  end
+  object riddleButtonTwo: TButton
+    Left = 136
+    Height = 44
+    Top = 376
+    Width = 102
+    Caption = 'Answer 2'
+    OnClick = onRiddleButtonClicked
+    TabOrder = 5
+  end
+  object riddleButtonThree: TButton
+    Left = 256
+    Height = 44
+    Top = 376
+    Width = 102
+    Caption = 'Answer 3'
+    OnClick = onRiddleButtonClicked
+    TabOrder = 6
+  end
+  object riddleButtonFour: TButton
+    Left = 376
+    Height = 44
+    Top = 376
+    Width = 102
+    Caption = 'Answer 4'
+    OnClick = onRiddleButtonClicked
+    TabOrder = 7
+  end
+  object riddleText: TMemo
+    Left = 16
+    Height = 89
+    Top = 272
+    Width = 342
+    Lines.Strings = (
+      'riddleText'
+    )
+    ReadOnly = True
+    TabOrder = 8
+  end
+  object roomDescription: TMemo
+    Left = 16
+    Height = 246
+    Top = 11
+    Width = 340
+    Lines.Strings = (
+      'roomDescription'
+    )
+    TabOrder = 9
+  end
 end
