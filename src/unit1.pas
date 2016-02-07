@@ -179,7 +179,7 @@ begin
   end
   else
   begin
-    onRiddleSolved();
+    onRiddleSolved(); // no riddle, so riddle is immediately 'solved'
   end;
 
 end;
