@@ -45,6 +45,13 @@ type
 
   end;
 
+type
+  TItem = class
+    id: integer;
+    constructor create(i:integer);
+    // TODO: add function to retrieve item image by id
+  end;
+
 var
   ClickAdventure: TClickAdventure;
   currentRoom: TRoom;
@@ -160,7 +167,12 @@ begin
 
 end;
 
+{ TItem }
 
+constructor TItem.create(i:integer);
+begin
+  id := i;
+end;
 
 { TClickAdventure }
 
