@@ -100,4 +100,13 @@ object ClickAdventure: TClickAdventure
     )
     TabOrder = 9
   end
+  object buttonItem: TButton
+    Left = 552
+    Height = 41
+    Top = 376
+    Width = 100
+    Caption = 'Search for item'
+    OnClick = onSearchItemClicked
+    TabOrder = 10
+  end
 end

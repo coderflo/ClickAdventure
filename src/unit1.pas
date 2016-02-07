@@ -26,6 +26,7 @@ type
 
     procedure onRoomNavigationButtonClicked(Sender: TObject);
     procedure onRiddleButtonClicked(Sender: TObject);
+    procedure onSearchItemClicked(Sender: TObject);
   private
     { private declarations }
   public
@@ -35,14 +36,18 @@ type
 type
   TRoom = class
     // TODO: add field for backgroundImage
+
     descriptionBeforeRiddle:string;
     descriptionAfterRiddle:string;
+
     north,east,south,west:TRoom;
     labelNorth,labelEast,labelSouth,labelWest:string;
 
     riddleQuestion, riddleAnswer,
       riddleOptionOne, riddleOptionTwo,
         riddleOptionThree, riddleOptionFour:string;
+
+    item:TItem;
 
     constructor create;
 
@@ -80,6 +85,9 @@ begin
   begin
     ClickAdventure.roomDescription.Lines.Add(currentRoom.descriptionAfterRiddle);
   end;
+
+  // show search item button
+  ClickAdventure.buttonItem.Visible:=true;
 
   // make room navigation buttons visible
   ClickAdventure.buttonNorth.Visible := (currentRoom.north <> nil);
@@ -127,6 +135,9 @@ begin
   ClickAdventure.buttonEast.Visible:=false;
   ClickAdventure.buttonSouth.Visible:=false;
   ClickAdventure.buttonWest.Visible:=false;
+
+  // hide search item button
+  ClickAdventure.buttonItem.Visible:=false;
 
   if(room.riddleQuestion <> '') then
   begin
@@ -240,6 +251,19 @@ begin
   begin
     // TODO: die();
   end;
+
+end;
+
+procedure TClickAdventure.onSearchItemClicked(Sender: TObject);
+begin
+
+  if(currentRoom.item <> nil) then
+  begin
+    roomDescription.Lines.Add(currentRoom.item.message);
+    // TODO: add item to bag
+  end;
+
+  buttonItem.Visible:=false;
 
 end;
 
