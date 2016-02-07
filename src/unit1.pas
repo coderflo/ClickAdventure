@@ -12,6 +12,7 @@ type
   { TClickAdventure }
 
   TClickAdventure = class(TForm)
+    buttonItem: TButton;
     buttonNorth: TButton; // north,east,... are code names only
     buttonEast: TButton;
     buttonWest: TButton;
@@ -50,7 +51,8 @@ type
 type
   TItem = class
     id: integer;
-    constructor create(i:integer);
+    message:string;
+    constructor create(i:integer;s:string);
     // TODO: add function to retrieve item image by id
   end;
 
@@ -194,9 +196,10 @@ end;
 
 { TItem }
 
-constructor TItem.create(i:integer);
+constructor TItem.create(i:integer;s:string);
 begin
   id := i;
+  message:=s;
 end;
 
 { TClickAdventure }
