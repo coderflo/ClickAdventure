@@ -43,6 +43,8 @@ type
       riddleOptionOne, riddleOptionTwo,
         riddleOptionThree, riddleOptionFour:string;
 
+    constructor create;
+
   end;
 
 type
@@ -164,6 +166,29 @@ begin
   begin
     onRiddleSolved();
   end;
+
+end;
+
+{ TRoom }
+constructor TRoom.create;
+begin
+
+  // initialize with standard values
+
+  descriptionBeforeRiddle:='';
+  descriptionAfterRiddle:='';
+
+  labelNorth:='Norden';
+  labelEast:='Osten';
+  labelSouth:='Süden';
+  labelWest:='Westen';
+
+  riddleQuestion:='';
+  riddleAnswer:='';
+  riddleOptionOne:='';
+  riddleOptionTwo:='';
+  riddleOptionThree:='';
+  riddleOptionFour:='';
 
 end;
 
