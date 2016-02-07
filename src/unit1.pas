@@ -34,6 +34,7 @@ type
   end;
 
 type
+  { TItem }
   TItem = class
     id: integer;
     message:string;
@@ -42,6 +43,7 @@ type
   end;
 
 type
+  { TRoom }
   TRoom = class
     // TODO: add field for backgroundImage
 
