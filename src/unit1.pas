@@ -34,6 +34,14 @@ type
   end;
 
 type
+  TItem = class
+    id: integer;
+    message:string;
+    constructor create(i:integer;s:string);
+    // TODO: add function to retrieve item image by id
+  end;
+
+type
   TRoom = class
     // TODO: add field for backgroundImage
 
@@ -51,14 +59,6 @@ type
 
     constructor create;
 
-  end;
-
-type
-  TItem = class
-    id: integer;
-    message:string;
-    constructor create(i:integer;s:string);
-    // TODO: add function to retrieve item image by id
   end;
 
 var
