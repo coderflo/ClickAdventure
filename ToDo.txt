@@ -1,0 +1,15 @@
+TItem:
+	add funmction to retrieve image by id
+	
+TRoom:
+	add variable for background image
+	
+changeRoom(Room):
+	update GUI
+	change background image
+	
+TClickAdventure.onRiddleButtonClicked(TObject):
+	kill player when answer is wrong
+	
+TClickAdventure.onSearchItemClicked(TObject):
+	add item to bag
