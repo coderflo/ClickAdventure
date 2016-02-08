@@ -1,12 +1,8 @@
 TItem:
-	add funmction to retrieve image by id
-	
-TRoom:
-	add variable for background image
+	add function to retrieve image by id
 	
 changeRoom(Room):
 	update GUI
-	change background image
 	
 TClickAdventure.onRiddleButtonClicked(TObject):
 	kill player when answer is wrong
