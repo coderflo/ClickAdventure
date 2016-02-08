@@ -169,13 +169,13 @@ begin
   // hide search item button
   ClickAdventure.buttonItem.Visible:=false;
 
+  ClickAdventure.riddleText.Lines.Clear;
   if(room.riddleQuestion <> '') then
   begin
 
     // show riddle
 
     ClickAdventure.riddleText.Visible:=true;
-    ClickAdventure.riddleText.Lines.Clear;
     ClickAdventure.riddleText.Lines.Add(room.riddleQuestion);
 
     // show riddle answers if necessary
@@ -379,6 +379,8 @@ var
   start,first,second,third:TRoom;
   item:TItem;
 begin
+
+  bag := TBag.create;
 
   start := TRoom.create;
   first := TRoom.create;
