@@ -362,7 +362,11 @@ begin
   if(currentRoom.item <> nil) then
   begin
     roomDescription.Lines.Add(currentRoom.item.message);
-    // TODO: add item to bag
+    bag.add(currentRoom.item.id);
+  end
+  else
+  begin
+    roomDescription.Lines.Add('Du hast kein Item gefunden');
   end;
 
   buttonItem.Visible:=false;
