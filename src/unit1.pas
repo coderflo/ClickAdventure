@@ -5,7 +5,8 @@ unit Unit1;
 interface
 
 uses
-  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls;
+  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
+  ExtCtrls;
 
 type
 
@@ -17,6 +18,7 @@ type
     buttonEast: TButton;
     buttonWest: TButton;
     buttonSouth: TButton;
+    backgroundImage: TImage;
     roomDescription: TMemo;
     riddleText: TMemo;
     riddleButtonOne: TButton;
@@ -57,7 +59,8 @@ type
 type
   { TRoom }
   TRoom = class
-    // TODO: add field for backgroundImage
+
+    backgroundImagePath:string; // path to img: /img/[name].[extension]
 
     descriptionBeforeRiddle:string;
     descriptionAfterRiddle:string;
@@ -143,6 +146,12 @@ begin
 
   // TODO: update GUI to new room ones
 
+  // load background image
+  if(room.backgroundImagePath <> '') then
+  begin
+    ClickAdventure.backgroundImage.Picture.LoadFromFile(Application.Location + room.backgroundImagePath);
+  end;
+
   // show room description
   ClickAdventure.roomDescription.Lines.Clear;
 
@@ -208,6 +217,8 @@ constructor TRoom.create;
 begin
 
   // initialize with standard values
+
+  backgroundImagePath:='';
 
   descriptionBeforeRiddle:='';
   descriptionAfterRiddle:='';
