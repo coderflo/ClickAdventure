@@ -26,6 +26,7 @@ type
     riddleButtonThree: TButton;
     riddleButtonFour: TButton;
 
+    procedure FormShow(Sender: TObject);
     procedure onRoomNavigationButtonClicked(Sender: TObject);
     procedure onRiddleButtonClicked(Sender: TObject);
     procedure onSearchItemClicked(Sender: TObject);
@@ -370,6 +371,43 @@ begin
   end;
 
   buttonItem.Visible:=false;
+
+end;
+
+procedure TClickAdventure.FormShow(Sender: TObject);
+var
+  start,first,second,third:TRoom;
+  item:TItem;
+begin
+
+  start := TRoom.create;
+  first := TRoom.create;
+  second := TRoom.create;
+  third := TRoom.create;
+
+  start.descriptionBeforeRiddle:='Spawn Raum';
+  start.north:=first;
+
+  first.descriptionBeforeRiddle:='Löse dieses Rätsel!';
+  first.riddleQuestion:='Was ist 1+1?';
+  first.riddleOptionOne:='1';
+  first.riddleOptionTwo:='2';
+  first.riddleOptionThree:='3';
+  first.riddleAnswer:=first.riddleOptionTwo;
+  first.descriptionAfterRiddle:='Perfekt! Die Tür nach Osten ist verschlossen, gehe nach Westen um sie zu öffnen!';
+  first.west:=second;
+  first.east:=third;
+
+  item := TItem.create(1,'Tür geöffnet');
+
+  second.item:=item;
+  second.descriptionBeforeRiddle:='Hier findest du das Item, um nach Osten zu gehen';
+  second.east:=first;
+
+  third.requiredItem:=1;
+  third.descriptionBeforeRiddle:='Gewonnen!';
+
+  changeRoom(start);
 
 end;
 
