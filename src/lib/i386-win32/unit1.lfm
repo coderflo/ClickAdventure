@@ -1,7 +1,7 @@
 object ClickAdventure: TClickAdventure
-  Left = 344
+  Left = 306
   Height = 434
-  Top = 117
+  Top = 107
   Width = 665
   Caption = 'ClickAdventure'
   ClientHeight = 434
@@ -108,5 +108,11 @@ object ClickAdventure: TClickAdventure
     Caption = 'Search for item'
     OnClick = onSearchItemClicked
     TabOrder = 10
+  end
+  object backgroundImage: TImage
+    Left = 368
+    Height = 181
+    Top = 11
+    Width = 284
   end
 end

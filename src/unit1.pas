@@ -26,8 +26,6 @@ type
     riddleButtonThree: TButton;
     riddleButtonFour: TButton;
 
-    bag: TBag; // TODO: move to character class
-
     procedure onRoomNavigationButtonClicked(Sender: TObject);
     procedure onRiddleButtonClicked(Sender: TObject);
     procedure onSearchItemClicked(Sender: TObject);
@@ -84,6 +82,7 @@ type
 var
   ClickAdventure: TClickAdventure;
   currentRoom: TRoom;
+  bag: TBag; // TODO: move to character class
 
 implementation
 
@@ -118,22 +117,22 @@ begin
   // update button label if necessary
   if(ClickAdventure.buttonNorth.Visible) then
   begin
-    ClickAdventure.buttonNorth.Visible:=currentRoom.north.canEnter(ClickAdventure.bag);
+    ClickAdventure.buttonNorth.Visible:=currentRoom.north.canEnter(bag);
     ClickAdventure.buttonNorth.Caption:=currentRoom.labelNorth;
   end;
   if(ClickAdventure.buttonEast.Visible) then
   begin
-    ClickAdventure.buttonEast.Visible:=currentRoom.east.canEnter(ClickAdventure.bag);
+    ClickAdventure.buttonEast.Visible:=currentRoom.east.canEnter(bag);
     ClickAdventure.buttonEast.Caption:=currentRoom.labelEast;
   end;
   if(ClickAdventure.buttonSouth.Visible) then
   begin
-    ClickAdventure.buttonSouth.Visible:=currentRoom.south.canEnter(ClickAdventure.bag);
+    ClickAdventure.buttonSouth.Visible:=currentRoom.south.canEnter(bag);
     ClickAdventure.buttonSouth.Caption:=currentRoom.labelSouth;
   end;
   if(ClickAdventure.buttonWest.Visible) then
   begin
-    ClickAdventure.buttonWest.Visible:=currentRoom.west.canEnter(ClickAdventure.bag);
+    ClickAdventure.buttonWest.Visible:=currentRoom.west.canEnter(bag);
     ClickAdventure.buttonWest.Caption:=currentRoom.labelWest;
   end;
 
@@ -277,6 +276,8 @@ begin
 end;
 
 function TBag.contains(id:integer):boolean;
+var
+  i:integer;
 begin
 
   result := false;
