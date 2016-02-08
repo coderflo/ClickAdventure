@@ -286,7 +286,7 @@ begin
   for i:=1 to Length(items) do
   begin
 
-    if(items[i]=id) then
+    if(items[i]=id) then  // error: External: SIGSEGV
     begin
       result:=true;
     end;
