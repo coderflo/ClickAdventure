@@ -72,7 +72,7 @@ type
 
     constructor create;
 
-    function canEnter():boolean;
+    function canEnter(bag:TBag):boolean;
 
   end;
 
@@ -219,6 +219,22 @@ begin
   riddleOptionFour:='';
 
   requiredItem:=-1;
+
+end;
+
+function TRoom.canEnter(bag:TBag):boolean;
+begin
+
+  result := false;
+
+  if(requiredItem <> -1) then
+  begin
+    result := bag.contains(requiredItem);
+  end
+  else
+  begin
+    result := true;
+  end;
 
 end;
 
