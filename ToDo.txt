@@ -1,5 +1,8 @@
 TItem:
 	add function to retrieve image by id
+
+TBag:
+	adjust max index of items array
 	
 changeRoom(Room):
 	update GUI
