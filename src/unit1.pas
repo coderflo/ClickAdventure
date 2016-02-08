@@ -24,6 +24,8 @@ type
     riddleButtonThree: TButton;
     riddleButtonFour: TButton;
 
+    bag: TBag; // TODO: move to character class
+
     procedure onRoomNavigationButtonClicked(Sender: TObject);
     procedure onRiddleButtonClicked(Sender: TObject);
     procedure onSearchItemClicked(Sender: TObject);
@@ -113,18 +115,22 @@ begin
   // update button label if necessary
   if(ClickAdventure.buttonNorth.Visible) then
   begin
+    ClickAdventure.buttonNorth.Visible:=currentRoom.north.canEnter(ClickAdventure.bag);
     ClickAdventure.buttonNorth.Caption:=currentRoom.labelNorth;
   end;
   if(ClickAdventure.buttonEast.Visible) then
   begin
+    ClickAdventure.buttonEast.Visible:=currentRoom.east.canEnter(ClickAdventure.bag);
     ClickAdventure.buttonEast.Caption:=currentRoom.labelEast;
   end;
   if(ClickAdventure.buttonSouth.Visible) then
   begin
+    ClickAdventure.buttonSouth.Visible:=currentRoom.south.canEnter(ClickAdventure.bag);
     ClickAdventure.buttonSouth.Caption:=currentRoom.labelSouth;
   end;
   if(ClickAdventure.buttonWest.Visible) then
   begin
+    ClickAdventure.buttonWest.Visible:=currentRoom.west.canEnter(ClickAdventure.bag);
     ClickAdventure.buttonWest.Caption:=currentRoom.labelWest;
   end;
 
