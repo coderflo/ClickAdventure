@@ -43,6 +43,16 @@ type
   end;
 
 type
+  { TBag }
+  TBag = class
+    items : array [1..20] of integer; // NOTE: ONE based
+    // TODO: adjust max index
+    constructor create;
+    function contains(id:integer):boolean;
+    procedure add(id:integer);
+  end;
+
+type
   { TRoom }
   TRoom = class
     // TODO: add field for backgroundImage
@@ -58,8 +68,11 @@ type
         riddleOptionThree, riddleOptionFour:string;
 
     item:TItem;
+    requiredItem:integer; // id of item required to enter the room, -1 for none
 
     constructor create;
+
+    function canEnter():boolean;
 
   end;
 
@@ -205,6 +218,8 @@ begin
   riddleOptionThree:='';
   riddleOptionFour:='';
 
+  requiredItem:=-1;
+
 end;
 
 { TItem }
@@ -213,6 +228,57 @@ constructor TItem.create(i:integer;s:string);
 begin
   id := i;
   message:=s;
+end;
+
+{ TBag }
+constructor TBag.create;
+var
+  i:integer;
+begin
+
+  for i:=1 to Length(items) do
+  begin
+    items[i]:=-1;
+  end;
+
+end;
+
+function TBag.contains(id:integer):boolean;
+begin
+
+  result := false;
+
+  for i:=1 to Length(items) do
+  begin
+
+    if(items[i]=id) then
+    begin
+      result:=true;
+    end;
+
+  end;
+
+end;
+
+procedure TBag.add(id:integer);
+var
+  i:integer;
+begin
+
+  if(not contains(id))then
+  begin
+
+    i := 1;
+
+    while(items[i] <> -1) do
+    begin
+      i := i+1;
+    end;
+
+    items[i]:=id;
+
+  end;
+
 end;
 
 { TClickAdventure }
