@@ -1,0 +1,3 @@
+room background images:
+	images should be saved (for test and production) in [exe folder]/img/
+	path in code is set through TRoom.backgroundImagePath := '\img\[name].[extension]'
