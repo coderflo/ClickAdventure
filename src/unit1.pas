@@ -30,6 +30,9 @@ type
     procedure onRoomNavigationButtonClicked(Sender: TObject);
     procedure onRiddleButtonClicked(Sender: TObject);
     procedure onSearchItemClicked(Sender: TObject);
+
+    procedure buildAdventure;
+
   private
     { private declarations }
   public
@@ -375,6 +378,11 @@ begin
 end;
 
 procedure TClickAdventure.FormShow(Sender: TObject);
+begin
+  buildAdventure();
+end;
+
+procedure TClickAdventure.buildAdventure;
 var
   start,first,second,third:TRoom;
   item:TItem;
