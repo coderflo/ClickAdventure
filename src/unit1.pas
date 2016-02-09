@@ -77,6 +77,8 @@ type
       riddleOptionOne, riddleOptionTwo,
         riddleOptionThree, riddleOptionFour:string;
 
+    riddleSolved:boolean;
+
     item:TItem;
     requiredItem:integer; // id of item required to enter the room, -1 for none
 
@@ -97,6 +99,9 @@ implementation
 
 procedure onRiddleSolved();
 begin
+
+  // save riddle solved state
+  currentRoom.riddleSolved:=true;
 
   // hide riddle options
 
@@ -176,7 +181,7 @@ begin
   ClickAdventure.buttonItem.Visible:=false;
 
   ClickAdventure.riddleText.Lines.Clear;
-  if(room.riddleQuestion <> '') then
+  if( (room.riddleQuestion <> '') and (not room.riddleSolved) ) then
   begin
 
     // show riddle
@@ -241,6 +246,8 @@ begin
   riddleOptionThree:='';
   riddleOptionFour:='';
 
+  riddleSolved := false;
+
   requiredItem:=-1;
 
 end;
@@ -267,7 +274,7 @@ constructor TItem.create(i:integer;s,msg:string);
 begin
   id := i;
   message:=msg;
-  name=s;
+  name:=s;
 end;
 
 { TBag }
@@ -383,7 +390,7 @@ end;
 
 procedure TClickAdventure.onBagButtonClicked(Sender: TObject);
 begin
-
+  // TODO: open BagView form and show items
 end;
 
 procedure TClickAdventure.FormShow(Sender: TObject);
