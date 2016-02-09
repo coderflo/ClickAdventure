@@ -116,4 +116,13 @@ object ClickAdventure: TClickAdventure
     Top = 11
     Width = 396
   end
+  object bagButton: TButton
+    Left = 583
+    Height = 41
+    Top = 376
+    Width = 93
+    Caption = 'Rucksack öffnen'
+    OnClick = onBagButtonClicked
+    TabOrder = 11
+  end
 end

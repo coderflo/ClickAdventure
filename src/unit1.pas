@@ -13,6 +13,7 @@ type
   { TClickAdventure }
 
   TClickAdventure = class(TForm)
+    bagButton: TButton;
     buttonItem: TButton;
     buttonNorth: TButton; // north,east,... are code names only
     buttonEast: TButton;
@@ -30,6 +31,7 @@ type
     procedure onRoomNavigationButtonClicked(Sender: TObject);
     procedure onRiddleButtonClicked(Sender: TObject);
     procedure onSearchItemClicked(Sender: TObject);
+    procedure onBagButtonClicked(Sender: TObject);
 
     procedure buildAdventure;
 
@@ -376,6 +378,11 @@ begin
   end;
 
   buttonItem.Visible:=false;
+
+end;
+
+procedure TClickAdventure.onBagButtonClicked(Sender: TObject);
+begin
 
 end;
 
