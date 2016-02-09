@@ -10,5 +10,4 @@ changeRoom(Room):
 TClickAdventure.onRiddleButtonClicked(TObject):
 	kill player when answer is wrong
 	
-TClickAdventure.onSearchItemClicked(TObject):
-	add item to bag
+setup and display BagView form
