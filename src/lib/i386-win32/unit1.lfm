@@ -1,44 +1,44 @@
 object ClickAdventure: TClickAdventure
-  Left = 306
+  Left = 303
   Height = 434
-  Top = 107
-  Width = 665
+  Top = 119
+  Width = 787
   Caption = 'ClickAdventure'
   ClientHeight = 434
-  ClientWidth = 665
+  ClientWidth = 787
   OnShow = FormShow
   LCLVersion = '1.4.4.0'
   object buttonNorth: TButton
-    Left = 464
+    Left = 584
     Height = 42
-    Top = 224
+    Top = 223
     Width = 92
     Caption = 'Go north'
     OnClick = onRoomNavigationButtonClicked
     TabOrder = 0
   end
   object buttonEast: TButton
-    Left = 560
+    Left = 680
     Height = 42
-    Top = 272
+    Top = 271
     Width = 92
     Caption = 'Go east'
     OnClick = onRoomNavigationButtonClicked
     TabOrder = 1
   end
   object buttonSouth: TButton
-    Left = 464
+    Left = 584
     Height = 42
-    Top = 320
+    Top = 319
     Width = 92
     Caption = 'Go south'
     OnClick = onRoomNavigationButtonClicked
     TabOrder = 2
   end
   object buttonWest: TButton
-    Left = 368
+    Left = 488
     Height = 42
-    Top = 272
+    Top = 271
     Width = 92
     Caption = 'Go west'
     OnClick = onRoomNavigationButtonClicked
@@ -102,18 +102,27 @@ object ClickAdventure: TClickAdventure
     TabOrder = 9
   end
   object buttonItem: TButton
-    Left = 552
+    Left = 680
     Height = 41
     Top = 376
-    Width = 100
+    Width = 92
     Caption = 'Item suchen'
     OnClick = onSearchItemClicked
     TabOrder = 10
   end
   object backgroundImage: TImage
-    Left = 368
+    Left = 376
     Height = 181
     Top = 11
-    Width = 284
+    Width = 396
+  end
+  object bagButton: TButton
+    Left = 583
+    Height = 41
+    Top = 376
+    Width = 93
+    Caption = 'Rucksack öffnen'
+    OnClick = onBagButtonClicked
+    TabOrder = 11
   end
 end
