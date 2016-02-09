@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
-  ExtCtrls;
+  ExtCtrls, Unit2;
 
 type
 
@@ -389,8 +389,16 @@ begin
 end;
 
 procedure TClickAdventure.onBagButtonClicked(Sender: TObject);
+var
+  view: TBagView;
 begin
-  // TODO: open BagView form and show items
+
+  view := TBagView.Create(ClickAdventure);
+
+  // TODO: submit item names to view
+
+  view.Show;
+
 end;
 
 procedure TClickAdventure.FormShow(Sender: TObject);
