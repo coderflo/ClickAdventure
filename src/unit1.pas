@@ -44,7 +44,8 @@ type
   TItem = class
     id: integer;
     message:string;
-    constructor create(i:integer;s:string);
+    name:string;
+    constructor create(i:integer;s,msg:string);
     // TODO: add function to retrieve item image by id
   end;
 
@@ -260,10 +261,11 @@ end;
 
 { TItem }
 
-constructor TItem.create(i:integer;s:string);
+constructor TItem.create(i:integer;s,msg:string);
 begin
   id := i;
-  message:=s;
+  message:=msg;
+  name=s;
 end;
 
 { TBag }
@@ -408,7 +410,7 @@ begin
   first.west:=second;
   first.east:=third;
 
-  item := TItem.create(1,'Tür geöffnet');
+  item := TItem.create(1,'Test Item','Tür geöffnet');
 
   second.item:=item;
   second.descriptionBeforeRiddle:='Hier findest du das Item, um nach Osten zu gehen';
