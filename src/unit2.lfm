@@ -1,0 +1,18 @@
+object BagView: TBagView
+  Left = 537
+  Height = 433
+  Top = 120
+  Width = 313
+  Caption = 'BagView'
+  ClientHeight = 433
+  ClientWidth = 313
+  LCLVersion = '1.4.4.0'
+  object itemStringList: TListBox
+    Left = 8
+    Height = 417
+    Top = 8
+    Width = 296
+    ItemHeight = 0
+    TabOrder = 0
+  end
+end
