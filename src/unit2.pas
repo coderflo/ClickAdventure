@@ -13,6 +13,7 @@ type
 
   TBagView = class(TForm)
     itemStringList: TListBox;
+    Label1: TLabel;
 
   private
     { private declarations }
