@@ -393,12 +393,12 @@ var
   i:integer;
 begin
 
-  for i := 0 to Length(bag.items) do
+  for i := 1 to Length(bag.items) do
   begin
     BagView.itemNames[i] := bag.items[i].name;
   end;
 
-  BagView.ShowModal;
+  BagView.ShowModal; // optional: replace with .Show
 
 end;
 
