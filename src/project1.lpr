@@ -7,7 +7,7 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, Unit1
+  Forms, Unit1, Unit2
   { you can add units after this };
 
 {$R *.res}
@@ -16,6 +16,7 @@ begin
   RequireDerivedFormResource := True;
   Application.Initialize;
   Application.CreateForm(TClickAdventure, ClickAdventure);
+  Application.CreateForm(TBagView, BagView);
   Application.Run;
 end.
 

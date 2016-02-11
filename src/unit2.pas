@@ -5,20 +5,16 @@ unit Unit2;
 interface
 
 uses
-  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls;
+  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs;
 
 type
-
-  { TBagView }
-
   TBagView = class(TForm)
-    itemStringList: TListBox;
-    Label1: TLabel;
-
   private
     { private declarations }
   public
     { public declarations }
+    const itemNames : array[1..20] of string = ('','','','','','','','','','','','','','','','','','','','');
+          // TODO: adjust max array size!
   end;
 
 var

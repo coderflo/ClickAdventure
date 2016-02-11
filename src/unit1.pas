@@ -54,11 +54,11 @@ type
 type
   { TBag }
   TBag = class
-    items : array [1..20] of integer; // NOTE: ONE based
+    items : array [1..20] of TItem; // NOTE: ONE based
     // TODO: adjust max index
     constructor create;
     function contains(id:integer):boolean;
-    procedure add(id:integer);
+    procedure add(item:TItem);
   end;
 
 type
@@ -285,7 +285,7 @@ begin
 
   for i:=1 to Length(items) do
   begin
-    items[i]:=-1;
+    items[i]:=TItem.create(-1,'','');
   end;
 
 end;
@@ -300,7 +300,7 @@ begin
   for i:=1 to Length(items) do
   begin
 
-    if(items[i]=id) then
+    if(items[i].id=id) then
     begin
       result:=true;
     end;
@@ -309,22 +309,22 @@ begin
 
 end;
 
-procedure TBag.add(id:integer);
+procedure TBag.add(item:TItem);
 var
   i:integer;
 begin
 
-  if(not contains(id))then
+  if(not contains(item.id))then
   begin
 
     i := 1;
 
-    while(items[i] <> -1) do
+    while(items[i].id <> -1) do
     begin
       i := i+1;
     end;
 
-    items[i]:=id;
+    items[i]:=item;
 
   end;
 
@@ -377,7 +377,7 @@ begin
   if(currentRoom.item <> nil) then
   begin
     roomDescription.Lines.Add(currentRoom.item.message);
-    bag.add(currentRoom.item.id);
+    bag.add(currentRoom.item);
   end
   else
   begin
@@ -390,14 +390,15 @@ end;
 
 procedure TClickAdventure.onBagButtonClicked(Sender: TObject);
 var
-  view: TBagView;
+  i:integer;
 begin
 
-  view := TBagView.Create(ClickAdventure);
+  for i := 0 to Length(bag.items) do
+  begin
+    BagView.itemNames[i] := bag.items[i].name;
+  end;
 
-  // TODO: submit item names to view
-
-  view.Show;
+  BagView.ShowModal;
 
 end;
 
