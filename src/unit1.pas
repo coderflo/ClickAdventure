@@ -81,6 +81,7 @@ type
 
     item:TItem;
     requiredItem:integer; // id of item required to enter the room, -1 for none
+    killWithoutItem:boolean; // reset to spawn when entering without item
 
     constructor create;
 
@@ -155,6 +156,18 @@ procedure changeRoom(room: TRoom);
 begin
 
   currentRoom := room;
+
+  // reset player to spawn when entering without required item
+  if(room.killWithoutItem) then
+  begin
+
+    if(not bag.contains(room.requiredItem)) then
+    begin
+      changeRoom(spawnRoom);
+      exit;
+    end;
+
+  end;
 
   // TODO: update GUI to new room ones
 
@@ -250,6 +263,7 @@ begin
   riddleSolved := false;
 
   requiredItem:=-1;
+  killWithoutItem:=false;
 
 end;
 
@@ -260,7 +274,16 @@ begin
 
   if(requiredItem <> -1) then
   begin
-    result := bag.contains(requiredItem);
+
+    if(not killWithoutItem) then
+    begin
+      result := bag.contains(requiredItem);
+    end
+    else
+    begin
+      result := true;
+    end;
+
   end
   else
   begin
