@@ -91,7 +91,8 @@ type
 var
   ClickAdventure: TClickAdventure;
   currentRoom: TRoom;
-  bag: TBag; // TODO: move to character class
+  bag: TBag;
+  spawnRoom: TRoom;
 
 implementation
 
@@ -366,7 +367,7 @@ begin
   end
   else
   begin
-    // TODO: die();
+    changeRoom(spawnRoom);
   end;
 
 end;
@@ -422,6 +423,7 @@ begin
 
   start.descriptionBeforeRiddle:='Spawn Raum';
   start.north:=first;
+  spawnRoom:=start;
 
   first.descriptionBeforeRiddle:='Löse dieses Rätsel!';
   first.riddleQuestion:='Was ist 1+1?';
