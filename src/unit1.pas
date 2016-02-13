@@ -401,7 +401,7 @@ begin
   if(currentRoom.item <> nil) then
   begin
 
-    if(not bag.contains(currentRoom.item.id) then
+    if(not bag.contains(currentRoom.item.id)) then
     begin
       roomDescription.Lines.Add(currentRoom.item.message);
       bag.add(currentRoom.item);
@@ -474,6 +474,7 @@ begin
   second.east:=first;
 
   third.requiredItem:=1;
+  third.killWithoutItem:=true;
   third.descriptionBeforeRiddle:='Gewonnen!';
 
   changeRoom(start);
