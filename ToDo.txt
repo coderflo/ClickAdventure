@@ -1,13 +1,5 @@
-TItem:
-	add function to retrieve image by id
+GUI:
+	make roomDescription and riddleText a bit transparent
 
 TBag:
 	adjust max index of items array
-	
-changeRoom(Room):
-	update GUI
-	
-TClickAdventure.onRiddleButtonClicked(TObject):
-	kill player when answer is wrong
-	
-setup and display BagView form
