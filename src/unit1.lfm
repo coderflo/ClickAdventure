@@ -1,7 +1,7 @@
 object ClickAdventure: TClickAdventure
-  Left = -19
+  Left = -16
   Height = 720
-  Top = 4
+  Top = 29
   Width = 1276
   Caption = 'ClickAdventure'
   ClientHeight = 720
