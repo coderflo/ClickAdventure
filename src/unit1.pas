@@ -377,8 +377,17 @@ begin
 
   if(currentRoom.item <> nil) then
   begin
-    roomDescription.Lines.Add(currentRoom.item.message);
-    bag.add(currentRoom.item);
+
+    if(not bag.contains(currentRoom.item.id) then
+    begin
+      roomDescription.Lines.Add(currentRoom.item.message);
+      bag.add(currentRoom.item);
+    end
+    else
+    begin
+      roomDescription.Lines.Add('Du hast kein Item gefunden');
+    end;
+
   end
   else
   begin
