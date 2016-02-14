@@ -20,6 +20,7 @@ type
     backgroundImage: TImage;
     buttonItem: TImage;
     buttonBag: TImage;
+    guiImage: TImage;
     labelRegion: TLabel;
     labelVersion: TLabel;
     roomDescription: TMemo;
