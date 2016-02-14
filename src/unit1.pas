@@ -20,6 +20,8 @@ type
     backgroundImage: TImage;
     buttonItem: TImage;
     buttonBag: TImage;
+    labelRegion: TLabel;
+    labelVersion: TLabel;
     roomDescription: TMemo;
     riddleText: TMemo;
     riddleButtonOne: TButton;
@@ -69,6 +71,8 @@ type
 
     descriptionBeforeRiddle:string;
     descriptionAfterRiddle:string;
+
+    region:string; // format: [REGION] - [MAP]
 
     north,east,south,west:TRoom;
     labelNorth,labelEast,labelSouth,labelWest:string;
@@ -177,6 +181,12 @@ begin
     ClickAdventure.backgroundImage.Picture.LoadFromFile(Application.Location + room.backgroundImagePath);
   end;
 
+  // display region info
+  if(room.region <> '') then
+  begin
+    ClickAdventure.labelRegion.Caption:=room.region;
+  end;
+
   // show room description
   ClickAdventure.roomDescription.Lines.Clear;
 
@@ -247,6 +257,8 @@ begin
 
   descriptionBeforeRiddle:='';
   descriptionAfterRiddle:='';
+
+  region:='';
 
   labelNorth:='Norden';
   labelEast:='Osten';
@@ -454,10 +466,12 @@ begin
   third := TRoom.create;
 
   start.descriptionBeforeRiddle:='Spawn Raum';
+  start.region:='SPAWN - MAP #1';
   start.north:=first;
   spawnRoom:=start;
 
   first.descriptionBeforeRiddle:='Löse dieses Rätsel!';
+  first.region:='TEMPEL - MAP #1';
   first.riddleQuestion:='Was ist 1+1?';
   first.riddleOptionOne:='1';
   first.riddleOptionTwo:='2';

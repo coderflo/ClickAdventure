@@ -1,7 +1,7 @@
 object ClickAdventure: TClickAdventure
-  Left = -12
+  Left = -5
   Height = 720
-  Top = 0
+  Top = 3
   Width = 1276
   Caption = 'ClickAdventure'
   ClientHeight = 0
@@ -47844,5 +47844,27 @@ object ClickAdventure: TClickAdventure
       C90000000049454E44AE426082
     }
     Proportional = True
+  end
+  object labelVersion: TLabel
+    Left = 1150
+    Height = 32
+    Top = 4
+    Width = 124
+    Caption = 'ALPHA V0.1'
+    Font.Color = clWhite
+    Font.Height = -24
+    ParentColor = False
+    ParentFont = False
+  end
+  object labelRegion: TLabel
+    Left = 400
+    Height = 54
+    Top = -8
+    Width = 488
+    Caption = 'GEBIETSNAME - MAPNAME'
+    Font.Color = clWhite
+    Font.Height = -40
+    ParentColor = False
+    ParentFont = False
   end
 end
