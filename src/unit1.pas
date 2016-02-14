@@ -463,7 +463,7 @@ begin
   first.riddleOptionTwo:='2';
   first.riddleOptionThree:='3';
   first.riddleAnswer:=first.riddleOptionTwo;
-  first.descriptionAfterRiddle:='Perfekt! Die Tür nach Osten ist verschlossen, gehe nach Westen um sie zu öffnen!';
+  first.descriptionAfterRiddle:='Die Tür nach Osten ist zaw offen, aber du musst erst ein Item finden, ansonsten stirbst du beim Versuch sie zu durchqueren';
   first.west:=second;
   first.east:=third;
 

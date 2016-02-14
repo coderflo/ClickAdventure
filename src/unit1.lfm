@@ -1,5 +1,5 @@
 object ClickAdventure: TClickAdventure
-  Left = -14
+  Left = -12
   Height = 720
   Top = 0
   Width = 1276
@@ -38103,7 +38103,7 @@ object ClickAdventure: TClickAdventure
     TabOrder = 4
   end
   object riddleButtonTwo: TButton
-    Left = 280
+    Left = 284
     Height = 96
     Top = 616
     Width = 240
@@ -38160,7 +38160,7 @@ object ClickAdventure: TClickAdventure
     TabOrder = 0
   end
   object buttonEast: TButton
-    Left = 280
+    Left = 284
     Height = 96
     Top = 616
     Width = 240
