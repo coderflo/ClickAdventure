@@ -21,6 +21,7 @@ type
     buttonItem: TImage;
     buttonBag: TImage;
     guiImage: TImage;
+    buttonContinue: TImage;
     labelRegion: TLabel;
     labelVersion: TLabel;
     roomDescription: TMemo;
@@ -92,6 +93,17 @@ type
 
     function canEnter(bag:TBag):boolean;
 
+  end;
+
+type
+  { TDialog }
+  TDialog = class
+    lines: array of string;
+    currentLine: integer;
+    constructor create(a:array of string); // must be 0 based!
+    procedure show;
+    procedure showNext;
+    procedure hide;
   end;
 
 var
@@ -365,6 +377,46 @@ begin
 
   end;
 
+end;
+
+{ TDialog }
+constructor TDialog.create(a:array of string);
+begin
+  lines := a;
+  currentLine := 0; // optional: change to start index
+end;
+
+procedure TDialog.show;
+begin
+
+  ClickAdventure.buttonItem.Visible:=false;
+  ClickAdventure.buttonBag.Visible:=false;
+
+  showNext;
+
+end;
+
+procedure TDialog.showNext;
+begin
+
+  if(currentLine < Length(lines)) then
+  begin
+    ClickAdventure.roomDescription.Lines.Add(lines[currentLine]);
+    currentLine:=currentLine+1;
+    ClickAdventure.buttonContinue.Visible:=true;
+  end
+  else
+  begin
+    hide;
+  end;
+
+end;
+
+procedure TDialog.hide;
+begin
+  ClickAdventure.buttonContinue.Visible:=false;
+  ClickAdventure.buttonItem.Visible:=true;
+  ClickAdventure.buttonBag.Visible:=true;
 end;
 
 { TClickAdventure }
