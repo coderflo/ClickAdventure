@@ -3,7 +3,7 @@ object ClickAdventure: TClickAdventure
   Height = 720
   Top = 1
   Width = 1276
-  Caption = 'ClickAdventure'
+  Caption = 'Prüfung der Erhabenen'
   ClientHeight = 0
   ClientWidth = 0
   OnShow = FormShow
