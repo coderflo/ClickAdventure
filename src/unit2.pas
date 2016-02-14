@@ -5,13 +5,15 @@ unit Unit2;
 interface
 
 uses
-  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls;
+  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
+  ExtCtrls;
 
 type
 
   { TBagView }
 
   TBagView = class(TForm)
+    Image1: TImage;
     Label1: TLabel;
     itemNameList: TListBox;
     procedure FormShow(Sender: TObject);
