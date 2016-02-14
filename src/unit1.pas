@@ -36,6 +36,7 @@ type
     procedure onRiddleButtonClicked(Sender: TObject);
     procedure onSearchItemClicked(Sender: TObject);
     procedure onBagButtonClicked(Sender: TObject);
+    procedure onContinueDialogClicked(Sender: TObject);
 
     procedure buildAdventure;
 
@@ -66,13 +67,27 @@ type
   end;
 
 type
+  { TDialog }
+  TDialog = class
+    beforeRiddle: boolean;
+    lines: array of string;
+    currentLine: integer;
+    constructor create(a:array of string); // must be 0 based!
+    procedure show;
+    procedure showNext;
+    procedure hide;
+  end;
+
+type
   { TRoom }
   TRoom = class
 
     backgroundImagePath:string; // path to img: /img/[name].[extension]
 
     descriptionBeforeRiddle:string;
+    dialogBeforeRiddle:TDialog;
     descriptionAfterRiddle:string;
+    dialogAfterRiddle:TDialog;
 
     region:string; // format: [REGION] - [MAP]
 
@@ -95,46 +110,19 @@ type
 
   end;
 
-type
-  { TDialog }
-  TDialog = class
-    lines: array of string;
-    currentLine: integer;
-    constructor create(a:array of string); // must be 0 based!
-    procedure show;
-    procedure showNext;
-    procedure hide;
-  end;
-
 var
   ClickAdventure: TClickAdventure;
   currentRoom: TRoom;
   bag: TBag;
   spawnRoom: TRoom;
+  currentDialog:TDialog;
 
 implementation
 
 {$R *.lfm}
 
-procedure onRiddleSolved();
+procedure afterDialogAfterRiddle;
 begin
-
-  // save riddle solved state
-  currentRoom.riddleSolved:=true;
-
-  // hide riddle options
-
-  ClickAdventure.riddleButtonOne.Visible:=false;
-  ClickAdventure.riddleButtonTwo.Visible:=false;
-  ClickAdventure.riddleButtonThree.Visible:=false;
-  ClickAdventure.riddleButtonFour.Visible:=false;
-
-  // add room description
-
-  if(currentRoom.descriptionAfterRiddle <> '') then
-  begin
-    ClickAdventure.roomDescription.Lines.Add(currentRoom.descriptionAfterRiddle);
-  end;
 
   // show search item button
   ClickAdventure.buttonItem.Visible:=true;
@@ -165,6 +153,88 @@ begin
   begin
     ClickAdventure.buttonWest.Visible:=currentRoom.west.canEnter(bag);
     ClickAdventure.buttonWest.Caption:=currentRoom.labelWest;
+  end;
+
+end;
+
+procedure onRiddleSolved();
+begin
+
+  // save riddle solved state
+  currentRoom.riddleSolved:=true;
+
+  // hide riddle options
+
+  ClickAdventure.riddleButtonOne.Visible:=false;
+  ClickAdventure.riddleButtonTwo.Visible:=false;
+  ClickAdventure.riddleButtonThree.Visible:=false;
+  ClickAdventure.riddleButtonFour.Visible:=false;
+
+  // add room description
+
+  if(currentRoom.descriptionAfterRiddle <> '') then
+  begin
+    ClickAdventure.roomDescription.Lines.Add(currentRoom.descriptionAfterRiddle);
+  end;
+
+  if(currentRoom.dialogAfterRiddle <> nil) then
+  begin
+
+    // show dialog
+    currentDialog:=currentRoom.dialogAfterRiddle;
+
+    currentDialog.beforeRiddle:=false;
+    currentDialog.show;
+
+  end
+  else
+  begin
+    afterDialogAfterRiddle; // no dialog --> go ahead
+  end;
+
+end;
+
+procedure afterDialogBeforeRiddle;
+begin
+
+  if( (currentRoom.riddleQuestion <> '') and (not currentRoom.riddleSolved) ) then
+  begin
+
+    // show riddle
+
+    ClickAdventure.riddleText.Visible:=true;
+    ClickAdventure.riddleText.Lines.Add(currentRoom.riddleQuestion);
+
+    // show riddle answers if necessary
+
+    if(currentRoom.riddleOptionOne <> '') then
+    begin
+      ClickAdventure.riddleButtonOne.Visible:=true;
+      ClickAdventure.riddleButtonOne.Caption:=currentRoom.riddleOptionOne;
+    end;
+
+    if(currentRoom.riddleOptionTwo <> '') then
+    begin
+      ClickAdventure.riddleButtonTwo.Visible:=true;
+      ClickAdventure.riddleButtonTwo.Caption:=currentRoom.riddleOptionTwo;
+    end;
+
+    if(currentRoom.riddleOptionThree <> '') then
+    begin
+      ClickAdventure.riddleButtonThree.Visible:=true;
+      ClickAdventure.riddleButtonThree.Caption:=currentRoom.riddleOptionThree;
+    end;
+
+    if(currentRoom.riddleOptionFour <> '') then
+    begin
+      ClickAdventure.riddleButtonFour.Visible:=true;
+      ClickAdventure.riddleButtonFour.Caption:=currentRoom.riddleOptionFour;
+    end;
+
+  end
+  else
+  begin
+    onRiddleSolved(); // no riddle, so riddle is immediately 'solved'
   end;
 
 end;
@@ -218,44 +288,20 @@ begin
   ClickAdventure.buttonItem.Visible:=false;
 
   ClickAdventure.riddleText.Lines.Clear;
-  if( (room.riddleQuestion <> '') and (not room.riddleSolved) ) then
+
+  if(room.dialogBeforeRiddle <> nil) then
   begin
 
-    // show riddle
+    // show dialog
+    currentDialog := room.dialogBeforeRiddle;
 
-    ClickAdventure.riddleText.Visible:=true;
-    ClickAdventure.riddleText.Lines.Add(room.riddleQuestion);
-
-    // show riddle answers if necessary
-
-    if(room.riddleOptionOne <> '') then
-    begin
-      ClickAdventure.riddleButtonOne.Visible:=true;
-      ClickAdventure.riddleButtonOne.Caption:=room.riddleOptionOne;
-    end;
-
-    if(room.riddleOptionTwo <> '') then
-    begin
-      ClickAdventure.riddleButtonTwo.Visible:=true;
-      ClickAdventure.riddleButtonTwo.Caption:=room.riddleOptionTwo;
-    end;
-
-    if(room.riddleOptionThree <> '') then
-    begin
-      ClickAdventure.riddleButtonThree.Visible:=true;
-      ClickAdventure.riddleButtonThree.Caption:=room.riddleOptionThree;
-    end;
-
-    if(room.riddleOptionFour <> '') then
-    begin
-      ClickAdventure.riddleButtonFour.Visible:=true;
-      ClickAdventure.riddleButtonFour.Caption:=room.riddleOptionFour;
-    end;
+    currentDialog.beforeRiddle:=true;
+    currentDialog.show;
 
   end
   else
   begin
-    onRiddleSolved(); // no riddle, so riddle is immediately 'solved'
+    afterDialogBeforeRiddle; // no dialog --> go ahead
   end;
 
 end;
@@ -382,6 +428,7 @@ end;
 { TDialog }
 constructor TDialog.create(a:array of string);
 begin
+  beforeRiddle:=true;
   lines := a;
   currentLine := 0; // optional: change to start index
 end;
@@ -414,9 +461,20 @@ end;
 
 procedure TDialog.hide;
 begin
+
   ClickAdventure.buttonContinue.Visible:=false;
   ClickAdventure.buttonItem.Visible:=true;
   ClickAdventure.buttonBag.Visible:=true;
+
+  if(beforeRiddle) then
+  begin
+    afterDialogBeforeRiddle;
+  end
+  else
+  begin
+    afterDialogAfterRiddle;
+  end;
+
 end;
 
 { TClickAdventure }
@@ -497,6 +555,13 @@ begin
   end;
 
   BagView.ShowModal; // optional: replace with .Show
+
+end;
+
+procedure TClickAdventure.onContinueDialogClicked(Sender: TObject);
+begin
+
+  currentDialog.showNext;
 
 end;
 
