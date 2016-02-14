@@ -13,13 +13,13 @@ type
   { TClickAdventure }
 
   TClickAdventure = class(TForm)
-    bagButton: TButton;
-    buttonItem: TButton;
     buttonNorth: TButton; // north,east,... are code names only
     buttonEast: TButton;
     buttonWest: TButton;
     buttonSouth: TButton;
     backgroundImage: TImage;
+    buttonItem: TImage;
+    buttonBag: TImage;
     roomDescription: TMemo;
     riddleText: TMemo;
     riddleButtonOne: TButton;
