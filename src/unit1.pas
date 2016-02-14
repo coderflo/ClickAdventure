@@ -124,8 +124,9 @@ implementation
 procedure afterDialogAfterRiddle;
 begin
 
-  // show search item button
+  // show search item button and show bag button
   ClickAdventure.buttonItem.Visible:=true;
+  ClickAdventure.buttonBag.Visible:=true;
 
   // make room navigation buttons visible
   ClickAdventure.buttonNorth.Visible := (currentRoom.north <> nil);
@@ -284,8 +285,9 @@ begin
   ClickAdventure.buttonSouth.Visible:=false;
   ClickAdventure.buttonWest.Visible:=false;
 
-  // hide search item button
+  // hide search item button and show bag button
   ClickAdventure.buttonItem.Visible:=false;
+  ClickAdventure.buttonBag.Visible:=false;
 
   ClickAdventure.riddleText.Lines.Clear;
 
@@ -435,8 +437,8 @@ end;
 procedure TDialog.show;
 begin
 
-  ClickAdventure.buttonItem.Visible:=false;
-  ClickAdventure.buttonBag.Visible:=false;
+  //ClickAdventure.buttonItem.Visible:=false;
+  //ClickAdventure.buttonBag.Visible:=false;
 
   showNext;
 
@@ -462,8 +464,8 @@ procedure TDialog.hide;
 begin
 
   ClickAdventure.buttonContinue.Visible:=false;
-  ClickAdventure.buttonItem.Visible:=true;
-  ClickAdventure.buttonBag.Visible:=true;
+  //ClickAdventure.buttonItem.Visible:=true;
+  //ClickAdventure.buttonBag.Visible:=true;
 
   if(beforeRiddle) then
   begin
