@@ -72,7 +72,7 @@ type
     beforeRiddle: boolean;
     lines: array of string;
     currentLine: integer;
-    constructor create(a:array of string); // must be 0 based!
+    constructor create;
     procedure show;
     procedure showNext;
     procedure hide;
@@ -426,10 +426,9 @@ begin
 end;
 
 { TDialog }
-constructor TDialog.create(a:array of string);
+constructor TDialog.create;
 begin
   beforeRiddle:=true;
-  lines := a;
   currentLine := 0; // optional: change to start index
 end;
 
