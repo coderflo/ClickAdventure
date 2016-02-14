@@ -44889,5 +44889,6 @@ object ClickAdventure: TClickAdventure
       454E44AE426082
     }
     Proportional = True
+    Visible = False
   end
 end

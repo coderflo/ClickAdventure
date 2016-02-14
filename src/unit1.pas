@@ -573,6 +573,10 @@ procedure TClickAdventure.buildAdventure;
 var
   start,first,second,third:TRoom;
   item:TItem;
+
+  dialogOne,dialogTwo:TDialog;
+  dialogLinesOne, dialogLinesTwo: array of string;
+
 begin
 
   bag := TBag.create;
@@ -597,6 +601,21 @@ begin
   first.descriptionAfterRiddle:='Die Tür nach Osten ist zaw offen, aber du musst erst ein Item finden, ansonsten stirbst du beim Versuch sie zu durchqueren';
   first.west:=second;
   first.east:=third;
+
+  dialogOne := TDialog.create;
+  SetLength(dialogLinesOne, 2);
+  dialogLinesOne[0]:='Erste Dialogzeile des ersten Dialoges';
+  dialogLinesOne[1]:='Zweite Dialogzeile des ersten Dialoges';
+  dialogOne.lines:=dialogLinesOne;
+
+  dialogTwo := TDialog.create;
+  SetLength(dialogLinesTwo, 2);
+  dialogLinesTwo[0]:='Erste Dialogzeile des zweiten Dialoges';
+  dialogLinesTwo[1]:='Zweite Dialogzeile des zweiten Dialoges';
+  dialogTwo.lines:=dialogLinesTwo;
+
+  first.dialogBeforeRiddle:=dialogOne;
+  first.dialogAfterRiddle:=dialogTwo;
 
   item := TItem.create(1,'Test Item','Tür geöffnet');
 
