@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
-  ExtCtrls, Unit2;
+  ExtCtrls, Unit2, mmsystem;
 
 type
 
@@ -83,6 +83,7 @@ type
   TRoom = class
 
     backgroundImagePath:string; // path to img: /img/[name].[extension]
+    backgroundMusicPath:string; // path to music: /music/[name].wav
 
     descriptionBeforeRiddle:string;
     dialogBeforeRiddle:TDialog;
@@ -263,6 +264,12 @@ begin
   if(room.backgroundImagePath <> '') then
   begin
     ClickAdventure.backgroundImage.Picture.LoadFromFile(Application.Location + room.backgroundImagePath);
+  end;
+
+  // load background music
+  if(room.backgroundMusicPath <> '') then
+  begin
+    sndPlaySound(Application.Location + room.backgroundMusicPath,SND_NODEFAULT Or SND_ASYNC);
   end;
 
   // display region info

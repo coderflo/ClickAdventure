@@ -1,3 +1,7 @@
 room background images:
 	images should be saved (for test and production) in [exe folder]/img/
 	path in code is set through TRoom.backgroundImagePath := '\img\[name].[extension]'
+
+room background music:
+	music shpould be saved in [exe folder]/music/
+	path in code is set through TRoom.backgroundMusicPath := '\music\[name].wav';
