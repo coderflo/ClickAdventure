@@ -604,9 +604,25 @@ begin
     rooms[i] := TRoom.create; // create all rooms with default values
   end;
 
-  // room 1
-  rooms[1].backgroundMusicPath:='';
+  playerName:='Player';
 
+  // room 1
+  rooms[1].descriptionBeforeRiddle:=compile('%n: Wo bin ich? Was ist passiert? Ich kann mich an nichts mehr erinnern… Ich sollte mich zunächst aus diesem Schneegebiet entfernen. Lange halte ich das wahrscheinlich nicht durch… bei diesen Temperaturen.');
+  rooms[1].labelEast:='Osten: Geht tiefer in den Wald hinein.';
+  rooms[1].region:='Wintertau-Lichtung';
+  rooms[1].backgroundImagePath:='img\S1.jpg';
+  rooms[1].east:=rooms[2];
+
+  // room 2
+  rooms[2].descriptionBeforeRiddle:=compile('%n: Hier gibt es nicht wirklich viele Möglichkeiten, sich zu verlaufen. Der Wald ist viel zu dicht, um Umwege zu gehen. Ich sollte besser dem Weg nach Süden folgen. Hoffentlich finde ich bald eine Antwort auf meine Fragen…');
+  rooms[2].labelSouth:='Süden: Schlagt den Weg zur Doldenvan-Passage ein.';
+  rooms[2].labelWest:='Westen: Geht zurück zur Lichtung, an der Ihr aufgewacht seid.';
+  rooms[2].region:='Wintertau-Wald';
+  rooms[2].backgroundImagePath:='img\S1.jpg';
+  //rooms[2].south:=rooms[3];
+  rooms[2].west:=rooms[1];
+
+  spawnRoom := rooms[1];
   startAdventure;
 
 end;
