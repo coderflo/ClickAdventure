@@ -898,6 +898,30 @@ begin
   rooms[18].north:=rooms[19];
   rooms[18].east:=rooms[16];
 
+  // rooms 19
+  dialogsBefore[19}:=TDialog.create;
+  SetLength(dialogLinesBefore[19],2);
+  dialogLinesBefore[19][0]:='Explorator: Da seid ihr ja. Bitte helft mir, das Lager abzubauen.';
+  dialogLinesBefore[19][1]:=compile('%n: Hatte nichts anderes vor…');
+  dialogsBefore[19].lines:=dialogLinesBefore[19];
+  rooms[19].dialogBeforeRiddle:=dialogsBefore[19];
+  // TODO: add riddle
+  dialogsAfter[19]:=TDialog.create;
+  SetLength(dialogLinesAfter[19],4);
+  dialogLinesAfter[19][0]:=compile('%n: Kann ich Euch noch zu den Ranken hier in der Gegend befragen?');
+  dialogLinesAfter[19][1]:='Explorator: Wir sind hier unter einem Dschungel, da ist es doch kein Wunder, mal ab und zu eine Ranke zu finden. Meint Ihr nicht?';
+  dialogLinesAfter[19][2]:=compile('%n: Es ergibt keinen Sinn, dass sich die Ranken so willkürlich anordnen, wie ich sie manchmal sehe.');
+  dialogLinesAfter[19][3]:='Explorator: Wer versteht schon die Natur… Hier, für Eure gute Arbeit!';
+  dialogsAfter[19].lines:=dialogLinesAfter[19];
+  rooms[19].dialogAfterRiddle:=dialogsAfter[19];
+  rooms[19].item:=TItem.create(6,'Flammenbrecher-Fragment 3','Ihr erhaltet ein Flammenbrecher-Fragment.');
+  rooms[19].labelEast:='Osten: Folgt dem Strom der Lava.';
+  rooms[19].labelSouth:='Süden: Geht zurück in die Aschen-Senke.';
+  rooms[19].region:='Mahlstromgalle';
+  rooms[19].backgroundImagePath:='img\L1.jpg';
+  rooms[19].east:=rooms[20];
+  rooms[19].south:=rooms[18];
+
   spawnRoom := rooms[1];
   startAdventure;
 
