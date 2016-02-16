@@ -596,6 +596,8 @@ procedure TClickAdventure.buildAdventure;
 var
   i:integer;
   rooms: array [1..43] of TRoom;
+  dialogsBefore, dialogsAfter: array [1..43] of TDialog;
+  dialogLinesBefore, dialogLinesAfter: array [1..43] of array of string;
 
 begin
 
@@ -605,6 +607,8 @@ begin
   end;
 
   playerName:='Player';
+
+  bag := TBag.create;
 
   // room 1
   rooms[1].descriptionBeforeRiddle:=compile('%n: Wo bin ich? Was ist passiert? Ich kann mich an nichts mehr erinnern… Ich sollte mich zunächst aus diesem Schneegebiet entfernen. Lange halte ich das wahrscheinlich nicht durch… bei diesen Temperaturen.');
@@ -619,8 +623,44 @@ begin
   rooms[2].labelWest:='Westen: Geht zurück zur Lichtung, an der Ihr aufgewacht seid.';
   rooms[2].region:='Wintertau-Wald';
   rooms[2].backgroundImagePath:='img\S1.jpg';
-  //rooms[2].south:=rooms[3];
+  rooms[2].south:=rooms[3];
   rooms[2].west:=rooms[1];
+
+  // room 3
+  rooms[3].descriptionBeforeRiddle:=compile('%n: Ein umgestürzter Baum blockiert die Straße nach Süden… Offenbar lichtet sich der Wald dort etwas. Vielleicht kann mir der Besitzer dieses Gehöfts helfen.');
+  rooms[3].labelNorth:='Norden: Geht zurück in den dichten Teil des Waldes.';
+  rooms[3].labelSouth:='Süden: Zerschlage den Baumstamm mit der mystischen Axt und verlasse den Wald.';
+  rooms[3].labelWest:='Westen: Betretet das Gehöft.';
+  rooms[3].region:='Doldenvan-Passage';
+  rooms[3].backgroundImagePath:='img\S1.jpg';
+  rooms[3].north:=rooms[2];
+  rooms[3].west:=rooms[4];
+  rooms[3].south:=rooms[5];
+
+  // room 4
+  dialogsBefore[4]:=TDialog.create;
+  SetLength(dialogLinesBefore[4], 7);
+  dialogLinesBefore[4][0]:=compile('%n: Hier ist es schön warm, ich wünschte ich könnte ewig hier bleiben. Soweit ich das erkennen kann, ist das hier eine Holzfällerhütte… all die Sägen hier an den Wänden.');
+  dialogLinesBefore[4][1]:='Holzfäller: Grüße, Wanderer. Was verschlägt Euch in meine Hütte?';
+  dialogLinesBefore[4][2]:=compile('%n: Ich weiß es selber nicht… Ich muss nach Süden und hatte gehofft, ihr könntet mir mit der versperrten Straße nach Süden weiterhelfen.');
+  dialogLinesBefore[4][3]:='Holzfäller: Ach ja, die Frostwinde waren wohl wieder am Werk. Seit Neustem wüten sie hier durch die Zittergipfel und keiner kann es sich wirklich erklären. Muss wohl mit dem Erscheinen der Drachen zusammenhängen…';
+  dialogLinesBefore[4][4]:=compile('%n: Drachen?!');
+  dialogLinesBefore[4][5]:='Holzfäller: Keine Angst, es ist nur ein Mythos. Lasst Euch davon nicht abhalten. Ich helfe Euch gerne, wenn ihr mir bei einem kleinen Problem helft, was mich schon länger beschäftigt.';
+  dialogLinesBefore[4][6]:=compile('%n: Natürlich.');
+  dialogsBefore[4].lines:=dialogLinesBefore[4];
+  rooms[4].dialogBeforeRiddle:=dialogsBefore[4];
+  // TODO: add riddle
+  dialogsAfter[4]:=TDialog.create;
+  SetLength(dialogLinesAfter[4], 2);
+  dialogLinesAfter[4][0]:='Holzfäller: So einfach hätte ich mir das gar nicht vorgestellt, danke. Hier, nehmt diese Axt. Ich habe sie gestern in einer Ranke gefunden, die hier im Schnee lag. Witzig, nicht? Eine Ranke hier im Schnee. Braucht sie mir auch nicht zurückbringen. Ich habe sowieso bessere Äxte. Also dann, gute Reise. Passt nur auf Issormir, den Eiswurm, der seit Wochen diese Gegend heimsucht, auf. Möge Dwayna Euch beschützen.';
+  dialogLinesAfter[4][1]:=compile('%n: Danke. Euch auch.');
+  dialogsAfter[4].lines:=dialogLinesAfter[4];
+  rooms[4].dialogAfterRiddle:=dialogsAfter[4];
+  rooms[4].item:=TItem.create(1,'Mystische Holzfälleraxt','Ihr erhaltet die mystische Holzfälleraxt aus den Zittergipfeln.');
+  rooms[4].labelEast:='Osten: Verlasst das Gehöft.';
+  rooms[4].region:='Alpenzur-Gehöft';
+  rooms[4].backgroundImagePath:='img\S1.jpg';
+  rooms[4].east:=rooms[3];
 
   spawnRoom := rooms[1];
   startAdventure;
