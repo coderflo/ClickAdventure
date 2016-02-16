@@ -792,6 +792,27 @@ begin
   rooms[13].east:=rooms[14];
   rooms[13].west:=rooms[11];
 
+  // room 14
+  rooms[14].backgroundMusicPath:='music\Lava.wav';
+  rooms[14].descriptionBeforeRiddle:=compile('%n: Der Erdrutsch! Das Siegel hat ihn zu Eis verwandelt, welches dann wegen der Hitze hier geschmolzen ist. Genial! Aber wo bin ich denn jetzt hier gelandet? Ein unterirdischer Vulkan? Ich kann nördlich von hier eine Art Lager erkennen. Vielleicht sollte ich mal nachfragen.');
+  rooms[14].labelNorth:='Norden: Geht zum Basislager.';
+  rooms[14].labelSouth:='Süden: Geht bergauf zum Urteilsfelsen.';
+  rooms[14].labelWest:='Westen: Verlasst das Vulkangebiet.';
+  rooms[14].region:='Dämonenschlund';
+  rooms[14].backgroundImagePath:='img\L3.jpg';
+  rooms[14].north:=rooms[16];
+  rooms[14].south:=rooms[15];
+  rooms[14].west:=rooms[13];
+
+  // room 15
+  rooms[15].descriptionBeforeRiddle:=compile('%n: Bei Dwayna! Was ist denn hier passiert? Eine gigantische Rankenwand blockiert den Weg nach Osten. Es ist unmöglich, weiterzugehen. Etwas stimmt hier nicht. Ich sollte später wiederkommen…');
+  rooms[15].labelNorth:='Norden: Geht zurück zum Vulkan.';
+  rooms[15].labelEast:='Osten: Zerschneidet die Rankenwand.';
+  rooms[15].region:='Urteilsfelsen';
+  rooms[15].backgroundImagePath:='img\L3.jpg';
+  rooms[15].north:=rooms[14];
+  rooms[15].east:=rooms[35];
+
   spawnRoom := rooms[1];
   startAdventure;
 
