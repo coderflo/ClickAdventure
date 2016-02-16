@@ -38,6 +38,7 @@ type
     procedure onBagButtonClicked(Sender: TObject);
     procedure onContinueDialogClicked(Sender: TObject);
 
+    procedure startAdventure;
     procedure buildAdventure;
 
   private
@@ -579,6 +580,11 @@ begin
   buildAdventure();
 end;
 
+procedure TClickAdventure.startAdventure;
+begin
+  changeRoom(spawnRoom);
+end;
+
 procedure TClickAdventure.buildAdventure;
 var
   start,first,second,third:TRoom;
@@ -637,7 +643,7 @@ begin
   third.killWithoutItem:=true;
   third.descriptionBeforeRiddle:='Gewonnen!';
 
-  changeRoom(start);
+  startAdventure;
 
 end;
 
