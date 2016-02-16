@@ -118,6 +118,7 @@ var
   bag: TBag;
   spawnRoom: TRoom;
   currentDialog:TDialog;
+  playerName:string;
 
 implementation
 
@@ -270,7 +271,8 @@ begin
   // load background music
   if(room.backgroundMusicPath <> '') then
   begin
-    sndPlaySound(Application.Location + room.backgroundMusicPath,SND_NODEFAULT Or SND_ASYNC);
+    // ERROR: Incompatible type for arg no. 1: Got 'AnsiString', expected 'PChar'
+    //sndPlaySound(Application.Location + room.backgroundMusicPath,SND_NODEFAULT Or SND_ASYNC);
   end;
 
   // display region info
@@ -314,6 +316,11 @@ begin
     afterDialogBeforeRiddle; // no dialog --> go ahead
   end;
 
+end;
+
+function compile(s:string):string;
+begin
+  result:=StringReplace(s,'%n',playerName,[rfReplaceAll]);
 end;
 
 { TRoom }
@@ -587,61 +594,18 @@ end;
 
 procedure TClickAdventure.buildAdventure;
 var
-  start,first,second,third:TRoom;
-  item:TItem;
-
-  dialogOne,dialogTwo:TDialog;
-  dialogLinesOne, dialogLinesTwo: array of string;
+  i:integer;
+  rooms: array [1..43] of TRoom;
 
 begin
 
-  bag := TBag.create;
+  for i := 0 to 43 do
+  begin
+    rooms[i] := TRoom.create; // create all rooms with default values
+  end;
 
-  start := TRoom.create;
-  first := TRoom.create;
-  second := TRoom.create;
-  third := TRoom.create;
-
-  start.descriptionBeforeRiddle:='Spawn Raum';
-  start.region:='SPAWN - MAP #1';
-  start.north:=first;
-  spawnRoom:=start;
-
-  first.descriptionBeforeRiddle:='Löse dieses Rätsel!';
-  first.region:='TEMPEL - MAP #1';
-  first.riddleQuestion:='Was ist 1+1?';
-  first.riddleOptionOne:='1';
-  first.riddleOptionTwo:='2';
-  first.riddleOptionThree:='3';
-  first.riddleAnswer:=first.riddleOptionTwo;
-  first.descriptionAfterRiddle:='Die Tür nach Osten ist zaw offen, aber du musst erst ein Item finden, ansonsten stirbst du beim Versuch sie zu durchqueren';
-  first.west:=second;
-  first.east:=third;
-
-  dialogOne := TDialog.create;
-  SetLength(dialogLinesOne, 2);
-  dialogLinesOne[0]:='Erste Dialogzeile des ersten Dialoges';
-  dialogLinesOne[1]:='Zweite Dialogzeile des ersten Dialoges';
-  dialogOne.lines:=dialogLinesOne;
-
-  dialogTwo := TDialog.create;
-  SetLength(dialogLinesTwo, 2);
-  dialogLinesTwo[0]:='Erste Dialogzeile des zweiten Dialoges';
-  dialogLinesTwo[1]:='Zweite Dialogzeile des zweiten Dialoges';
-  dialogTwo.lines:=dialogLinesTwo;
-
-  first.dialogBeforeRiddle:=dialogOne;
-  first.dialogAfterRiddle:=dialogTwo;
-
-  item := TItem.create(1,'Test Item','Tür geöffnet');
-
-  second.item:=item;
-  second.descriptionBeforeRiddle:='Hier findest du das Item, um nach Osten zu gehen';
-  second.east:=first;
-
-  third.requiredItem:=1;
-  third.killWithoutItem:=true;
-  third.descriptionBeforeRiddle:='Gewonnen!';
+  // room 1
+  rooms[1].backgroundMusicPath:='';
 
   startAdventure;
 
