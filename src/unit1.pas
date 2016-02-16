@@ -832,6 +832,39 @@ begin
   rooms[15].north:=rooms[14];
   rooms[15].east:=rooms[35];
 
+  // room 16
+  rooms[16].backgroundMusicPath:='music\Lava2.wav';
+  dialogsBefore[16]:=TDialog.create;
+  SetLength(dialogLinesBefore[16],15);
+  dialogLinesBefore[16][0]:=compile('%n: Grüßt Euch, könnt Ihr mir vielleicht in dieser Gegend hier weiterhelfen?');
+  dialogLinesBefore[16][1]:='Explorator: Natürlich, wir sind die Exploratoren und erforschen den Mahlstrom seit vier Jahren! Insofern kennen wir uns hier perfekt aus.';
+  dialogLinesBefore[16][2]:=compile('%n: Der Mahlstrom?');
+  dialogLinesBefore[16][3]:='Explorator: Ich merke, Ihr kommt nicht von hier. Ihr befindet euch direkt neben einem gigantischen unterirdischen Vulkan- und Höhlensystem. Wir nennen es den „Mahlstrom“. Wir haben hier in der Aschen-Senke unser Basislager für die Expeditionen aufgeschlagen, um die Geheimnisse dieses Vulkans zu lüften.';
+  dialogLinesBefore[16][4]:=compile('%n: Vielen Dank! Ist es denn gefährlich, hier ohne Begleitung herumzulaufen?');
+  dialogLinesBefore[16][5]:='Explorator: Nein, nein. Das Gebiet ist größtenteils gesichert. Solange Ihr Gaheron in seiner Festung in Ruhe lasst, sollte Euch nichts zustoßen.';
+  dialogLinesBefore[16][6]:=compile('%n: Gaheron?');
+  dialogLinesBefore[16][7]:='Explorator: Euch muss man aber auch alles erklären. Gaheron Baelfeuer ist ein widerliches Geschöpf, vollgestopft mit Machtgier und bösem Willen. Irgend so ein Katzenwesen, können wir uns hier kaum vorstellen.';
+  dialogLinesBefore[16][8]:=compile('%n: Böser Willen… das kommt mir bekannt vor. Sagt Euch der Name Svaard irgendetwas?');
+  dialogLinesBefore[16][9]:='Explorator: Hmm, habe ich schon mal gehört. Soll ein Jäger in den Zittergipfeln sein. Mit riesigem Palast in einer Eisscholle.';
+  dialogLinesBefore[16][10]:=compile('%n: Er erzählte irgendetwas von „Erhabenen“ und „Kralkatorrik“. Wisst Ihr etwas darüber? Mir bereitet das alles ein wenig Sorgen im Moment…');
+  dialogLinesBefore[16][11]:='Explorator: Unmöglich. Kralkatorrik ist vor Jahrtausenden ausgestorben. Er war laut Mythos ein Drache, der in den fernen östlichen Wäldern gelebt hat. In welchem Kontext hat Svaard dies zu Euch gesagt?';
+  dialogLinesBefore[16][12]:=compile('%n: Naja, er hat mir irgendetwas von den „Erhabenen“ erzählt und mich dann angegriffen, während er „Für Kralkatorrik“ gebrüllt hat. Ich kann mich nur noch daran erinnern, dass er danach tot vor mir lag.');
+  dialogLinesBefore[16][13]:='Explorator: Wenn Ihr die Wahrheit sagt, dann müssen wir hier schleunigst verschwinden. Geht zu meinen 3 Kollegen hier in der Nähe und helft ihnen beim Aufbruch. Wir haben keine Zeit zu verlieren.';
+  dialogLinesBefore[16][14]:=compile('%n: Warten Sie, sie haben etwas fallen gelassen… Zu spät. Ich sollte das lieber aufsammeln.');
+  dialogsBefore[16].lines:=dialogLinesBefore[16];
+  rooms[16].dialogBeforeRiddle:=dialogsBefore[16];
+  rooms[16].item:=TItem.create(4,'Flammenbrecher-Fragment 1','Ihr erhaltet ein Flammenbrecher-Fragment.');
+  rooms[16].labelNorth:='Norden: Nähert Euch den Tiefen des Mahlstroms.';
+  rooms[16].labelEast:='Osten: Begebt Euch auf eine nahe gelegene Anhöhe.';
+  rooms[16].labelSouth:='Süden: Verlasst das Basislager.';
+  rooms[16].labelWest:='Westen: Dringt tiefer in die Aschen-Senke vor.';
+  rooms[16].region:='Geheimes Basislager';
+  rooms[16].backgroundImagePath:='img\L1.jpg';
+  rooms[16].north:=rooms[20];
+  rooms[16].east:=rooms[17];
+  rooms[16].south:=rooms[14];
+  rooms[16].west:=rooms[18];
+
   spawnRoom := rooms[1];
   startAdventure;
 
