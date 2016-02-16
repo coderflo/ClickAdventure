@@ -750,6 +750,46 @@ begin
   rooms[10].backgroundImagePath:='img\S4.jpg';
   rooms[10].north:=rooms[9];
 
+  // room 11
+  rooms[11].descriptionBeforeRiddle:=compile('%n: Es ist ziemlich dunkel hier unten, kaum zu glauben, dass oben alles weiß ist. Von Osten spüre ich eine gewisse Wärme… kann das sein?');
+  rooms[11].labelNorth:='Norden: Erklimmt den Hochgipfel.';
+  rooms[11].labelEast:='Osten: Folgt der Wärme weiter nach unten.';
+  rooms[11].labelSouth:='Süden: Geht in Richtung des Eisklamms.';
+  rooms[11].region:='Abgrund der Verzweiflung';
+  rooms[11].backgroundImagePath:='img\S2.jpg';
+  rooms[11].north:=rooms[8];
+  rooms[11].east:=rooms[13];
+  rooms[11].south:=rooms[12];
+
+  // room 12
+  dialogsBefore[12]:=TDialog.create;
+  SetLength(dialogLinesBefore[11],3);
+  dialogLinesBefore[11][0]:=compile('%n: Ich kann kaum etwas sehen. Das Licht von oben dringt fast gar nicht bis hier unten durch. Ich sollte wohl lieber umkehren.');
+  dialogLinesBefore[11][1]:='Issormir: Raaaaawwwwrrrrg!';
+  dialogLinesBefore[11][2]:=compile('%n: Was ist das?! Ein Eiswurm? Issormir! Er greift mich an!');
+  dialogsBefore[12].lines:=dialogLinesBefore[11];
+  rooms[12].dialogBeforeRiddle:=dialogsBefore[12];
+  // TODO: add riddle
+  dialogsAfter[12]:=TDialog.create;
+  SetLength(dialogLinesAfter[11],1);
+  dialogLinesAfter[11][0]:=compile('%n: Ich bin nicht tot? Wie habe ich das geschafft? Ich sah Zeichen, logisch anzuordnen. Hängt das mit den ganzen Geschehnissen zusammen? Naja… Issormir ist zumindest enthauptet. Ich nehme besser seinen Kopf mit.');
+  dialogsAfter[12].lines:=dialogLinesBefore[11];
+  rooms[12].dialogAfterRiddle:=dialogsAfter[12];
+  rooms[12].item:=TItem.create(3,'Kopf Issormirs','Ihr erhaltet den Kopf Issormirs. Er sieht sehr wertvoll aus.');
+  rooms[12].labelNorth:='Norden: Verlasst den Klamm.';
+  rooms[12].region:='Nebelriss-Klamm';
+  rooms[12].backgroundImagePath:='img\S2.jpg';
+  rooms[12].north:=rooms[11];
+
+  // room 13
+  rooms[13].descriptionBeforeRiddle:=compile('%n: Hier ist es erstaunlich heiß für ein verschneites Gebirge. Doch der Weg ist durch einen Erdrutsch versperrt. Hätte ich doch nur etwas, um den Erdrutsch zu entfernen…');
+  rooms[13].labelEast:='Osten: Verwendet Svaards Frostsiegel.';
+  rooms[13].labelWest:='Westen: Kehrt um.';
+  rooms[13].region:='Erdrutsch-Tiefen';
+  rooms[13].backgroundImagePath:='img\S2.jpg';
+  rooms[13].east:=rooms[14];
+  rooms[13].west:=rooms[11];
+
   spawnRoom := rooms[1];
   startAdventure;
 
