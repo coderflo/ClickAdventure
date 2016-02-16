@@ -322,6 +322,7 @@ begin
   // initialize with standard values
 
   backgroundImagePath:='';
+  backgroundMusicPath:='';
 
   descriptionBeforeRiddle:='';
   descriptionAfterRiddle:='';
