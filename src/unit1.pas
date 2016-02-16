@@ -865,6 +865,39 @@ begin
   rooms[16].south:=rooms[14];
   rooms[16].west:=rooms[18];
 
+  // room 17
+  rooms[17].descriptionBeforeRiddle:=compile('%n: Hier hat man einen guten Überblick über das Lager. Im Norden und Westen sehe ich weitere Exploratoren. Ich sollte beim Aufbruch helfen, obwohl ich noch nicht weiß, wozu das alles…');
+  rooms[17].labelWest:='Westen: Kehrt in das Lager zurück.';
+  rooms[17].region:='Rußberne';
+  rooms[17].backgroundImagePath:='img\L3.jpg';
+  rooms[17].west:=rooms[16];
+
+  // room 18
+  dialogsBefore[18]:=TDialog.create;
+  SetLength(dialogLinesBefore[18],4);
+  dialogLinesBefore[18][0]:='Explorator: Seid ihr der Reisende, der von Kralkatorrik erzählt hat?';
+  dialogLinesBefore[18][1]:=compile('%n: ICH habe nicht von ihm erzählt, eigentlich war das Svaard.');
+  dialogLinesBefore[18][2]:='Explorator: Egal, helft mir hier. Sonst sind wir alle beide bald nur noch Asche.';
+  dialogLinesBefore[18][3]:=compile('%n: Es hat keinen Sinn, den jetzt noch weiter zu befragen. Ich sollte ihm lieber helfen.');
+  dialogsBefore[18].lines:=dialogLinesBefore[18];
+  rooms[18].dialogBeforeRiddle:=dialogsBefore[18];
+  // TODO: add riddle
+  dialogsAfter[18]:=TDialog.create;
+  SetLength(dialogLinesAfter[18],4);
+  dialogLinesAfter[18][0]:='Explorator: Danke vielmals. Nehmt bitte dieses Fragment. Ich habe es heute bei den Ausgrabungen gefunden. Ihr könnt bestimmt etwas damit anfangen.';
+  dialogLinesAfter[18][1]:=compile('%n: Wer oder was sind die „Erhabenen“?');
+  dialogLinesAfter[18][2]:='Explorator: Ein Gerücht. Nichts weiter. Es gibt keine übernatürlichen Kräfte. Niemand kann mit Hilfe seines Verstandes Macht erzeugen.';
+  dialogLinesAfter[18][3]:=compile('%n: Danke…');
+  dialogsAfter[18].lines:=dialogLinesAfter[18];
+  rooms[18].dialogAfterRiddle:=dialogsAfter[18];
+  rooms[18].item:=TItem.create(5,'Flammenbrecher-Fragment 2','Ihr erhaltet ein Flammenbrecher-Fragment.');
+  rooms[18].labelNorth:='Norden: Geht in Richtung der Lava.';
+  rooms[18].labelEast:='Osten: Kehrt zum Hauptlager zurück.';
+  rooms[18].region:='Aschen-Senke';
+  rooms[18].backgroundImagePath:='img\L1.jpg';
+  rooms[18].north:=rooms[19];
+  rooms[18].east:=rooms[16];
+
   spawnRoom := rooms[1];
   startAdventure;
 
