@@ -278,8 +278,7 @@ begin
   // load background music
   if(room.backgroundMusicPath <> '') then
   begin
-    // ERROR: Incompatible type for arg no. 1: Got 'AnsiString', expected 'PChar'
-    //sndPlaySound(Application.Location + room.backgroundMusicPath,SND_NODEFAULT Or SND_ASYNC);
+    sndPlaySound(pchar(UTF8ToSys(Application.Location + room.backgroundMusicPath)), snd_Async or snd_NoDefault);
   end;
 
   // display region info
