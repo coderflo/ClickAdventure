@@ -662,6 +662,18 @@ begin
   rooms[4].backgroundImagePath:='img\S1.jpg';
   rooms[4].east:=rooms[3];
 
+  // room 5
+  rooms[5].descriptionBeforeRiddle:=compile('%n: Gut, dass dieser Wald hinter mir liegt. Ich habe gar nicht bemerkt, dass ich von so hohen Bergen umgeben bin. Mir bereiten nur die Drachen ein wenig Sorge… und dieser Issormir… wahrscheinlich nur dumme Gerüchte.');
+  rooms[5].labelNorth:='Norden: Betretet den Wald.';
+  rooms[5].labelEast:='Osten: Geht in Richtung Maulent-Gipfel.';
+  rooms[5].labelSouth:='Süden: Besteigt die verschneite Anhöhe.';
+  rooms[5].requiredItem:=1;
+  rooms[5].region:='Eissteppen';
+  rooms[5].backgroundImagePath:='img\S3.jpg';
+  rooms[5].east:=rooms[6];
+  rooms[5].south:=rooms[7];
+  rooms[5].north:=rooms[3];
+
   spawnRoom := rooms[1];
   startAdventure;
 
