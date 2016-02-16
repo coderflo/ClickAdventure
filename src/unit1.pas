@@ -763,17 +763,17 @@ begin
 
   // room 12
   dialogsBefore[12]:=TDialog.create;
-  SetLength(dialogLinesBefore[11],3);
-  dialogLinesBefore[11][0]:=compile('%n: Ich kann kaum etwas sehen. Das Licht von oben dringt fast gar nicht bis hier unten durch. Ich sollte wohl lieber umkehren.');
-  dialogLinesBefore[11][1]:='Issormir: Raaaaawwwwrrrrg!';
-  dialogLinesBefore[11][2]:=compile('%n: Was ist das?! Ein Eiswurm? Issormir! Er greift mich an!');
-  dialogsBefore[12].lines:=dialogLinesBefore[11];
+  SetLength(dialogLinesBefore[12],3);
+  dialogLinesBefore[12][0]:=compile('%n: Ich kann kaum etwas sehen. Das Licht von oben dringt fast gar nicht bis hier unten durch. Ich sollte wohl lieber umkehren.');
+  dialogLinesBefore[12][1]:='Issormir: Raaaaawwwwrrrrg!';
+  dialogLinesBefore[12][2]:=compile('%n: Was ist das?! Ein Eiswurm? Issormir! Er greift mich an!');
+  dialogsBefore[12].lines:=dialogLinesBefore[12];
   rooms[12].dialogBeforeRiddle:=dialogsBefore[12];
   // TODO: add riddle
   dialogsAfter[12]:=TDialog.create;
-  SetLength(dialogLinesAfter[11],1);
-  dialogLinesAfter[11][0]:=compile('%n: Ich bin nicht tot? Wie habe ich das geschafft? Ich sah Zeichen, logisch anzuordnen. Hängt das mit den ganzen Geschehnissen zusammen? Naja… Issormir ist zumindest enthauptet. Ich nehme besser seinen Kopf mit.');
-  dialogsAfter[12].lines:=dialogLinesBefore[11];
+  SetLength(dialogLinesAfter[12],1);
+  dialogLinesAfter[12][0]:=compile('%n: Ich bin nicht tot? Wie habe ich das geschafft? Ich sah Zeichen, logisch anzuordnen. Hängt das mit den ganzen Geschehnissen zusammen? Naja… Issormir ist zumindest enthauptet. Ich nehme besser seinen Kopf mit.');
+  dialogsAfter[12].lines:=dialogLinesBefore[12];
   rooms[12].dialogAfterRiddle:=dialogsAfter[12];
   rooms[12].item:=TItem.create(3,'Kopf Issormirs','Ihr erhaltet den Kopf Issormirs. Er sieht sehr wertvoll aus.');
   rooms[12].labelNorth:='Norden: Verlasst den Klamm.';
