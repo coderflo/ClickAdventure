@@ -85,6 +85,7 @@ type
 
     backgroundImagePath:string; // path to img: /img/[name].[extension]
     backgroundMusicPath:string; // path to music: /music/[name].wav
+    backgroundMusicPathAfterRiddle:string;
 
     descriptionBeforeRiddle:string;
     dialogBeforeRiddle:TDialog;
@@ -175,6 +176,12 @@ begin
   ClickAdventure.riddleButtonTwo.Visible:=false;
   ClickAdventure.riddleButtonThree.Visible:=false;
   ClickAdventure.riddleButtonFour.Visible:=false;
+
+  // start music
+  if(currentRoom.backgroundMusicPathAfterRiddle <> '') then
+  begin
+    sndPlaySound(pchar(UTF8ToSys(Application.Location + currentRoom.backgroundMusicPathAfterRiddle)), snd_Async or snd_NoDefault);
+  end;
 
   // add room description
 
@@ -338,6 +345,7 @@ begin
 
   backgroundImagePath:='';
   backgroundMusicPath:='';
+  backgroundMusicPathAfterRiddle:='';
 
   descriptionBeforeRiddle:='';
   descriptionAfterRiddle:='';
@@ -898,7 +906,7 @@ begin
   rooms[18].north:=rooms[19];
   rooms[18].east:=rooms[16];
 
-  // rooms 19
+  // room 19
   dialogsBefore[19}:=TDialog.create;
   SetLength(dialogLinesBefore[19],2);
   dialogLinesBefore[19][0]:='Explorator: Da seid ihr ja. Bitte helft mir, das Lager abzubauen.';
@@ -921,6 +929,62 @@ begin
   rooms[19].backgroundImagePath:='img\L1.jpg';
   rooms[19].east:=rooms[20];
   rooms[19].south:=rooms[18];
+
+  // room 20
+  dialogsBefore[20]:=TDialog.create;
+  SetLength(dialogLinesBefore[20],3);
+  dialogLinesBefore[20][0]:='Explorator: Vorsicht! Wenn ihr hier hinunterfallt, seid ihr gebraten.';
+  dialogLinesBefore[20][1]:=compile('%n: Ich passe schon auf. Kann ich Euch ein Paar Fragen stellen?');
+  dialogLinesBefore[20][2]:='Explorator: Wenn das mit Kralkatorrik stimmt, dann sollten wir jetzt erstmal aufbrechen. Helft mir bitte.';
+  dialogsBefore[20].lines:=dialogLinesBefore[20];
+  rooms[20].dialogBeforeRiddle:=dialogsBefore[20];
+  // TODO: add riddle
+  dialogsAfter[20]:=TDialog.create;
+  SetLength(dialogLinesAfter[20],3);
+  dialogLinesAfter[20][0]:='Explorator: Vielen Dank.';
+  dialogLinesAfter[20][1]:=compile('%n: Also, zu meiner Frage. Was wisst Ihr über Gaheron?');
+  dialogLinesAfter[20][2]:='Explorator: Er ist ein hundsgemeiner Kerl. Passt auf jeden Fall auf vor ihm… Er wurde zwar seit längerem nicht mehr in seiner Festung gesehen, doch ganz sicher ist das dennoch nicht. Ich beantworte Euch auf dem Weg nach Norden mehr Fragen. Wir sollten nur erst einmal aufbrechen. Auf dem Weg kommen wir übrigens auch an Gaherons Festung vorbei, falls Ihr Euch ein Bild machen möchtet. Hier, das habe ich für Euch. Es wird Euch vielleicht helfen, im Norden durch die Flammenwand zu kommen.';
+  dialogsAfter[20].lines:=dialogLinesAfter[20];
+  rooms[20].dialogAfterRiddle:=dialogsAfter[20];
+  rooms[20].item:=TItem.create(7,'Flammenbrecher-Fragment 4','Ihr erhaltet ein Flammenbrecher-Fragment.');
+  rooms[20].labelNorth:='Norden: Geht den Steilpfad neben den Lavafällen hinab.';
+  rooms[20].labelSouth:='Süden: Kehrt ins Basislager zurück.';
+  rooms[20].labelWest:='Westen: Folgt den Lavafällen zum Ursprung.';
+  rooms[20].region:='Mahlstromkern';
+  rooms[20].backgroundImagePath:='img\L1.jpg';
+  rooms[20].north:=rooms[21];
+  rooms[20].west:=rooms[19];
+  rooms[20].south:=rooms[16];
+
+  // room 21
+  rooms[21].descriptionBeforeRiddle:=compile('%n: Hier ist es extrem steil, ich sollte vorsichtig sein. Mir bereiten nur die Informationen von gerade eben ein wenig Kopfschmerzen. Wer ist Gaheron? Und was, wenn ich ihm begegne?');
+  rooms[21].labelEast:='Osten: Geht zum Herz des Vulkans.';
+  rooms[21].labelSouth:='Süden: Steigt den Weg in Richtung Basislager hinauf.';
+  rooms[21].region:='Höllenschlund-Fälle';
+  rooms[21].backgroundImagePath:='img\L2.jpg';
+  rooms[21].east:=rooms[22];
+  rooms[21].south:=rooms[20];
+
+  // room 22
+  rooms[22].descriptionBeforeRiddle:=compile('%n: Hier teilt sich der Weg. Weiter im Osten sehe ich eine monströse Festung… Dürfte wohl Gaherons Festung sein. Der Weg nach Norden ist durch eine Flammenwand versperrt.');
+  rooms[22].labelNorth:='Norden: Fügt Eure Flammenbrecher-Fragmente zu einem Stein zusammen und passiert damit die Flammenwand.';
+  rooms[22].labelEast:='Osten: Betretet die brennende Festung.';
+  rooms[22].labelWest:='Westen: Geht zurück zu den Lavafällen.';
+  rooms[22].region:='Herz des Vulkans';
+  rooms[22].backgroundImagePath:='img\L2.jpg';
+  rooms[22].north:=rooms[25];
+  rooms[22].east:=rooms[23];
+  rooms[22].west:=rooms[21];
+
+  // room 23
+  rooms[23].descriptionBeforeRiddle:=compile('%n: Ein teuflischer Ort. Passend zu einem teuflischen Herrscher. Überall Leichenteile und Feuer. Mir persönlich etwas zu ungemütlich… Ich sehe eine Art Schrein mit leerem Sockel. Da muss sicherlich etwas rein.');
+  rooms[23].labelEast:='Osten: Platziert das Totem im Sockel.';
+  rooms[23].labelWest:='Westen: Verlasst Igni Castrum.';
+  rooms[23].region:='Igni Castrum';
+  rooms[23].backgroundImagePath:='img\L2.jpg';
+  rooms[23].east:=rooms[24];
+  rooms[23].west:=rooms[22];
+
 
   spawnRoom := rooms[1];
   startAdventure;
