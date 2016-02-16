@@ -1103,6 +1103,35 @@ begin
   rooms[33].south:=rooms[34];
   rooms[33].west:=rooms[31];
 
+  // room 34
+  rooms[34].deathMessage:='Ihr seht die Silhouette eines Wesens, doch bevor ihr blinzeln könnt, seid ihr tot. Game Over.';
+  // TODO: organize TP in room 14
+  rooms[34].requiredItem:=8;
+  rooms[34].killWithoutItem:=true;
+  rooms[34].backgroundMusicPath:='music\Kralkatorrik.wav';
+  dialogsBefore[34]:=TDialog.create;
+  SetLength(dialogLinesBefore[34],5);
+  dialogLinesBefore[34][0]:=compile('%n: Zeigt Euch! Wer seid ihr?!');
+  dialogLinesBefore[34][1]:='KRALKATORRIK: ICH BIN ÜBERALL! IHR KÖNNT MICH NICHT BEZWINGEN! IHR ENDET GENAU SO, WIE ES DIE ANDEREN ERHABENEN GETAN HABEN!';
+  dialogLinesBefore[34][2]:=compile('%n: Ich bin kein Erhabener! Lasst mich gehen! Warum bin ich hier?!');
+  dialogLinesBefore[34][3]:='KRALKATORRIK: IHR HATTET DIE MACHT, MEINE CHAMPIONS SVAARD UND GAHERON ZU BESIEGEN. NUR EIN ERHABENER BESITZT DIESE MACHT. LASST MICH EUCH AUS DEM WEG RÄUMEN.';
+  dialogLinesBefore[34][4]:=compile('%n: (Es hat keinen Sinn. Ich muss wohl kämpfen. Bringt es zu Ende! Gaherons Zepter wird mir helfen.)');
+  dialogsBefore[34].lines:=dialogLinesBefore[34];
+  rooms[34].dialogBeforeRiddle:=dialogsBefore[34];
+  // TODO: add riddle
+  // TODO: stop music after riddle
+  dialogsAfter[34]:=TDialog.create;
+  SetLength(dialogLinesAfter[34],3);
+  dialogLinesAfter[34][0]:=compile('%n: Er… ist besiegt. Es war wieder dasselbe Gefühl, wie bei Svaard und Gaheron. Es lässt sich schwer beschreiben… Ist es jetzt vorbei? Was geschieht jetzt mit mir...');
+  dialogLinesAfter[34][1]:='Stimme: Erhabener, ihr habt den Fluch gebrochen. Ich warte im Süden auf Euch, damit Ihr Euch der Prüfung stellen könnt.';
+  dialogLinesAfter[34][2]:=compile('%n: Prüfung? Oh… die Stimme ist wieder weg…');
+  dialogsAfter[34].lines:=dialogLinesAfter[34];
+  rooms[34].dialogAfterRiddle:=dialogsAfter[34];
+  rooms[34].item:=TItem.create(11,'Rankenzorn-Flöte','Die Ranken, aus denen das Abbild Kralkatorriks zusammengesetzt war, formen sich zu einer Flöte. Mit ihr lässt sich die nächstgelegene Rankenwand entfernen.');
+  rooms[34].labelNorth:='Norden: Verlasst den Ort Kralkatorriks.';
+  rooms[34].region:='Kralkatorriks Vermächtnis';
+  rooms[34].backgroundImagePath:='img\J2.jpg';
+  rooms[34].north:=rooms[33];
 
   spawnRoom := rooms[1];
   startAdventure;
