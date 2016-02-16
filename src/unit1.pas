@@ -104,6 +104,7 @@ type
 
     item:TItem;
     requiredItem:integer; // id of item required to enter the room, -1 for none
+    requiredItemArray:array of integer;
     killWithoutItem:boolean; // reset to spawn when entering without item
     deathMessage:string;
 
@@ -358,12 +359,15 @@ begin
   riddleSolved := false;
 
   requiredItem:=-1;
+  SetLength(requiredItemArray,0);
   killWithoutItem:=false;
   deathMessage:='';
 
 end;
 
 function TRoom.canEnter(bag:TBag):boolean;
+var
+  i:integer;
 begin
 
   result := false;
@@ -384,6 +388,21 @@ begin
   else
   begin
     result := true;
+  end;
+
+  if(Length(requiredItemArray) > 0) then
+  begin
+
+    for i:=0 to (Length(requiredItemArray)-1) do
+    begin
+
+      if(not bag.contains(requiredItemArray[i])) then
+      begin
+        result := false;
+      end;
+
+    end;
+
   end;
 
 end;
