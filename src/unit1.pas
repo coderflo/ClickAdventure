@@ -622,6 +622,7 @@ begin
   rooms[1].labelEast:='Osten: Geht tiefer in den Wald hinein.';
   rooms[1].region:='Wintertau-Lichtung';
   rooms[1].backgroundImagePath:='img\S1.jpg';
+  rooms[1].backgroundMusicPath:='music\Snow.wav';
   rooms[1].east:=rooms[2];
 
   // room 2
@@ -747,6 +748,8 @@ begin
   rooms[10].labelNorth:='Norden: Verlasst Svaards Palast.';
   rooms[10].region:='Svaards Eisschollenpalast';
   rooms[10].backgroundImagePath:='img\S4.jpg';
+  rooms[10].backgroundMusicPath:='music\SnowASvaard.wav';
+  // optional: Svaard.wav
   rooms[10].north:=rooms[9];
 
   // room 11
