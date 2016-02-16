@@ -633,6 +633,8 @@ var
   dialogsBefore, dialogsAfter: array [1..43] of TDialog;
   dialogLinesBefore, dialogLinesAfter: array [1..43] of array of string;
 
+  room25requiredItems:array of integer;
+
 begin
 
   for i := 0 to 43 do
@@ -907,7 +909,7 @@ begin
   rooms[18].east:=rooms[16];
 
   // room 19
-  dialogsBefore[19}:=TDialog.create;
+  dialogsBefore[19]:=TDialog.create;
   SetLength(dialogLinesBefore[19],2);
   dialogLinesBefore[19][0]:='Explorator: Da seid ihr ja. Bitte helft mir, das Lager abzubauen.';
   dialogLinesBefore[19][1]:=compile('%n: Hatte nichts anderes vor…');
@@ -1010,6 +1012,96 @@ begin
   rooms[24].backgroundImagePath:='img\L4.jpg';
   rooms[24].west:=rooms[23];
 
+  // room 25
+  rooms[25].descriptionBeforeRiddle:=compile('%n: Ich wünschte, ich könnte auch ohne den Stein durch Feuer laufen… Vergiss es, %n. Das wird nie passieren. Ich sollte mich mehr auf meine Mission konzentrieren. Die Exploratoren sind schon weit voraus.');
+  rooms[25].labelSouth:='Süden: Passiert die Flammen, um zurück ins Herz des Vulkans zu gelangen.';
+  rooms[25].labelWest:='Westen: Geht in Richtung des Randes des Vulkans.';
+  rooms[25].region:='Trügerische Gaslöcher';
+  rooms[25].backgroundImagePath:='img\L2.jpg';
+  SetLength(room25requiredItems,4);
+  room25requiredItems[0]:=4;
+  room25requiredItems[1]:=5;
+  room25requiredItems[2]:=6;
+  room25requiredItems[3]:=7;
+  rooms[25].requiredItemArray:=room25requiredItems;
+  rooms[25].south:=rooms[22];
+  rooms[25].east:=rooms[26];
+
+  // room 26
+  rooms[26].descriptionBeforeRiddle:=compile('%n: Der Weg spaltet sich schon wieder. Ich glaube, im Norden kann ich den Ausgang aus dieser Hölle hier sehen. Im Westen geht es zwar auch Bergauf, aber wohin genau, weiß ich nicht.');
+  rooms[26].labelNorth:='Norden: Sucht den Ausgang des Vulkans.';
+  rooms[26].labelEast:='Osten: Geht zurück zu der Flammenwand.';
+  rooms[26].labelWest:='Westen: Besteigt den Rand des Vulkans.';
+  rooms[26].region:='Dysphorischer Rand';
+  rooms[26].backgroundImagePath:='img\L1.jpg';
+  rooms[26].north:=rooms[29];
+  rooms[26].east:=rooms[25];
+  rooms[26].west:=rooms[27];
+
+  // room 27
+  rooms[27].descriptionBeforeRiddle:=compile('%n: Ich habe gleich den Gipfel erreicht. Mit jedem Schritt wird es merklich kühler. Ein Segen.');
+  rooms[27].labelNorth:='Norden: Betretet den Signalgipfel.';
+  rooms[27].labelEast:='Osten: Kehrt zur Gabelung zurück.';
+  rooms[27].region:='Aufstieg des Helden';
+  rooms[27].backgroundImagePath:='img\L3.jpg';
+  rooms[27].north:=rooms[28];
+  rooms[27].east:=rooms[26];
+
+  // room 28
+  rooms[28].descriptionBeforeRiddle:=compile('%n: Gipfel und Sackgasse. Weiter komme ich nicht. Was ist denn das da hinten? Etwas Kleines scheint leicht zu glühen. Besser, ich gucke mal nach.');
+  rooms[28].item:=TItem.create(9,'Geschnitztes Totem','Ihr hebt ein kleines geschnitztes Totem auf. Es sieht aus, als würde es irgendwo hinein passen.');
+  rooms[28].labelSouth:='Süden: Verlasst den Signalgipfel.';
+  rooms[28].region:='Signalgipfel';
+  rooms[28].backgroundImagePath:='img\L3.jpg';
+  rooms[28].south:=rooms[27];
+
+  // room 29
+  rooms[29].descriptionBeforeRiddle:=compile('%n: Endlich bin ich raus aus dem Vulkan. Östlich von mir sehe ich zum ersten Mal seit langer Zeit wieder etwas Grünes. Wo ist denn nur der Explorator-Trupp hin?');
+  rooms[29].labelEast:='Osten: Betretet den Rankenzorn-Dschungel.';
+  rooms[29].labelSouth:='Süden: Kehrt in den Vulkan zurück.';
+  rooms[29].region:='Vermoderter Pass';
+  rooms[29].backgroundImagePath:='img\L3.jpg';
+  rooms[29].east:=rooms[30];
+  rooms[29].south:=rooms[26];
+
+  // room 30
+  rooms[30].backgroundMusicPath:='music\Jungle.wav';
+  rooms[30].descriptionBeforeRiddle:=compile('%n: Autsch, überall Dornen. Alles halb verdorrt. Nach einem gesunden Dschungel sieht mir das aber nicht aus. Ich habe auch wieder leichte Kopfschmerzen. Hoffentlich finde ich bald die Exploratoren wieder…');
+  rooms[30].labelEast:='Osten: Geht tiefer in den Dschungel hinein.';
+  rooms[30].labelWest:='Westen: Verlasst den Dschungel.';
+  rooms[30].region:='Dornengeflecht';
+  rooms[30].backgroundImagePath:='img\J1.jpg';
+  rooms[30].east:=rooms[31];
+  rooms[30].west:=rooms[29];
+
+  // room 31
+  rooms[31].descriptionBeforeRiddle:=compile('%n: Schon wieder eine Rankenwand im Süden?? Das kann nichts Gutes verheißen. Die Kopfschmerzen werden stärker. Ich nähere mich wohl dem Bösen. Vielleicht beendet dies meine Reise… Vielleicht muss ich mich einfach meinem Schicksal stellen.');
+  rooms[31].labelEast:='Osten: Geht in das Herz des Rankenzorn-Dschungels hinein.';
+  rooms[31].labelSouth:='Süden: Blast in Eure Flöte und lasst die Rankenwand verschwinden.';
+  rooms[31].labelWest:='Westen: Kehrt um in Richtung Vulkan.';
+  rooms[31].region:='Rankenwand';
+  rooms[31].backgroundImagePath:='img\L1.jpg';
+  rooms[31].east:=rooms[33];
+  rooms[31].south:=rooms[32];
+  rooms[31].west:=rooms[30];
+
+  // room 32
+  rooms[32].descriptionBeforeRiddle:=compile('%n: Das verbirgt sich also hinter den Ranken! Tausende Leichen. Kralkatorrik hat wahllos unschuldige Menschen umgebracht. Da liegen auch die vier Exploratoren! Völlig zerfetzt. Sie haben es nicht geschafft. Kralkatorrik hat seinen Tribut gezahlt. Aber ich bin aus der Sache noch nicht draußen. Am besten schaue ich mal, was ich mir hier Nützliches mitnehmen kann.');
+  rooms[32].item:=TItem.create(10,'Machete','Ihr nehmt die Machete eines toten Explorators an Euch. Sie sollte stark genug sein, um die restlichen Ranken zu zerschneiden.');
+  rooms[32].labelNorth:='Norden: Verlasst den Leichenhügel.';
+  rooms[32].region:='Exhumierte Anhöhe';
+  rooms[32].backgroundImagePath:='img\L1.jpg';
+  rooms[32].requiredItem:=11;
+  rooms[32].north:=rooms[31];
+
+  // room 33
+  rooms[33].descriptionBeforeRiddle:=compile('%n: Ich spüre es. Südlich von mir ist etwas. Etwas Mächtiges. Etwas Lebendiges. Meine Kopfschmerzen sind nicht auszuhalten. Ich sollte nicht ohne entsprechende Waffe fortfahren. Sonst könnte wirklich mein letztes Stündchen geschlagen haben.');
+  rooms[33].labelSouth:='Süden: Betretet die Quelle Eurer Kopfschmerzen.';
+  rooms[33].labelWest:='Westen: Geht zurück in den Dschungel.';
+  rooms[33].region:='Domäne des Drachen';
+  rooms[33].backgroundImagePath:='img\L1.jpg';
+  rooms[33].south:=rooms[34];
+  rooms[33].west:=rooms[31];
 
 
   spawnRoom := rooms[1];
