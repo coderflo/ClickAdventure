@@ -726,6 +726,7 @@ begin
   rooms[9].east:=rooms[8];
   rooms[9].south:=rooms[10];
   rooms[9].requiredItem:=3;
+  rooms[9].killWithoutItem:=true;
 
   // room 10
   dialogsBefore[10]:=TDialog.create;
