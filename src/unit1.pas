@@ -105,6 +105,7 @@ type
     item:TItem;
     requiredItem:integer; // id of item required to enter the room, -1 for none
     killWithoutItem:boolean; // reset to spawn when entering without item
+    deathMessage:string;
 
     constructor create;
 
@@ -254,6 +255,12 @@ begin
 
     if(not bag.contains(room.requiredItem)) then
     begin
+
+      if(room.deathMessage <> '') then
+      begin
+        ShowMessage(room.deathMessage);
+      end;
+
       changeRoom(spawnRoom);
       exit;
     end;
@@ -353,6 +360,7 @@ begin
 
   requiredItem:=-1;
   killWithoutItem:=false;
+  deathMessage:='';
 
 end;
 
@@ -673,6 +681,73 @@ begin
   rooms[5].east:=rooms[6];
   rooms[5].south:=rooms[7];
   rooms[5].north:=rooms[3];
+
+  // room 6
+  rooms[6].descriptionBeforeRiddle:=compile('%n: Hier ist es definitiv zu steil. Selbst erfahrene Bergsteiger kommen hier nicht weiter. Ich will auch gar nicht an die Lawinen denken, die hier runter kommen könnten. Besser, ich kehre um.');
+  rooms[6].labelWest:='Westen: Kehrt zur Gabelung zurück.';
+  rooms[6].region:='Maulent-Gipfel';
+  rooms[6].backgroundImagePath:='img\S3.jpg';
+  rooms[6].west:=rooms[5];
+
+  // room 7
+  rooms[7].descriptionBeforeRiddle:=compile('%n: Ich nähere mich dem Gipfel. Der Schnee peitscht mir ins Gesicht. Etwa wieder einer dieser Frostwinde, von denen der Holzfäller gesprochen hat? Ich muss aufs Schlimmste gefasst sein.');
+  rooms[7].labelNorth:='Norden: Geht zur Gabelung zurück.';
+  rooms[7].labelSouth:='Süden: Erklimmt den Hochgipfel.';
+  rooms[7].region:='Schneeanstieg';
+  rooms[7].backgroundImagePath:='img\S3.jpg';
+  rooms[7].north:=rooms[5];
+  rooms[7].south:=rooms[8];
+
+  // room 8
+  rooms[8].descriptionBeforeRiddle:=compile('%n: Tolle Aussicht hier oben. Schnee, Schnee und nochmal Schnee. Im Westen sehe ich einen Gletscher. Sieht bewacht aus. Auf jeden Fall sollte ich dort ohne Rechtfertigung nicht lang.');
+  rooms[8].labelNorth:='Norden: Steigt den Berg in Richtung des Waldes hinab.';
+  rooms[8].labelSouth:='Süden: Seilt Euch in den Abgrund hinab.';
+  rooms[8].labelWest:='Westen: Betretet den bewachten Gletscher.';
+  rooms[8].region:='Hochgipfel';
+  rooms[8].backgroundImagePath:='img\S3.jpg';
+  rooms[8].north:=rooms[7];
+  rooms[8].west:=rooms[9];
+  rooms[8].south:=rooms[11];
+
+  // room 9
+  rooms[9].deathMessage:='Die bewaffneten Wachen nehmen Euch gefangen und töten Euch. Game Over.';
+  dialogsBefore[9]:=TDialog.create;
+  SetLength(dialogLinesBefore[9],4);
+  dialogLinesBefore[9][0]:='Wache: Halt, sofort stehen bleiben. Svaard empfängt keine Besucher. Identifiziert Euch.';
+  dialogLinesBefore[9][1]:=compile('%n: Ich habe den Kopf Issormirs dabei. Mir wurde befohlen, den Eiswurm zu töten, der seit Wochen terrorisiert.');
+  dialogLinesBefore[9][2]:='Wache: Eintreten.';
+  dialogLinesBefore[9][3]:=compile('%n: (Wer ist Svaard? Ich habe da ein ganz mieses Gefühl…)');
+  dialogsBefore[9].lines:=dialogLinesBefore[9];
+  rooms[9].dialogBeforeRiddle:=dialogsBefore[9];
+  rooms[9].labelEast:='Osten: Verlasst den Gletescher.';
+  rooms[9].labelSouth:='Süden: Betretet den Palast im Gletscher.';
+  rooms[9].region:='Gletschergraben';
+  rooms[9].backgroundImagePath:='img\S4.jpg';
+  rooms[9].east:=rooms[8];
+  rooms[9].south:=rooms[10];
+  rooms[9].requiredItem:=3;
+
+  // room 10
+  dialogsBefore[10]:=TDialog.create;
+  SetLength(dialogLinesBefore[10],3);
+  dialogLinesBefore[10][0]:='Svaard: Tretet vor.';
+  dialogLinesBefore[10][1]:=compile('%n: Ich habe Issormir geschlachtet. Hier ist sein Kopf.');
+  dialogLinesBefore[10][2]:='Svaard: Schweigt. Die Macht der Erhabenen glüht in Euch. Ihr müsst sterben. Für Kralkatorrik.';
+  dialogsBefore[10].lines:=dialogLinesBefore[10];
+  rooms[10].dialogBeforeRiddle:=dialogsBefore[10];
+  // TODO: add riddle
+  dialogsAfter[10]:=TDialog.create;
+  SetLength(dialogLinesAfter[10],3);
+  dialogLinesAfter[10][0]:=compile('%n: Was ist passiert? Ich wurde angegriffen, sein Schwert traf mich, aber ich konnte ihn irgendwie besiegen. Es war dasselbe Gefühl, wie bei Issormir.');
+  dialogLinesAfter[10][1]:='Svaard: Niemand…kann…Ihn…aufhalten…';
+  dialogLinesAfter[10][2]:=compile('%n: Huch, er hat irgendetwas fallen gelassen. Sieht aus wie eine Art Siegel. Aber es ist eiskalt. Seine Wachen sind auch verschwunden… als hätte der Gletscher sie verschluckt. Nun aber erst mal raus aus der Kälte hier. Nachdenken kann ich auch noch später.');
+  dialogsAfter[10].lines:=dialogLinesAfter[10];
+  rooms[10].dialogAfterRiddle:=dialogsAfter[10];
+  rooms[10].item:=TItem.create(2,'Verdorbenes Frostsiegel','Ihr findet das verdorbene Frostsiegel Svaards. Man sagt, sein Besitzer könne alles zu Eis erstarren lassen.');
+  rooms[10].labelNorth:='Norden: Verlasst Svaards Palast.';
+  rooms[10].region:='Svaards Eisschollenpalast';
+  rooms[10].backgroundImagePath:='img\S4.jpg';
+  rooms[10].north:=rooms[9];
 
   spawnRoom := rooms[1];
   startAdventure;
