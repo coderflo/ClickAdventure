@@ -775,8 +775,8 @@ begin
   rooms[10].labelNorth:='Norden: Verlasst Svaards Palast.';
   rooms[10].region:='Svaards Eisschollenpalast';
   rooms[10].backgroundImagePath:='img\S4.jpg';
-  rooms[10].backgroundMusicPath:='music\SnowASvaard.wav';
-  // optional: Svaard.wav
+  rooms[10].backgroundImagePath:='music\Svaard.wav';
+  rooms[10].backgroundMusicPathAfterRiddle:='music\SnowASvaard.wav';
   rooms[10].north:=rooms[9];
 
   // room 11
@@ -984,6 +984,32 @@ begin
   rooms[23].backgroundImagePath:='img\L2.jpg';
   rooms[23].east:=rooms[24];
   rooms[23].west:=rooms[22];
+
+  // room 24
+  rooms[24].backgroundMusicPath:='music\Gaheron.wav';
+  dialogsBefore[24]:=TDialog.create;
+  SetLength(dialogLinesBefore[24],6);
+  dialogLinesBefore[24][0]:=compile('%n: Das Totem ist in Flammen aufgegangen. Doch nichts ist passiert. Ich sollte besser hier verschwinden bevor…');
+  dialogLinesBefore[24][1]:='Gaheron Baelfeuer: Ich kenne Euch nicht, Eindringling. Doch die anderen, die es versucht haben, habt Ihr gerade verbrannt auf dem Boden liegen gesehen. Mir egal. Eine Mahlzeit mehr.';
+  dialogLinesBefore[24][2]:=compile('%n: Wartet! Ich will Euch nichts tun, Gaheron! Ich habe nur ein paar Fragen. Was könnt Ihr mir über die Erhabenen und Kralkatorrik sagen? Ist das alles nur ein Gerücht?');
+  dialogLinesBefore[24][3]:='Gaheron Baelfeuer: Die Erhabenen müssen vernichtet werden. Kralkatorriks Diener werden sein Werk vollbringen.';
+  dialogLinesBefore[24][4]:=compile('%n: (Mein Kopf tut höllisch weh, als würde jemand versuchen, darauf zuzugreifen!)');
+  dialogLinesBefore[24][5]:='Gaheron Baelfeuer: Erhabener, hier ist die Sackgasse Eurer Reise!';
+  dialogsBefore[24].lines:=dialogLinesBefore[24];
+  rooms[24].dialogBeforeRiddle:=dialogsBefore[24];
+  // TODO: add riddle
+  rooms[24].backgroundMusicPathAfterRiddle:='music\LavaAGaheron.wav';
+  dialogsAfter[24]:=TDialog.create;
+  SetLength(dialogLinesAfter[24],1);
+  dialogLinesAfter[24][0]:=compile('%n: Was passiert hier?! Warum bin ich hier? Wie konnte ich ihn besiegen? Ich muss schnell hier weg und eine Antwort finden. Wenn Gaheron die Wahrheit gesagt hat, macht das alles einen Sinn. Kralkatorrik muss irgendwie am Leben sein. Am besten nehme ich mir eine von Gaherons Waffen mit; kann bestimmt nicht schaden. Sie müssen hier irgendwo liegen.');
+  dialogsAfter[24].lines:=dialogLinesAfter[24];
+  rooms[24].dialogAfterRiddle:=dialogsAfter[24];
+  rooms[24].item:=TItem.create(8,'Magmatisches Zepter','Ihr findet Gaherons magmatisches Zepter. Ihr spürt seine Macht durch euer Blut fließen. Die Flammen dieses vom Bösen durchflossenen Zepters reichen aus, um jedes Lebewesen zu vernichten.');
+  rooms[24].labelWest:='Westen: Verlasst Gaherons Schrein.';
+  rooms[24].region:='Gaherons Höllenschrein';
+  rooms[24].backgroundImagePath:='img\L4.jpg';
+  rooms[24].west:=rooms[23];
+
 
 
   spawnRoom := rooms[1];
