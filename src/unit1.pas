@@ -764,12 +764,12 @@ begin
   riddlesBoss[11][2]:=TRiddle.create('Probe 220: Begriff 1: LEWIS-Säure, Begriff 2: Nucleophil, Begriff 3: Elektrophil, Begriff 4: LEWIS-Base. Verknüpfungen herstellen.','2 = 3, 1 = 4','1 = 2, 3 = 4','1 = 2 = 3 = 4','1 = 3, 2 = 4','1 = 3, 2 = 4');
   riddlesBoss[11][3]:=TRiddle.create('Probe 014: Prüfung eines Stoffes auf Aromatizität. Name der relevanten Regel angeben.','Jahn-Teller-Regel','Kepler-Fassregel','Hückel-Regel','Regel von Markovnikov','Hückel-Regel');
   // category 'Sport' (12)
-  riddlesEasy[12][1]:=TRiddle.create('','','','','','');
-  riddlesEasy[12][2]:=TRiddle.create('','','','','','');
-  riddlesEasy[12][3]:=TRiddle.create('','','','','','');
-  riddlesBoss[12][1]:=TRiddle.create('','','','','','');
-  riddlesBoss[12][2]:=TRiddle.create('','','','','','');
-  riddlesBoss[12][3]:=TRiddle.create('','','','','','');
+  riddlesEasy[12][1]:=TRiddle.create('Probe 691: Auflistung von Kraftarten. Fehlerhafte Kraft entfernen.','Maximalkraft','Schlagkraft','Kraftausdauer','Schnellkraft','Schlagkraft');
+  riddlesEasy[12][2]:=TRiddle.create('Probe 858: Olympische Sportarten. Nicht anerkannte Sportart angeben.','Triathlon','Kanusport','Baseball','Gewichteheben','Baseball');
+  riddlesEasy[12][3]:=TRiddle.create('Probe 652: Fußball-Datenbanken verglichen. Weltmeister 2010 gesucht.','Spanien','Deutschland','Niederlande','Uruguay','Spanien');
+  riddlesBoss[12][1]:=TRiddle.create('Probe 407: Profisport-Organisationen in Listen zusammengetragen. Fehlerhaften Eintrag identifizieren.','MLB','MLT','NFL','NBA','MLT');
+  riddlesBoss[12][2]:=TRiddle.create('Probe 825: Kartensuche erfolglos. FIFA-Hauptsitz konnte nicht lokalisiert werden. Lokalisiere FIFA-Hauptsitz.','Frankfurt','Paris','Barcelona','Zürich','Zürich');
+  riddlesBoss[12][3]:=TRiddle.create('Probe 885: Zeitplaner durcheinander. Super-Bowl-Termin üblich in welchem Quartal?','2. Quartal','4. Quartal','1. Quartal','3. Quartal','1. Quartal');
 
   bag := TBag.create;
 
