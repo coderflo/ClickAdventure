@@ -1133,6 +1133,54 @@ begin
   rooms[34].backgroundImagePath:='img\J2.jpg';
   rooms[34].north:=rooms[33];
 
+  // room 35
+  rooms[35].backgroundMusicPath:='music\Jungle2.wav';
+  rooms[35].descriptionBeforeRiddle:=compile('%n: Das hat sich also hier verborgen! Ein weiterer Wald? Zumindest die Baumkronen. Ein Weg führt nach unten. Mal sehen, wo er hin führt…');
+  rooms[35].labelNorth:='Norden: Geht den Weg hinab.';
+  rooms[35].labelWest:='Westen: Kehrt um in Richtung des Vulkans.';
+  rooms[35].region:='Mattierte Baumkrone';
+  rooms[35].backgroundImagePath:='img\J3.jpg';
+  rooms[35].requiredItem:=10;
+  rooms[35].north:=rooms[36];
+  rooms[35].west:=rooms[15];
+
+  // room 36
+  dialogsBefore[36]:=TDialog.create;
+  SetLength([36],2);
+  dialogLinesBefore[36][0]:='Stimme: Hier entlang. Es ist nicht mehr weit bis zum heiligen Ort.';
+  dialogLinesBefore[36][1]:=compile('%n: Das klingt Spannend. Doch wo führt mich diese Stimme hin? Etwa dieser kleine Tempel vor mir?');
+  dialogsBefore[36].lines:=dialogLinesBefore[36];
+  rooms[36].dialogBeforeRiddle:=dialogsBefore[36];
+  rooms[36].labelEast:='Osten: Betretet Tarir.';
+  rooms[36].labelSouth:='Süden: Geht den Weg wieder hinauf.';
+  rooms[36].region:='Güldener Abstieg';
+  rooms[36].backgroundImagePath:='img\J3.jpg';
+  rooms[36].east:=rooms[37];
+  rooms[36].south:=rooms[35];
+
+  // room 37
+  dialogsBefore[37]:=TDialog.create;
+  SetLength(dialogLinesBefore[37],7);
+  dialogLinesBefore[37][0]:='Stimme: Willkommen in Tarir, der Vergessenen Stadt. Die Erhabenen haben sie vor Jahrtausenden aus purem Gold errichtet, um hier in Frieden zu leben und zu lernen.';
+  dialogLinesBefore[37][1]:=compile('%n: Bitte nicht so schnell. Wer genau bist du?');
+  dialogLinesBefore[37][2]:='Stimme: Ich bin nur die Stimme deines Unterbewusstseins. Du bist schließlich ein Erhabener.';
+  dialogLinesBefore[37][3]:=compile('%n: Was ich schon die ganze Zeit wissen will. Was ist ein Erhabener? Ich wurde deswegen schon dreimal fast getötet.');
+  dialogLinesBefore[37][4]:='Stimme: Ein Erhabener ist eine Inkarnation aus Wissen. Er verwendet das Wissen, um Macht zu erzeugen und ist somit eine Gefahr für die übrigen Machthaber. Du bist der letzte Überlebende Erhabene. Deswegen wollte Kralkatorrik dich mit seinen Champions loswerden, damit er die Macht behält.';
+  dialogLinesBefore[37][5]:=compile('%n: Ich verstehe. Und warum sollte ich jetzt in diese Stadt kommen?');
+  dialogLinesBefore[37][6]:='Stimme: Sieh dich in Ruhe um und erfahre mehr über die Vergangenheit und dein Dasein. Ich erwarte dich bei der Prüfung, südlich der zentralen Kammer.';
+  dialogsBefore[37].lines:=dialogLinesBefore[37];
+  rooms[37].dialogBeforeRiddle:=dialogsBefore[37];
+  rooms[37].labelNorth:='Norden: Betretet die vergoldete Senke.';
+  rooms[37].labelEast:='Osten: Geht in die zentrale Kammer.';
+  rooms[37].labelWest:='Westen: Verlasst Tarir.';
+  rooms[37].region:='Tarir Die Vergessene Stadt';
+  rooms[37].backgroundImagePath:='img\J4.jpg';
+  rooms[37].north:=rooms[38];
+  rooms[37].east:=rooms[42];
+  rooms[37].west:=rooms[36];
+
+
+
   spawnRoom := rooms[1];
   startAdventure;
 
