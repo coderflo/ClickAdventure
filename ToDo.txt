@@ -1,5 +1,0 @@
-GUI:
-	make roomDescription and riddleText a bit transparent
-
-TBag:
-	adjust max index of items array
