@@ -715,12 +715,12 @@ begin
   riddlesBoss[4][2]:=TRiddle.create('Probe 174: Besuch des Vatikans. Benennung des Künstlers der Deckengemälde der Sixtinischen Kapelle.','Dürer','Botticelli','Michelangelo','Rembrandt','Michelangelo');
   riddlesBoss[4][3]:=TRiddle.create('Probe 065: Goldene Schalplatten eingelesen. Erkennung des meist ausgezeichneten Interpreten.','Elvis Presley','Pink Floyd','Michael Jackson','Beatles','Beatles');
   // category 'Physik' (5)
-  riddlesEasy[5][1]:=TRiddle.create('','','','','','');
-  riddlesEasy[5][2]:=TRiddle.create('','','','','','');
-  riddlesEasy[5][3]:=TRiddle.create('','','','','','');
-  riddlesBoss[5][1]:=TRiddle.create('','','','','','');
-  riddlesBoss[5][2]:=TRiddle.create('','','','','','');
-  riddlesBoss[5][3]:=TRiddle.create('','','','','','');
+  riddlesEasy[5][1]:=TRiddle.create('Probe 196: Einheit der Rechnung m*g*h gesucht.','Joule','Newton','Watt','Ampere','Joule');
+  riddlesEasy[5][2]:=TRiddle.create('Probe 941: Reagenz 1: Wasser, Reagenz 2: Leichtbenzin. Phasengrenze beschreiben.','Phasengrenze nicht vorhanden','Reagenz 1 über Reagenz 2','Reagenz 2 über Reagenz 1','Reagenz 1 und 2 im Wechsel','Reagenz 2 über Reagenz 1');
+  riddlesEasy[5][3]:=TRiddle.create('Probe 117: Kraft benennen, die auf Körper in Flüssigkeiten und Gasen wirkt. Vektor besitzt entgegengesetzte Richtung zur Schwerkraft.','Radialkraft','Auftriebskraft','Treibkraft','Fliehkraft','Auftriebskraft');
+  riddlesBoss[5][1]:=TRiddle.create('Probe 328: Fehlerhafte Komponente eines Hebels bestimmen.','Druckarm','Lastarm','Angelpunkt','Kraftarm','Druckarm');
+  riddlesBoss[5][2]:=TRiddle.create('Probe 038: Gleichförmig rotierendes System: P1,2 auf Rotationsbahnen. P1: r=5. P2: r= 8. Absolute Geschwindigkeiten vergleichen.','P1 schneller als P2','P2 und P1 gleich schnell','Geschwindigkeiten = 0','P2 schneller als P1','P2 schneller als P1');
+  riddlesBoss[5][3]:=TRiddle.create('Probe 762: Faktor x zur Berechnung einer Energie auswählen: E=m*a*x','t','g','q','s','s');
   // category 'Informatik' (6)
   riddlesEasy[6][1]:=TRiddle.create('Probe 960: Datenbanken der Programmiersprachen erfolgreich durchsucht. Nicht-existente Sprache ausfindig machen.','Python','LUA','Turtle','C','Turtle');
   riddlesEasy[6][2]:=TRiddle.create('','','','','','');
