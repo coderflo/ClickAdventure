@@ -1146,7 +1146,7 @@ begin
 
   // room 36
   dialogsBefore[36]:=TDialog.create;
-  SetLength([36],2);
+  SetLength(dialogLinesBefore[36],2);
   dialogLinesBefore[36][0]:='Stimme: Hier entlang. Es ist nicht mehr weit bis zum heiligen Ort.';
   dialogLinesBefore[36][1]:=compile('%n: Das klingt Spannend. Doch wo führt mich diese Stimme hin? Etwa dieser kleine Tempel vor mir?');
   dialogsBefore[36].lines:=dialogLinesBefore[36];
