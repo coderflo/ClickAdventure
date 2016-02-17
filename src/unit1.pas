@@ -120,6 +120,7 @@ type
 
     constructor create;
 
+    procedure applyRiddle(riddle:TRiddle);
     function canEnter(bag:TBag):boolean;
 
   end;
@@ -380,6 +381,16 @@ begin
   killWithoutItem:=false;
   deathMessage:='';
 
+end;
+
+procedure TRoom.applyRiddle(riddle:TRiddle);
+begin
+  riddleQuestion:=riddle.question;
+  riddleOptionOne:=riddle.optionOne;
+  riddleOptionTwo:=riddle.optionTwo;
+  riddleOptionThree:=riddle.optionThree;
+  riddleOptionFour:=riddle.optionFour;
+  riddleAnswer:=riddle.answer;
 end;
 
 function TRoom.canEnter(bag:TBag):boolean;
