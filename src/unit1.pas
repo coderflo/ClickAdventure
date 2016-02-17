@@ -669,9 +669,9 @@ begin
 
   playerName:=InputBox('Vorbereitung','Gib einen Namen ein','Peter');
 
-  category1 := QuestionDlg('Vorbereitung','',mtCustom,[1,'', 2, '', 'IsDefault', 3, '', 4, ''],'');
-  category2 := QuestionDlg('Vorbereitung','',mtCustom,[5,'', 6, '', 'IsDefault', 7, '', 8, ''],'');
-  category3 := QuestionDlg('Vorbereitung','',mtCustom,[9,'', 10, '', 'IsDefault', 11, '', 12, ''],'');
+  category1 := QuestionDlg('Vorbereitung','Am schnellsten löse ich landesweite Probleme…',mtCustom,[1,'… durch komplexe mathematische Berechnungen und Formeln. (Mathematik)', 2, '… indem ich das politische Geschehen im Land erforsche und partizipiere. (Politik)', 'IsDefault', 3, '… durch Forschungen in der Geschichte des Landes und Rekonstruierung. (Geschichte)', 4, '… durch Bereicherung der Kultur mit Musik und Kunst. (Musik/ Kunst)'],'');
+  category2 := QuestionDlg('Vorbereitung','Eine bevorstehende Katastrophe sehe ich voraus, indem ich…',mtCustom,[5,'… Fehlkonstellationen der Sterne und Anomalien in den physikalischen Gesetzen feststelle. (Physik)', 6, '… die Fehlfunktion der Server sowie der Soft- und Hardware erkenne. (Informatik)', 'IsDefault', 7, '… die Ratschläge und Prognosen der Literatur aller Epochen in einen logischen Kontext bringe. (Literatur)', 8, '… besonders die Tektonik und das Wetter untersuche und Unregelmäßigkeiten feststelle. (Erdkunde)'],'');
+  category3 := QuestionDlg('Vorbereitung','Durch… kann einem kranken Menschen am besten geholfen werden.',mtCustom,[9,'… Gebete, Segen und Glauben (Religion)', 10, '… moderne Arzneimittel und biologische Errungenschaften (Biologie)', 'IsDefault', 11, '… chemische Behandlungen, Tränke und unentdeckte Verbindungen (Chemie)', 12, '… Bewegung, körperliches Training und Kraftaufwand (Sport)'],'');
 
   bag := TBag.create;
 
