@@ -736,19 +736,19 @@ begin
   riddlesBoss[7][2]:=TRiddle.create('Probe 082: Moderne Literatur. Ort der größten deutschen Buchmesse (neben Leipzig) angeben.','Dresden','Köln','Frankfurt','Hamburg','Frankfurt');
   riddlesBoss[7][3]:=TRiddle.create('Probe 858: Klassische Dramen. Bennant werden soll die Gestalt, in der Mephiso Faust erscheint.','Pferd','Katze','Rabe','Pudel','Pudel');
   // category 'Erdkunde' (8)
-  riddlesEasy[8][1]:=TRiddle.create('','','','','','');
-  riddlesEasy[8][2]:=TRiddle.create('','','','','','');
-  riddlesEasy[8][3]:=TRiddle.create('','','','','','');
-  riddlesBoss[8][1]:=TRiddle.create('','','','','','');
-  riddlesBoss[8][2]:=TRiddle.create('','','','','','');
-  riddlesBoss[8][3]:=TRiddle.create('','','','','','');
+  riddlesEasy[8][1]:=TRiddle.create('Probe 219: Luftprobe entnommen. Gas mit größtem Volumenanteil in der Luft identifizieren.','Stickstoff','Sauerstoff','Kohlenstoffdioxid','Wasserdampf','Stickstoff');
+  riddlesEasy[8][2]:=TRiddle.create('Probe 287: Teleskop verwendet. Anzahl der Planeten im Sonnensystem angeben.','10','9','8','7','8');
+  riddlesEasy[8][3]:=TRiddle.create('Probe 644: Weltreise wird abgeschlossen. Hauptstadt Japans gesucht.','Kyoto','Shanghai','Yokohama','Tokio','Tokio');
+  riddlesBoss[8][1]:=TRiddle.create('Probe 576: Eisenerzbohrung erfolgreich. Filtere Produkt, welches kein Eisenerz ist.','Magneteisenstein','Schiefereisenstein','Roteisenstein','Raseneisenstein','Schiefereisenstein');
+  riddlesBoss[8][2]:=TRiddle.create('Probe 506: Geologische Untersuchung zur Erdkruste. Plattentektonischen Vorgang benennen, bei dem sich eine Lithosphärenplatte unter eine andere schiebt.','Subduktion','Adaption','Subvention','Magmatisierung','Subduktion');
+  riddlesBoss[8][3]:=TRiddle.create('Probe 866: Tiefseeforschung macht entdeckung. Bestimmung der tiefsten Stelle im Weltmeer.','Tongagraben','Boningraben','Yapgraben','Marianengraben','Marianengraben');
   // category 'Religion' (9)
   riddlesEasy[9][1]:=TRiddle.create('','','','','','');
   riddlesEasy[9][2]:=TRiddle.create('','','','','','');
   riddlesEasy[9][3]:=TRiddle.create('','','','','','');
   riddlesBoss[9][1]:=TRiddle.create('','','','','','');
   riddlesBoss[9][2]:=TRiddle.create('','','','','','');
-  riddlesBoss[9][3]:=TRiddle.create('','','','','','');
+  riddlesBoss[9][3]:=TRiddle.create('Probe 494: Glaubensbekenntnis. Wer sitzt im Apostolischen Glaubensbekenntnis rechts von Gott?','Maria','Jesus Christus','Heiliger Geist','´Josef','Jesus Christus');
   // category 'Biologie' (10)
   riddlesEasy[10][1]:=TRiddle.create('','','','','','');
   riddlesEasy[10][2]:=TRiddle.create('','','','','','');
