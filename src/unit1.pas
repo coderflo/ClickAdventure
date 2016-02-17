@@ -1355,7 +1355,7 @@ begin
 
   // room 40
   rooms[40].descriptionBeforeRiddle:=compile('%n: Dieser Raum ist prächtig geschmückt. Die Erhabenen hatten so viel Besitz. Heutzutage überhaupt nicht mehr vorstellbar. Sieht so aus, als wäre der Thron hohl. Vielleicht verbirgt sich darin etwas.');
-  rooms[40].item:=TItem.create(12,'','Ihr findet eine merkwürdige Inschrift: 01010010 01100101 01100001 01100100 01101101 01100101');
+  rooms[40].item:=TItem.create(12,'merkwürdige Inschrift','Ihr findet eine merkwürdige Inschrift: 01010010 01100101 01100001 01100100 01101101 01100101');
   rooms[40].labelEast:='Osten: Verlasst den Thronsaal.';
   rooms[40].region:='Thron der Luminatin';
   rooms[40].backgroundImagePath:='img\J4.jpg';
