@@ -757,12 +757,12 @@ begin
   riddlesBoss[10][2]:=TRiddle.create('Probe 179: Untersuchung von Erfrischungsgetränken. Bestimmung des Getränks, welches ursprünglich eine medizinische Funktion hatte.','Ginger Ale','Coca Cola','Almdudler','Tonic Water','Tonic Water');
   riddlesBoss[10][3]:=TRiddle.create('Probe 377: Biologische Prozesse in der Untersuchung. Auswahl der zur Translation nötigen Strukturen (Proteinbiosynthese).','t-RNA, m-RNA, Ribosom','t-RNA, m-RNA, Phosphorrest','t-RNA, Cytoplasma, Protein','m-RNA, Ribosom, Protein','t-RNA, m-RNA, Ribosom');
   // category 'Chemie' (11)
-  riddlesEasy[11][1]:=TRiddle.create('','','','','','');
-  riddlesEasy[11][2]:=TRiddle.create('','','','','','');
-  riddlesEasy[11][3]:=TRiddle.create('','','','','','');
-  riddlesBoss[11][1]:=TRiddle.create('','','','','','');
-  riddlesBoss[11][2]:=TRiddle.create('','','','','','');
-  riddlesBoss[11][3]:=TRiddle.create('','','','','','');
+  riddlesEasy[11][1]:=TRiddle.create('Probe 678: Substanz: Wasser. Atomanzahl der Elemente im Molekül angeben.','3x O, 2x H','2x O, 1x H','1x C, 2x O','2x H, 1x O','2x H, 1x O');
+  riddlesEasy[11][2]:=TRiddle.create('Probe 412: Substanz: Schwefelsäure. Anzahl Dissoziationsstufen angeben.','1','4','3','2','2');
+  riddlesEasy[11][3]:=TRiddle.create('Probe 299: Gesucht: Viertes Homologes Glied der Alkane.','Hexan','Butan','Propan','Tetran','Butan');
+  riddlesBoss[11][1]:=TRiddle.create('Probe 894: Vergleich chemischer Polymere. Allgemeine Ordnung nach Siedetemperatur. Höchste SDT gesucht.','Duroplast','Thermoplast','Elastomer','Alle 3 gleich','Duroplast');
+  riddlesBoss[11][2]:=TRiddle.create('Probe 220: Begriff 1: LEWIS-Säure, Begriff 2: Nucleophil, Begriff 3: Elektrophil, Begriff 4: LEWIS-Base. Verknüpfungen herstellen.','2 = 3, 1 = 4','1 = 2, 3 = 4','1 = 2 = 3 = 4','1 = 3, 2 = 4','1 = 3, 2 = 4');
+  riddlesBoss[11][3]:=TRiddle.create('Probe 014: Prüfung eines Stoffes auf Aromatizität. Name der relevanten Regel angeben.','Jahn-Teller-Regel','Kepler-Fassregel','Hückel-Regel','Regel von Markovnikov','Hückel-Regel');
   // category 'Sport' (12)
   riddlesEasy[12][1]:=TRiddle.create('','','','','','');
   riddlesEasy[12][2]:=TRiddle.create('','','','','','');
