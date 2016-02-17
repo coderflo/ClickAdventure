@@ -660,9 +660,9 @@ end;
 procedure TClickAdventure.buildAdventure;
 var
   i:integer;
-  rooms: array [1..43] of TRoom;
-  dialogsBefore, dialogsAfter: array [1..43] of TDialog;
-  dialogLinesBefore, dialogLinesAfter: array [1..43] of array of string;
+  rooms: array [1..52] of TRoom;
+  dialogsBefore, dialogsAfter: array [1..52] of TDialog;
+  dialogLinesBefore, dialogLinesAfter: array [1..52] of array of string;
 
   room25requiredItems:array of integer;
 
@@ -673,7 +673,7 @@ var
 
 begin
 
-  for i := 0 to 43 do
+  for i := 0 to 52 do
   begin
     rooms[i] := TRoom.create; // create all rooms with default values
   end;
@@ -726,7 +726,7 @@ begin
   dialogLinesBefore[4][6]:=compile('%n: Natürlich.');
   dialogsBefore[4].lines:=dialogLinesBefore[4];
   rooms[4].dialogBeforeRiddle:=dialogsBefore[4];
-  // TODO: add riddle
+  rooms[4].applyRiddle(riddlesEasy[category1][1]);
   dialogsAfter[4]:=TDialog.create;
   SetLength(dialogLinesAfter[4], 2);
   dialogLinesAfter[4][0]:='Holzfäller: So einfach hätte ich mir das gar nicht vorgestellt, danke. Hier, nehmt diese Axt. Ich habe sie gestern in einer Ranke gefunden, die hier im Schnee lag. Witzig, nicht? Eine Ranke hier im Schnee. Braucht sie mir auch nicht zurückbringen. Ich habe sowieso bessere Äxte. Also dann, gute Reise. Passt nur auf Issormir, den Eiswurm, der seit Wochen diese Gegend heimsucht, auf. Möge Dwayna Euch beschützen.';
@@ -805,21 +805,25 @@ begin
   dialogLinesBefore[10][2]:='Svaard: Schweigt. Die Macht der Erhabenen glüht in Euch. Ihr müsst sterben. Für Kralkatorrik.';
   dialogsBefore[10].lines:=dialogLinesBefore[10];
   rooms[10].dialogBeforeRiddle:=dialogsBefore[10];
-  // TODO: add riddle
-  dialogsAfter[10]:=TDialog.create;
-  SetLength(dialogLinesAfter[10],3);
-  dialogLinesAfter[10][0]:=compile('%n: Was ist passiert? Ich wurde angegriffen, sein Schwert traf mich, aber ich konnte ihn irgendwie besiegen. Es war dasselbe Gefühl, wie bei Issormir.');
-  dialogLinesAfter[10][1]:='Svaard: Niemand…kann…Ihn…aufhalten…';
-  dialogLinesAfter[10][2]:=compile('%n: Huch, er hat irgendetwas fallen gelassen. Sieht aus wie eine Art Siegel. Aber es ist eiskalt. Seine Wachen sind auch verschwunden… als hätte der Gletscher sie verschluckt. Nun aber erst mal raus aus der Kälte hier. Nachdenken kann ich auch noch später.');
-  dialogsAfter[10].lines:=dialogLinesAfter[10];
-  rooms[10].dialogAfterRiddle:=dialogsAfter[10];
-  rooms[10].item:=TItem.create(2,'Verdorbenes Frostsiegel','Ihr findet das verdorbene Frostsiegel Svaards. Man sagt, sein Besitzer könne alles zu Eis erstarren lassen.');
-  rooms[10].labelNorth:='Norden: Verlasst Svaards Palast.';
-  rooms[10].region:='Svaards Eisschollenpalast';
-  rooms[10].backgroundImagePath:='img\S4.jpg';
-  rooms[10].backgroundImagePath:='music\Svaard.wav';
-  rooms[10].backgroundMusicPathAfterRiddle:='music\SnowASvaard.wav';
-  rooms[10].north:=rooms[9];
+  rooms[10].applyRiddle(riddlesEasy[category3][1]);
+  rooms[10].labelSouth:='Nächstes Rätsel';
+  rooms[10].south:=rooms[44];
+  // room 44 (10)
+  rooms[44].applyRiddle(riddlesBoss[category1][1]);
+  dialogsAfter[44]:=TDialog.create;
+  SetLength(dialogLinesAfter[44],3);
+  dialogLinesAfter[44][0]:=compile('%n: Was ist passiert? Ich wurde angegriffen, sein Schwert traf mich, aber ich konnte ihn irgendwie besiegen. Es war dasselbe Gefühl, wie bei Issormir.');
+  dialogLinesAfter[44][1]:='Svaard: Niemand…kann…Ihn…aufhalten…';
+  dialogLinesAfter[44][2]:=compile('%n: Huch, er hat irgendetwas fallen gelassen. Sieht aus wie eine Art Siegel. Aber es ist eiskalt. Seine Wachen sind auch verschwunden… als hätte der Gletscher sie verschluckt. Nun aber erst mal raus aus der Kälte hier. Nachdenken kann ich auch noch später.');
+  dialogsAfter[44].lines:=dialogLinesAfter[44];
+  rooms[44].dialogAfterRiddle:=dialogsAfter[44];
+  rooms[44].item:=TItem.create(2,'Verdorbenes Frostsiegel','Ihr findet das verdorbene Frostsiegel Svaards. Man sagt, sein Besitzer könne alles zu Eis erstarren lassen.');
+  rooms[44].labelNorth:='Norden: Verlasst Svaards Palast.';
+  rooms[44].region:='Svaards Eisschollenpalast';
+  rooms[44].backgroundImagePath:='img\S4.jpg';
+  rooms[44].backgroundImagePath:='music\Svaard.wav';
+  rooms[44].backgroundMusicPathAfterRiddle:='music\SnowASvaard.wav';
+  rooms[44].north:=rooms[9];
 
   // room 11
   rooms[11].descriptionBeforeRiddle:=compile('%n: Es ist ziemlich dunkel hier unten, kaum zu glauben, dass oben alles weiß ist. Von Osten spüre ich eine gewisse Wärme… kann das sein?');
@@ -840,7 +844,7 @@ begin
   dialogLinesBefore[12][2]:=compile('%n: Was ist das?! Ein Eiswurm? Issormir! Er greift mich an!');
   dialogsBefore[12].lines:=dialogLinesBefore[12];
   rooms[12].dialogBeforeRiddle:=dialogsBefore[12];
-  // TODO: add riddle
+  rooms[12].applyRiddle(riddlesEasy[category2][1]);
   dialogsAfter[12]:=TDialog.create;
   SetLength(dialogLinesAfter[12],1);
   dialogLinesAfter[12][0]:=compile('%n: Ich bin nicht tot? Wie habe ich das geschafft? Ich sah Zeichen, logisch anzuordnen. Hängt das mit den ganzen Geschehnissen zusammen? Naja… Issormir ist zumindest enthauptet. Ich nehme besser seinen Kopf mit.');
@@ -931,7 +935,7 @@ begin
   dialogLinesBefore[18][3]:=compile('%n: Es hat keinen Sinn, den jetzt noch weiter zu befragen. Ich sollte ihm lieber helfen.');
   dialogsBefore[18].lines:=dialogLinesBefore[18];
   rooms[18].dialogBeforeRiddle:=dialogsBefore[18];
-  // TODO: add riddle
+  rooms[18].applyRiddle(riddlesEasy[category1][2]);
   dialogsAfter[18]:=TDialog.create;
   SetLength(dialogLinesAfter[18],4);
   dialogLinesAfter[18][0]:='Explorator: Danke vielmals. Nehmt bitte dieses Fragment. Ich habe es heute bei den Ausgrabungen gefunden. Ihr könnt bestimmt etwas damit anfangen.';
@@ -955,7 +959,7 @@ begin
   dialogLinesBefore[19][1]:=compile('%n: Hatte nichts anderes vor…');
   dialogsBefore[19].lines:=dialogLinesBefore[19];
   rooms[19].dialogBeforeRiddle:=dialogsBefore[19];
-  // TODO: add riddle
+  rooms[19].applyRiddle(riddlesEasy[category2][2]);
   dialogsAfter[19]:=TDialog.create;
   SetLength(dialogLinesAfter[19],4);
   dialogLinesAfter[19][0]:=compile('%n: Kann ich Euch noch zu den Ranken hier in der Gegend befragen?');
@@ -980,7 +984,7 @@ begin
   dialogLinesBefore[20][2]:='Explorator: Wenn das mit Kralkatorrik stimmt, dann sollten wir jetzt erstmal aufbrechen. Helft mir bitte.';
   dialogsBefore[20].lines:=dialogLinesBefore[20];
   rooms[20].dialogBeforeRiddle:=dialogsBefore[20];
-  // TODO: add riddle
+  rooms[20].applyRiddle(riddlesEasy[category3][2]);
   dialogsAfter[20]:=TDialog.create;
   SetLength(dialogLinesAfter[20],3);
   dialogLinesAfter[20][0]:='Explorator: Vielen Dank.';
@@ -1039,18 +1043,22 @@ begin
   dialogLinesBefore[24][5]:='Gaheron Baelfeuer: Erhabener, hier ist die Sackgasse Eurer Reise!';
   dialogsBefore[24].lines:=dialogLinesBefore[24];
   rooms[24].dialogBeforeRiddle:=dialogsBefore[24];
-  // TODO: add riddle
-  rooms[24].backgroundMusicPathAfterRiddle:='music\LavaAGaheron.wav';
-  dialogsAfter[24]:=TDialog.create;
-  SetLength(dialogLinesAfter[24],1);
-  dialogLinesAfter[24][0]:=compile('%n: Was passiert hier?! Warum bin ich hier? Wie konnte ich ihn besiegen? Ich muss schnell hier weg und eine Antwort finden. Wenn Gaheron die Wahrheit gesagt hat, macht das alles einen Sinn. Kralkatorrik muss irgendwie am Leben sein. Am besten nehme ich mir eine von Gaherons Waffen mit; kann bestimmt nicht schaden. Sie müssen hier irgendwo liegen.');
-  dialogsAfter[24].lines:=dialogLinesAfter[24];
-  rooms[24].dialogAfterRiddle:=dialogsAfter[24];
-  rooms[24].item:=TItem.create(8,'Magmatisches Zepter','Ihr findet Gaherons magmatisches Zepter. Ihr spürt seine Macht durch euer Blut fließen. Die Flammen dieses vom Bösen durchflossenen Zepters reichen aus, um jedes Lebewesen zu vernichten.');
-  rooms[24].labelWest:='Westen: Verlasst Gaherons Schrein.';
-  rooms[24].region:='Gaherons Höllenschrein';
-  rooms[24].backgroundImagePath:='img\L4.jpg';
-  rooms[24].west:=rooms[23];
+  rooms[24].applyRiddle(riddlesBoss[category2][1]);
+  rooms[24].labelEast:='Nächstes Rätsel';
+  rooms[24].east:=rooms[45];
+  // room 45 (24)
+  rooms[45].applyRiddle(riddlesBoss[category3][1]);
+  rooms[45].backgroundMusicPathAfterRiddle:='music\LavaAGaheron.wav';
+  dialogsAfter[45]:=TDialog.create;
+  SetLength(dialogLinesAfter[45],1);
+  dialogLinesAfter[45][0]:=compile('%n: Was passiert hier?! Warum bin ich hier? Wie konnte ich ihn besiegen? Ich muss schnell hier weg und eine Antwort finden. Wenn Gaheron die Wahrheit gesagt hat, macht das alles einen Sinn. Kralkatorrik muss irgendwie am Leben sein. Am besten nehme ich mir eine von Gaherons Waffen mit; kann bestimmt nicht schaden. Sie müssen hier irgendwo liegen.');
+  dialogsAfter[45].lines:=dialogLinesAfter[45];
+  rooms[45].dialogAfterRiddle:=dialogsAfter[45];
+  rooms[45].item:=TItem.create(8,'Magmatisches Zepter','Ihr findet Gaherons magmatisches Zepter. Ihr spürt seine Macht durch euer Blut fließen. Die Flammen dieses vom Bösen durchflossenen Zepters reichen aus, um jedes Lebewesen zu vernichten.');
+  rooms[45].labelWest:='Westen: Verlasst Gaherons Schrein.';
+  rooms[45].region:='Gaherons Höllenschrein';
+  rooms[45].backgroundImagePath:='img\L4.jpg';
+  rooms[45].west:=rooms[23];
 
   // room 25
   rooms[25].descriptionBeforeRiddle:=compile('%n: Ich wünschte, ich könnte auch ohne den Stein durch Feuer laufen… Vergiss es, %n. Das wird nie passieren. Ich sollte mich mehr auf meine Mission konzentrieren. Die Exploratoren sind schon weit voraus.');
@@ -1158,20 +1166,28 @@ begin
   dialogLinesBefore[34][4]:=compile('%n: (Es hat keinen Sinn. Ich muss wohl kämpfen. Bringt es zu Ende! Gaherons Zepter wird mir helfen.)');
   dialogsBefore[34].lines:=dialogLinesBefore[34];
   rooms[34].dialogBeforeRiddle:=dialogsBefore[34];
-  // TODO: add riddle
+  rooms[34].applyRiddle(riddlesBoss[category1][2]);
+  rooms[34].labelSouth:='Nächstes Rätsel';
+  rooms[34].south:=rooms[46];
+  // room 46 (34)
+  rooms[46].applyRiddle(riddlesBoss[category2][2]);
+  rooms[46].labelSouth:='Nächstes Rätsel';
+  rooms[46].south:=rooms[47];
+  // room 47 (34)
   // TODO: stop music after riddle
-  dialogsAfter[34]:=TDialog.create;
-  SetLength(dialogLinesAfter[34],3);
-  dialogLinesAfter[34][0]:=compile('%n: Er… ist besiegt. Es war wieder dasselbe Gefühl, wie bei Svaard und Gaheron. Es lässt sich schwer beschreiben… Ist es jetzt vorbei? Was geschieht jetzt mit mir...');
-  dialogLinesAfter[34][1]:='Stimme: Erhabener, ihr habt den Fluch gebrochen. Ich warte im Süden auf Euch, damit Ihr Euch der Prüfung stellen könnt.';
-  dialogLinesAfter[34][2]:=compile('%n: Prüfung? Oh… die Stimme ist wieder weg…');
-  dialogsAfter[34].lines:=dialogLinesAfter[34];
-  rooms[34].dialogAfterRiddle:=dialogsAfter[34];
-  rooms[34].item:=TItem.create(11,'Rankenzorn-Flöte','Die Ranken, aus denen das Abbild Kralkatorriks zusammengesetzt war, formen sich zu einer Flöte. Mit ihr lässt sich die nächstgelegene Rankenwand entfernen.');
-  rooms[34].labelNorth:='Norden: Verlasst den Ort Kralkatorriks.';
-  rooms[34].region:='Kralkatorriks Vermächtnis';
-  rooms[34].backgroundImagePath:='img\J2.jpg';
-  rooms[34].north:=rooms[33];
+  rooms[47].applyRiddle(riddlesBoss[category3][2]);
+  dialogsAfter[47]:=TDialog.create;
+  SetLength(dialogLinesAfter[47],3);
+  dialogLinesAfter[47][0]:=compile('%n: Er… ist besiegt. Es war wieder dasselbe Gefühl, wie bei Svaard und Gaheron. Es lässt sich schwer beschreiben… Ist es jetzt vorbei? Was geschieht jetzt mit mir...');
+  dialogLinesAfter[47][1]:='Stimme: Erhabener, ihr habt den Fluch gebrochen. Ich warte im Süden auf Euch, damit Ihr Euch der Prüfung stellen könnt.';
+  dialogLinesAfter[47][2]:=compile('%n: Prüfung? Oh… die Stimme ist wieder weg…');
+  dialogsAfter[47].lines:=dialogLinesAfter[47];
+  rooms[47].dialogAfterRiddle:=dialogsAfter[47];
+  rooms[47].item:=TItem.create(11,'Rankenzorn-Flöte','Die Ranken, aus denen das Abbild Kralkatorriks zusammengesetzt war, formen sich zu einer Flöte. Mit ihr lässt sich die nächstgelegene Rankenwand entfernen.');
+  rooms[47].labelNorth:='Norden: Verlasst den Ort Kralkatorriks.';
+  rooms[47].region:='Kralkatorriks Vermächtnis';
+  rooms[47].backgroundImagePath:='img\J2.jpg';
+  rooms[47].north:=rooms[33];
 
   // room 35
   rooms[35].backgroundMusicPath:='music\Jungle2.wav';
@@ -1297,16 +1313,36 @@ begin
   dialogsBefore[43].lines:=dialogLinesBefore[43];
   rooms[43].dialogBeforeRiddle:=dialogsBefore[43];
   rooms[43].backgroundMusicPath:='music\Tarir.wav';
-  // TODO: add riddle
-  dialogsAfter[43]:=TDialog.create;
-  SetLength(dialogLinesAfter[43],3);
-  dialogLinesAfter[43][0]:=compile('%n: Ich habe mein Werk auf dieser Welt erfüllt. Ich muss gehen.');
-  dialogLinesAfter[43][1]:=compile('Stimme: Nehmt Abschied. Eure Nachfolger werden in Eurem Frieden leben können. Habt Dank, %n.');
-  dialogLinesAfter[43][2]:='Ende.';
-  dialogsAfter[43].lines:=dialogLinesAfter[43];
-  rooms[43].dialogAfterRiddle:=dialogsAfter[43];
-  rooms[43].region:='Prüfung der Erhabenen';
-  rooms[43].backgroundImagePath:='img\J4.jpg';
+  rooms[43].applyRiddle(riddlesEasy[category1][3]);
+  rooms[43].labelSouth:='Nächstes Rätsel';
+  rooms[43].south:=rooms[48];
+  // room 48 (43)
+  rooms[48].applyRiddle(riddlesEasy[category2][3]);
+  rooms[48].labelSouth:='Nächstes Rätsel';
+  rooms[48].south:=rooms[49];
+  // room 49 (43)
+  rooms[49].applyRiddle(riddlesEasy[category3][3]);
+  rooms[49].labelSouth:='Nächstes Rätsel';
+  rooms[49].south:=rooms[50];
+  // room 50 (43)
+  rooms[50].applyRiddle(riddlesBoss[category1][3]);
+  rooms[50].labelSouth:='Nächstes Rätsel';
+  rooms[50].south:=rooms[51];
+  // room 51 (43)
+  rooms[51].applyRiddle(riddlesBoss[category2][3]);
+  rooms[51].labelSouth:='Nächstes Rätsel';
+  rooms[51].south:=rooms[52];
+  // room 52 (43)
+  rooms[52].applyRiddle(riddlesBoss[category3][3]);
+  dialogsAfter[52]:=TDialog.create;
+  SetLength(dialogLinesAfter[52],3);
+  dialogLinesAfter[52][0]:=compile('%n: Ich habe mein Werk auf dieser Welt erfüllt. Ich muss gehen.');
+  dialogLinesAfter[52][1]:=compile('Stimme: Nehmt Abschied. Eure Nachfolger werden in Eurem Frieden leben können. Habt Dank, %n.');
+  dialogLinesAfter[52][2]:='Ende.';
+  dialogsAfter[52].lines:=dialogLinesAfter[52];
+  rooms[52].dialogAfterRiddle:=dialogsAfter[52];
+  rooms[52].region:='Prüfung der Erhabenen';
+  rooms[52].backgroundImagePath:='img\J4.jpg';
 
 
   spawnRoom := rooms[1];
