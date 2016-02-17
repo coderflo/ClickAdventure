@@ -673,8 +673,6 @@ begin
   category2 := QuestionDlg('Vorbereitung','',mtCustom,[5,'', 6, '', 'IsDefault', 7, '', 8, ''],'');
   category3 := QuestionDlg('Vorbereitung','',mtCustom,[9,'', 10, '', 'IsDefault', 11, '', 12, ''],'');
 
-  ShowMessage(IntToStr(category1));
-
   bag := TBag.create;
 
   // room 1
