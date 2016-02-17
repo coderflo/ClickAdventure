@@ -750,12 +750,12 @@ begin
   riddlesBoss[9][2]:=TRiddle.create('Probe 095: Religiöse Festlichkeiten. Nennung der Persönlichkeit, die an Weihnachten und Ostern den Segen "Urbi et orbi" ereilt.','Bischöfe','Papst','Priester','Kardinäle','Papst');
   riddlesBoss[9][3]:=TRiddle.create('Probe 494: Glaubensbekenntnis. Wer sitzt im Apostolischen Glaubensbekenntnis rechts von Gott?','Maria','Jesus Christus','Heiliger Geist','´Josef','Jesus Christus');
   // category 'Biologie' (10)
-  riddlesEasy[10][1]:=TRiddle.create('','','','','','');
-  riddlesEasy[10][2]:=TRiddle.create('','','','','','');
-  riddlesEasy[10][3]:=TRiddle.create('','','','','','');
-  riddlesBoss[10][1]:=TRiddle.create('','','','','','');
-  riddlesBoss[10][2]:=TRiddle.create('','','','','','');
-  riddlesBoss[10][3]:=TRiddle.create('','','','','','');
+  riddlesEasy[10][1]:=TRiddle.create('Probe 632: Biologische Lehren benannt. Name der Lehre von den Zellen angeben.','Neurologie','Cytologie','Ökologie','Somatologie','Cytologie');
+  riddlesEasy[10][2]:=TRiddle.create('Probe 989: Geschichte der Evolutionstheorie. Benennung des Begründers der modernen Evolutionstheorie.','Darwin','Dalton','Chaplin','Fleming','Darwin');
+  riddlesEasy[10][3]:=TRiddle.create('Probe 218: Untersuchung der Volkskrankheiten. Grund für Diabetes Typ 2 angeben.','Insulinresistenz','Insulin-Überproduktion','Insulin-Unterproduktion','Glucagon-Abbaustörung','Insulinresistenz');
+  riddlesBoss[10][1]:=TRiddle.create('Probe 783: Fachbegriffe der Körperbestandteile. Benennung des Darmtraktes (Latein).','Apparatus respiratorius','Systema nervosum','Canalis alimentarius','Medulla ossium','Canalis alimentarius');
+  riddlesBoss[10][2]:=TRiddle.create('Probe 179: Untersuchung von Erfrischungsgetränken. Bestimmung des Getränks, welches ursprünglich eine medizinische Funktion hatte.','Ginger Ale','Coca Cola','Almdudler','Tonic Water','Tonic Water');
+  riddlesBoss[10][3]:=TRiddle.create('Probe 377: Biologische Prozesse in der Untersuchung. Auswahl der zur Translation nötigen Strukturen (Proteinbiosynthese).','t-RNA, m-RNA, Ribosom','t-RNA, m-RNA, Phosphorrest','t-RNA, Cytoplasma, Protein','m-RNA, Ribosom, Protein','t-RNA, m-RNA, Ribosom');
   // category 'Chemie' (11)
   riddlesEasy[11][1]:=TRiddle.create('','','','','','');
   riddlesEasy[11][2]:=TRiddle.create('','','','','','');
