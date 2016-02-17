@@ -701,12 +701,12 @@ begin
   riddlesBoss[2][2]:=TRiddle.create('Probe 150: Parteienliste aktualisiert. Partei identifizieren, die in keinem Parlament Deutschlands vertreten ist.','NPD','ALFA','DKP','FDP','DKP');
   riddlesBoss[2][3]:=TRiddle.create('Probe 203: Listen des BIP verglichen. Land mit vergleichsweise höchstem BIP gefunden.','Japan','Russland','Frankreich','Deutschland','Japan');
   // category 'Geschichte' (3)
-  riddlesEasy[3][1]:=TRiddle.create('','','','','','');
-  riddlesEasy[3][2]:=TRiddle.create('','','','','','');
-  riddlesEasy[3][3]:=TRiddle.create('','','','','','');
-  riddlesBoss[3][1]:=TRiddle.create('','','','','','');
-  riddlesBoss[3][2]:=TRiddle.create('','','','','','');
-  riddlesBoss[3][3]:=TRiddle.create('','','','','','');
+  riddlesEasy[3][1]:=TRiddle.create('Probe 399: Datensicherung Kriege unvollständig. Datum des Beginns des 1. Weltkrieges angeben.','1914','1939','1789','1871','1914');
+  riddlesEasy[3][2]:=TRiddle.create('Probe 257: Forschungsergebnisse manipuliert. Nachname des französischen Kaisers ab 1804  gesucht.','Robespierre','Diderot','Montesquieu','Bonaparte','Bonaparte');
+  riddlesEasy[3][3]:=TRiddle.create('Probe 356: Suchmodul gestoppt. Datum der Kaiserkrönung Karls des Großen verloren gegangen.','800','912','753','0','800');
+  riddlesBoss[3][1]:=TRiddle.create('Probe 886: Erdzeitalter sortieren. Suche ältestes Zeitalter.','Jura','Quartär','Trias','Kreide','Trias');
+  riddlesBoss[3][2]:=TRiddle.create('Probe 808: Zeiteingrenzungsmodul beschädigt. Jahr des Röhm-Putsches gesucht.','1933','1930','1936','1934','1934');
+  riddlesBoss[3][3]:=TRiddle.create('Probe 133: Geschichte Deutschlands untersucht. Name des ersten deutschen Kaisers identifizieren.','Otto','Wilhelm','Karl','Leopold','Wilhelm');
   // category 'Musik/Kunst' (4)
   riddlesEasy[4][1]:=TRiddle.create('','','','','','');
   riddlesEasy[4][2]:=TRiddle.create('','','','','','');
