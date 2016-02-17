@@ -723,11 +723,11 @@ begin
   riddlesBoss[5][3]:=TRiddle.create('Probe 762: Faktor x zur Berechnung einer Energie auswählen: E=m*a*x','t','g','q','s','s');
   // category 'Informatik' (6)
   riddlesEasy[6][1]:=TRiddle.create('Probe 960: Datenbanken der Programmiersprachen erfolgreich durchsucht. Nicht-existente Sprache ausfindig machen.','Python','LUA','Turtle','C','Turtle');
-  riddlesEasy[6][2]:=TRiddle.create('','','','','','');
-  riddlesEasy[6][3]:=TRiddle.create('','','','','','');
-  riddlesBoss[6][1]:=TRiddle.create('','','','','','');
-  riddlesBoss[6][2]:=TRiddle.create('','','','','','');
-  riddlesBoss[6][3]:=TRiddle.create('','','','','','');
+  riddlesEasy[6][2]:=TRiddle.create('Probe 297: Display optimiert. Mögliche Signalausgänge der Grafikkarte untersucht. Falschen Output angeben.','HDMI','DVI','Display Port','Klinke','Klinke');
+  riddlesEasy[6][3]:=TRiddle.create('Probe 996: Speicherplatzüberprüfung positiv. Größe von 2GB in MB angeben.','2000','2048','2024','1984','2048');
+  riddlesBoss[6][1]:=TRiddle.create('Probe 767: Hardware optimiert. Abkürzung ROM erläutern.','Refresh Only Memory','Read Only Memory','Read One Memory','Reliable Online Memory','Read Only Memory');
+  riddlesBoss[6][2]:=TRiddle.create('Probe 218: Betriebssysteme installiert. GUI geladen. Erstes Betriebssystem mit grafischer Oberfläche nennen.','Mac OS','DOS 5.0','Linux','Windows 98','Mac OS');
+  riddlesBoss[6][3]:=TRiddle.create('Probe 569: Englische Hardwarebezeichnungen untersucht. Bedeutung "mainframe" angeben.','Druckserver','Server im lokalen Netz','zentraler Großcomputer','alleinstehendes Notebook','zentraler Großcomputer');
   // category 'Literatur' (7)
   riddlesEasy[7][1]:=TRiddle.create('','','','','','');
   riddlesEasy[7][2]:=TRiddle.create('','','','','','');
