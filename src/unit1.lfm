@@ -32151,7 +32151,7 @@ object ClickAdventure: TClickAdventure
     Left = 40
     Height = 137
     Top = 448
-    Width = 828
+    Width = 396
     Lines.Strings = (
       'riddleText'
     )
@@ -32162,7 +32162,7 @@ object ClickAdventure: TClickAdventure
     Left = 40
     Height = 376
     Top = 72
-    Width = 828
+    Width = 396
     Lines.Strings = (
       'roomDescription'
     )
