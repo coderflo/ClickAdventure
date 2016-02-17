@@ -117,6 +117,7 @@ type
     requiredItemArray:array of integer;
     killWithoutItem:boolean; // reset to spawn when entering without item
     deathMessage:string;
+    respawn:TRoom;
 
     constructor create;
 
@@ -279,7 +280,15 @@ begin
         ShowMessage(room.deathMessage);
       end;
 
-      changeRoom(spawnRoom);
+      if(room.respawn <> nil) then
+      begin
+        changeRoom(room.respawn);
+      end
+      else
+      begin
+        changeRoom(spawnRoom);
+      end;
+
       exit;
     end;
 
@@ -1240,7 +1249,7 @@ begin
 
   // room 34
   rooms[34].deathMessage:='Ihr seht die Silhouette eines Wesens, doch bevor ihr blinzeln könnt, seid ihr tot. Game Over.';
-  // TODO: organize TP in room 14
+  rooms[34].respawn:=rooms[14];
   rooms[34].requiredItem:=8;
   rooms[34].killWithoutItem:=true;
   rooms[34].backgroundMusicPath:='music\Kralkatorrik.wav';
