@@ -684,6 +684,93 @@ begin
   category2 := QuestionDlg('Vorbereitung','Eine bevorstehende Katastrophe sehe ich voraus, indem ich…',mtCustom,[5,'… Fehlkonstellationen der Sterne und Anomalien in den physikalischen Gesetzen feststelle. (Physik)', 6, '… die Fehlfunktion der Server sowie der Soft- und Hardware erkenne. (Informatik)', 'IsDefault', 7, '… die Ratschläge und Prognosen der Literatur aller Epochen in einen logischen Kontext bringe. (Literatur)', 8, '… besonders die Tektonik und das Wetter untersuche und Unregelmäßigkeiten feststelle. (Erdkunde)'],'');
   category3 := QuestionDlg('Vorbereitung','Durch… kann einem kranken Menschen am besten geholfen werden.',mtCustom,[9,'… Gebete, Segen und Glauben (Religion)', 10, '… moderne Arzneimittel und biologische Errungenschaften (Biologie)', 'IsDefault', 11, '… chemische Behandlungen, Tränke und unentdeckte Verbindungen (Chemie)', 12, '… Bewegung, körperliches Training und Kraftaufwand (Sport)'],'');
 
+  // add riddles
+
+  // category 'Mathe' (1)
+  riddlesEasy[1][1]:=TRiddle.create('Probe 815: Kristallgitterbereich - 1.512 Einheiten. Kristallgitterbegrenzung - 174 Einheiten. Abmessung identifizieren.','756 x 87','63 x 24','72 x 18','57 x 29','63 x 24');
+  riddlesEasy[1][2]:=TRiddle.create('Probe 097: Produktion erhöht sich: 6, 18, 30, 42. Berechnung der geschätzten Produktion für nächsten Zyklus mit aktuellem Muster.','54','52','60','56','54');
+  riddlesEasy[1][3]:=TRiddle.create('Probe 624: Lagerkapazität: 4250 Einhalten. Durchschnittliche Subjektgöße: 170 Einheiten. Maximale Subjektmenge in Lager berechnen.','15','22','25','18','25');
+  riddlesBoss[1][1]:=TRiddle.create('Probe 371: Kreis wird mit 4 Geraden zerteilt. Maximale Anzahl der resultierenden Teilstücke berechnen.','8','9','11','13','11');
+  riddlesBoss[1][2]:=TRiddle.create('Probe 965: Straße steigt von 0 - 3 Längeneinheiten nach Funktion: y=0,5(x)^2. Berechne Fläche unter gegebenem Längenabschnitt.','4,5','9','3','6,5','4,5');
+  riddlesBoss[1][3]:=TRiddle.create('Probe 459:  Zahl n gesucht. 2n + 0,5n + 0,25n + 1 = 100.','28','38','32','36','36');
+  // category 'Politik' (2)
+  riddlesEasy[2][1]:=TRiddle.create('','','','','','');
+  riddlesEasy[2][2]:=TRiddle.create('','','','','','');
+  riddlesEasy[2][3]:=TRiddle.create('','','','','','');
+  riddlesBoss[2][1]:=TRiddle.create('','','','','','');
+  riddlesBoss[2][2]:=TRiddle.create('','','','','','');
+  riddlesBoss[2][3]:=TRiddle.create('','','','','','');
+  // category 'Geschichte' (3)
+  riddlesEasy[3][1]:=TRiddle.create('','','','','','');
+  riddlesEasy[3][2]:=TRiddle.create('','','','','','');
+  riddlesEasy[3][3]:=TRiddle.create('','','','','','');
+  riddlesBoss[3][1]:=TRiddle.create('','','','','','');
+  riddlesBoss[3][2]:=TRiddle.create('','','','','','');
+  riddlesBoss[3][3]:=TRiddle.create('','','','','','');
+  // category 'Musik/Kunst' (4)
+  riddlesEasy[4][1]:=TRiddle.create('','','','','','');
+  riddlesEasy[4][2]:=TRiddle.create('','','','','','');
+  riddlesEasy[4][3]:=TRiddle.create('','','','','','');
+  riddlesBoss[4][1]:=TRiddle.create('','','','','','');
+  riddlesBoss[4][2]:=TRiddle.create('','','','','','');
+  riddlesBoss[4][3]:=TRiddle.create('','','','','','');
+  // category 'Physik' (5)
+  riddlesEasy[5][1]:=TRiddle.create('','','','','','');
+  riddlesEasy[5][2]:=TRiddle.create('','','','','','');
+  riddlesEasy[5][3]:=TRiddle.create('','','','','','');
+  riddlesBoss[5][1]:=TRiddle.create('','','','','','');
+  riddlesBoss[5][2]:=TRiddle.create('','','','','','');
+  riddlesBoss[5][3]:=TRiddle.create('','','','','','');
+  // category 'Informatik' (6)
+  riddlesEasy[6][1]:=TRiddle.create('Probe 960: Datenbanken der Programmiersprachen erfolgreich durchsucht. Nicht-existente Sprache ausfindig machen.','Python','LUA','Turtle','C','Turtle');
+  riddlesEasy[6][2]:=TRiddle.create('','','','','','');
+  riddlesEasy[6][3]:=TRiddle.create('','','','','','');
+  riddlesBoss[6][1]:=TRiddle.create('','','','','','');
+  riddlesBoss[6][2]:=TRiddle.create('','','','','','');
+  riddlesBoss[6][3]:=TRiddle.create('','','','','','');
+  // category 'Literatur' (7)
+  riddlesEasy[7][1]:=TRiddle.create('','','','','','');
+  riddlesEasy[7][2]:=TRiddle.create('','','','','','');
+  riddlesEasy[7][3]:=TRiddle.create('','','','','','');
+  riddlesBoss[7][1]:=TRiddle.create('','','','','','');
+  riddlesBoss[7][2]:=TRiddle.create('','','','','','');
+  riddlesBoss[7][3]:=TRiddle.create('','','','','','');
+  // category 'Erdkunde' (8)
+  riddlesEasy[8][1]:=TRiddle.create('','','','','','');
+  riddlesEasy[8][2]:=TRiddle.create('','','','','','');
+  riddlesEasy[8][3]:=TRiddle.create('','','','','','');
+  riddlesBoss[8][1]:=TRiddle.create('','','','','','');
+  riddlesBoss[8][2]:=TRiddle.create('','','','','','');
+  riddlesBoss[8][3]:=TRiddle.create('','','','','','');
+  // category 'Religion' (9)
+  riddlesEasy[9][1]:=TRiddle.create('','','','','','');
+  riddlesEasy[9][2]:=TRiddle.create('','','','','','');
+  riddlesEasy[9][3]:=TRiddle.create('','','','','','');
+  riddlesBoss[9][1]:=TRiddle.create('','','','','','');
+  riddlesBoss[9][2]:=TRiddle.create('','','','','','');
+  riddlesBoss[9][3]:=TRiddle.create('','','','','','');
+  // category 'Biologie' (10)
+  riddlesEasy[10][1]:=TRiddle.create('','','','','','');
+  riddlesEasy[10][2]:=TRiddle.create('','','','','','');
+  riddlesEasy[10][3]:=TRiddle.create('','','','','','');
+  riddlesBoss[10][1]:=TRiddle.create('','','','','','');
+  riddlesBoss[10][2]:=TRiddle.create('','','','','','');
+  riddlesBoss[10][3]:=TRiddle.create('','','','','','');
+  // category 'Chemie' (11)
+  riddlesEasy[11][1]:=TRiddle.create('','','','','','');
+  riddlesEasy[11][2]:=TRiddle.create('','','','','','');
+  riddlesEasy[11][3]:=TRiddle.create('','','','','','');
+  riddlesBoss[11][1]:=TRiddle.create('','','','','','');
+  riddlesBoss[11][2]:=TRiddle.create('','','','','','');
+  riddlesBoss[11][3]:=TRiddle.create('','','','','','');
+  // category 'Sport' (12)
+  riddlesEasy[12][1]:=TRiddle.create('','','','','','');
+  riddlesEasy[12][2]:=TRiddle.create('','','','','','');
+  riddlesEasy[12][3]:=TRiddle.create('','','','','','');
+  riddlesBoss[12][1]:=TRiddle.create('','','','','','');
+  riddlesBoss[12][2]:=TRiddle.create('','','','','','');
+  riddlesBoss[12][3]:=TRiddle.create('','','','','','');
+
   bag := TBag.create;
 
   // room 1
