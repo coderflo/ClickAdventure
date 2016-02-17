@@ -1179,6 +1179,44 @@ begin
   rooms[37].east:=rooms[42];
   rooms[37].west:=rooms[36];
 
+  // room 38
+  dialogsBefore[38]:=TDialog.create;
+  SetLength(dialogLinesBefore[38],2);
+  dialogLinesBefore[38][0]:=compile('%n: Ich bin also eine Inkarnation aus Wissen… Deswegen konnte ich mich wohl durch das Lösen von Rätseln verteidigen. Und als letzter Erhabener stand ich also Kralkatorrik im Weg… Aber war er nicht schon seit langer Zeit tot?');
+  dialogLinesBefore[38][1]:='Stimme: Kralkatorrik an sich starb vor langer Zeit durch die Kriegerin Dwayna. Er riss sie mit in den Tod. Sie wurde daraufhin als Göttin des Schutzes und des Lebens wiedergeboren; Kralkatorriks Böser Geist ruhte jedoch weiterhin in der Welt und befiel verschiedene Wesen. Die Gestalt, die Ihr im Dschungel besiegt habt, waren Kralkatorriks letzte Überreste. Das Gleichgewicht in der Welt wird sich wieder einpendeln. Fragt sich nur, in welchem Jahrtausend nach unserer Zeit das geschehen wird.';
+  dialogsBefore[38].lines:=dialogLinesBefore[38];
+  rooms[38].dialogBeforeRiddle:=dialogsBefore[38];
+  rooms[38].labelNorth:='Norden: Geht die Treppe hinab.';
+  rooms[38].labelEast:='Osten: Betretet die Halle der Gefallenen.';
+  rooms[38].labelSouth:='Süden: Geht zum Eingang von Tarir.';
+  rooms[38].region:='Vergoldete Senke';
+  rooms[38].backgroundImagePath:='img\J4.jpg';
+  rooms[38].north:=rooms[39];
+  rooms[38].east:=rooms[41];
+  rooms[38].south:=rooms[37];
+
+  // room 39
+  dialogsBefore[39]:=TDialog.create;
+  SetLength(dialogLinesBefore[39],3);
+  dialogLinesBefore[39][0]:=compile('%n: Was befindet sich hier unten?');
+  dialogLinesBefore[39][1]:='Stimme: Hier lebte unsere Königin. Wir nannten sie die Luminatin. Sie war der Inbegriff der puren Weisheit. Ich kann Euch hier leider nicht folgen. Dieser Durchgang ist nur für materielle Wesen zugänglich. Ich warte oben. Geht hinein und findet die Erleuchtung.';
+  dialogLinesBefore[39][2]:=compile('%n: Mache ich.');
+  dialogsBefore[39].lines:=dialogLinesBefore[39];
+  rooms[39].dialogBeforeRiddle:=dialogsBefore[39];
+  rooms[39].labelSouth:='Süden: Geht die Treppe wieder hoch.';
+  rooms[39].labelWest:='Westen: Betretet die Thronhalle der Luminatin.';
+  rooms[39].region:='Versiegelter Durchgang';
+  rooms[39].backgroundImagePath:='img\J4.jpg';
+  rooms[39].south:=rooms[38];
+  rooms[39].west:=rooms[40];
+
+  // room 40
+  rooms[40].descriptionBeforeRiddle:=compile('%n: Dieser Raum ist prächtig geschmückt. Die Erhabenen hatten so viel Besitz. Heutzutage überhaupt nicht mehr vorstellbar. Sieht so aus, als wäre der Thron hohl. Vielleicht verbirgt sich darin etwas.');
+  rooms[40].item:=TItem.create(12,'','Ihr findet eine merkwürdige Inschrift: 01010010 01100101 01100001 01100100 01101101 01100101');
+  rooms[40].labelEast:='Osten: Verlasst den Thronsaal.';
+  rooms[40].region:='Thron der Luminatin';
+  rooms[40].backgroundImagePath:='img\J4.jpg';
+  rooms[40].east:=rooms[39];
 
 
   spawnRoom := rooms[1];
