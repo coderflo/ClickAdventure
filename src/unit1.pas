@@ -694,12 +694,12 @@ begin
   riddlesBoss[1][2]:=TRiddle.create('Probe 965: Straße steigt von 0 - 3 Längeneinheiten nach Funktion: y=0,5(x)^2. Berechne Fläche unter gegebenem Längenabschnitt.','4,5','9','3','6,5','4,5');
   riddlesBoss[1][3]:=TRiddle.create('Probe 459:  Zahl n gesucht. 2n + 0,5n + 0,25n + 1 = 100.','28','38','32','36','36');
   // category 'Politik' (2)
-  riddlesEasy[2][1]:=TRiddle.create('','','','','','');
-  riddlesEasy[2][2]:=TRiddle.create('','','','','','');
-  riddlesEasy[2][3]:=TRiddle.create('','','','','','');
-  riddlesBoss[2][1]:=TRiddle.create('','','','','','');
-  riddlesBoss[2][2]:=TRiddle.create('','','','','','');
-  riddlesBoss[2][3]:=TRiddle.create('','','','','','');
+  riddlesEasy[2][1]:=TRiddle.create('Probe 077: Auflistung Deutscher Bundeskanzler fehlerhaft. Ersten Kanzler angeben.','Angela Merkel','Konrad Adenauer','Ludwig Erhard','Theodor Heuss','Konrad Adenauer');
+  riddlesEasy[2][2]:=TRiddle.create('Probe 106: Datenspeicher defekt. Datum der nächsten Bundestagswahl angeben.','2016','2019','2017','2020','2017');
+  riddlesEasy[2][3]:=TRiddle.create('Probe 369: Schaubild vervollständigen. Nicht existierendes Organ des politischen Systems Deutschlands angeben.','Landesverfassungsgericht','Bundesrat','Bundessenat','Bundeskabinett','Bundessenat');
+  riddlesBoss[2][1]:=TRiddle.create('Probe 290: Politikforschung abgeschlossen. Anzahl aller bisherigen deutschen Bundespräsidenten angeben.','8','9','10','11','11');
+  riddlesBoss[2][2]:=TRiddle.create('Probe 150: Parteienliste aktualisiert. Partei identifizieren, die in keinem Parlament Deutschlands vertreten ist.','NPD','ALFA','DKP','FDP','DKP');
+  riddlesBoss[2][3]:=TRiddle.create('Probe 203: Listen des BIP verglichen. Land mit vergleichsweise höchstem BIP gefunden.','Japan','Russland','Frankreich','Deutschland','Japan');
   // category 'Geschichte' (3)
   riddlesEasy[3][1]:=TRiddle.create('','','','','','');
   riddlesEasy[3][2]:=TRiddle.create('','','','','','');
