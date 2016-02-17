@@ -743,11 +743,11 @@ begin
   riddlesBoss[8][2]:=TRiddle.create('Probe 506: Geologische Untersuchung zur Erdkruste. Plattentektonischen Vorgang benennen, bei dem sich eine Lithosphärenplatte unter eine andere schiebt.','Subduktion','Adaption','Subvention','Magmatisierung','Subduktion');
   riddlesBoss[8][3]:=TRiddle.create('Probe 866: Tiefseeforschung macht entdeckung. Bestimmung der tiefsten Stelle im Weltmeer.','Tongagraben','Boningraben','Yapgraben','Marianengraben','Marianengraben');
   // category 'Religion' (9)
-  riddlesEasy[9][1]:=TRiddle.create('','','','','','');
-  riddlesEasy[9][2]:=TRiddle.create('','','','','','');
-  riddlesEasy[9][3]:=TRiddle.create('','','','','','');
-  riddlesBoss[9][1]:=TRiddle.create('','','','','','');
-  riddlesBoss[9][2]:=TRiddle.create('','','','','','');
+  riddlesEasy[9][1]:=TRiddle.create('Probe 502: Religionen im Vergleich. Benennung des heiligen Buchs des Judentums.','Bibel','Koran','Tora','Pali-Kanon','Tora');
+  riddlesEasy[9][2]:=TRiddle.create('Probe 376: Neues Testament gelesen. Nennung der Anzahl Jesu Jünger.','12','11','10','13','12');
+  riddlesEasy[9][3]:=TRiddle.create('Probe 718: Weltreligionen werden eingeteilt. Anzahl der anerkannten Weltreligionen angeben.','3','4','5','2','5');
+  riddlesBoss[9][1]:=TRiddle.create('Probe 687: Untersuche Gleichnisse in den Evangelien. Evangelium ohne Gleichnisse angeben.','Matthäus','Markus','Lukas','Johannes','Johannes');
+  riddlesBoss[9][2]:=TRiddle.create('Probe 095: Religiöse Festlichkeiten. Nennung der Persönlichkeit, die an Weihnachten und Ostern den Segen "Urbi et orbi" ereilt.','Bischöfe','Papst','Priester','Kardinäle','Papst');
   riddlesBoss[9][3]:=TRiddle.create('Probe 494: Glaubensbekenntnis. Wer sitzt im Apostolischen Glaubensbekenntnis rechts von Gott?','Maria','Jesus Christus','Heiliger Geist','´Josef','Jesus Christus');
   // category 'Biologie' (10)
   riddlesEasy[10][1]:=TRiddle.create('','','','','','');
