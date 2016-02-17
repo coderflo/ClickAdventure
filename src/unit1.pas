@@ -729,12 +729,12 @@ begin
   riddlesBoss[6][2]:=TRiddle.create('Probe 218: Betriebssysteme installiert. GUI geladen. Erstes Betriebssystem mit grafischer Oberfläche nennen.','Mac OS','DOS 5.0','Linux','Windows 98','Mac OS');
   riddlesBoss[6][3]:=TRiddle.create('Probe 569: Englische Hardwarebezeichnungen untersucht. Bedeutung "mainframe" angeben.','Druckserver','Server im lokalen Netz','zentraler Großcomputer','alleinstehendes Notebook','zentraler Großcomputer');
   // category 'Literatur' (7)
-  riddlesEasy[7][1]:=TRiddle.create('','','','','','');
-  riddlesEasy[7][2]:=TRiddle.create('','','','','','');
-  riddlesEasy[7][3]:=TRiddle.create('','','','','','');
-  riddlesBoss[7][1]:=TRiddle.create('','','','','','');
-  riddlesBoss[7][2]:=TRiddle.create('','','','','','');
-  riddlesBoss[7][3]:=TRiddle.create('','','','','','');
+  riddlesEasy[7][1]:=TRiddle.create('Probe 632: Analyse von Goethes Werken abgeschlossen. Identifiziere nicht von Goethe stammendes Werk.','Werther','Faust','Prometheus','Wilhelm Tell','Wilhelm Tell');
+  riddlesEasy[7][2]:=TRiddle.create('Probe 755: Literarische Epochen im Vergleich. Jüngste der 4 angegebenen Epochen angeben.','Klassik','Naturalismus','Aufklärung','Sturm und Drang','Naturalismus');
+  riddlesEasy[7][3]:=TRiddle.create('Probe 488: Betrachtung der literarischen Großgattungen. Nicht-literarische Großgattung benennen.','Romantik','Lyrik','Dramatik','Epik','Romantik');
+  riddlesBoss[7][1]:=TRiddle.create('Probe 913: Untersuchung der Todesursache Heinrichs vin Kleist. Todesursache angeben.','Drogenkonsum','Krankheit','Mord','Suizid','Suizid');
+  riddlesBoss[7][2]:=TRiddle.create('Probe 082: Moderne Literatur. Ort der größten deutschen Buchmesse (neben Leipzig) angeben.','Dresden','Köln','Frankfurt','Hamburg','Frankfurt');
+  riddlesBoss[7][3]:=TRiddle.create('Probe 858: Klassische Dramen. Bennant werden soll die Gestalt, in der Mephiso Faust erscheint.','Pferd','Katze','Rabe','Pudel','Pudel');
   // category 'Erdkunde' (8)
   riddlesEasy[8][1]:=TRiddle.create('','','','','','');
   riddlesEasy[8][2]:=TRiddle.create('','','','','','');
