@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
-  ExtCtrls, Unit2, mmsystem;
+  ExtCtrls, Unit2, mmsystem, LCLType;
 
 type
 
@@ -655,6 +655,11 @@ var
 
   room25requiredItems:array of integer;
 
+  riddlesEasy: array[1..12] of array[1..3] of TRiddle;
+  riddlesBoss: array[1..12] of array[1..3] of TRiddle;
+
+  category1,category2,category3:integer;
+
 begin
 
   for i := 0 to 43 do
@@ -663,6 +668,12 @@ begin
   end;
 
   playerName:=InputBox('Vorbereitung','Gib einen Namen ein','Peter');
+
+  category1 := QuestionDlg('Vorbereitung','',mtCustom,[1,'', 2, '', 'IsDefault', 3, '', 4, ''],'');
+  category2 := QuestionDlg('Vorbereitung','',mtCustom,[5,'', 6, '', 'IsDefault', 7, '', 8, ''],'');
+  category3 := QuestionDlg('Vorbereitung','',mtCustom,[9,'', 10, '', 'IsDefault', 11, '', 12, ''],'');
+
+  ShowMessage(IntToStr(category1));
 
   bag := TBag.create;
 
