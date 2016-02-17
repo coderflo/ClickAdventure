@@ -1218,6 +1218,56 @@ begin
   rooms[40].backgroundImagePath:='img\J4.jpg';
   rooms[40].east:=rooms[39];
 
+  // room 41
+  dialogsBefore[41]:=TDialog.create;
+  SetLength(dialogLinesBefore[41],3);
+  dialogLinesBefore[41][0]:=compile('%n: An den Wänden hier sind überall Schriften.');
+  dialogLinesBefore[41][1]:='Stimme: Das hier ist die Halle der Gefallenen. Hier verewigen wir jeden Erhabenen, der gelebt hat. Wie Ihr seht seid Ihr ganz unten im Stammbaum. Schaut mal, wer hier oben steht.';
+  dialogLinesBefore[41][2]:=compile('%n: Mein Vater… Lord-%n. Er war also auch hier…');
+  dialogsBefore[41].lines:=dialogLinesBefore[41];
+  rooms[41].dialogBeforeRiddle:=dialogsBefore[41];
+  rooms[41].labelSouth:='Süden: Betretet die zentrale Kammer.';
+  rooms[41].labelWest:='Westen: Geht in die vergoldete Senke.';
+  rooms[41].region:='Halle der Gefallenen';
+  rooms[41].backgroundImagePath:='img\J4.jpg';
+  rooms[41].south:=rooms[42];
+  rooms[41].west:=rooms[38];
+
+  // room 42
+  dialogsBefore[42]:=TDialog.create;
+  SetLength(dialogLinesBefore[42],4);
+  dialogLinesBefore[42][0]:=compile('%n: Stimme, sagt mir, was ist meine Bestimmung.');
+  dialogLinesBefore[42][1]:='Stimme: Die habt Ihr bereits erfüllt. Kralkatorrik endgültig zu vernichten und das Gleichgewicht wiederherzustellen. Dafür seid ihr auf die Welt gekommen und dafür geht ihr auch wieder.';
+  dialogLinesBefore[42][2]:=compile('%n: Heißt das, ich muss… jetzt… Abschied nehmen?');
+  dialogLinesBefore[42][3]:='Stimme: Das Schicksal schreibt es vor. Kralkatorrik hat Narben der Finsternis bei Euch hinterlassen. Sie dürfen sich nicht erneut entflammen. Deswegen müsst Ihr auch die Prüfung ablegen. Folgt mir in den letzten Raum Tarirs. Wir werden das Ritual gemeinsam Ablegen und den Erhabenen ihre verdiente Ruhe gewähren.';
+  dialogsBefore[42].lines:=dialogLinesBefore[42];
+  rooms[42].dialogBeforeRiddle:=dialogsBefore[42];
+  rooms[42].labelNorth:='Norden: Betretet die Halle der Gefallenen.';
+  rooms[42].labelSouth:='Süden: Legt die Prüfung der Erhabenen ab.';
+  rooms[42].labelWest:='Westen: Geht zurück zum Eingang von Tarir.';
+  rooms[42].region:='Zentrale Kammer';
+  rooms[42].backgroundImagePath:='img\J4.jpg';
+  rooms[42].south:=rooms[43];
+
+  // room 43
+  dialogsBefore[43]:=TDialog.create;
+  SetLength(dialogLinesBefore[43],2);
+  dialogLinesBefore[43][0]:=compile('Stimme: Hier ist sie. Die Prüfungsstätte. Ihr werdet eine Legende, %n.');
+  dialogLinesBefore[43][1]:=compile('%n: Ich werde es tun. Beginnt.');
+  dialogsBefore[43].lines:=dialogLinesBefore[43];
+  rooms[43].dialogBeforeRiddle:=dialogsBefore[43];
+  rooms[43].backgroundMusicPath:='music\Tarir.wav';
+  // TODO: add riddle
+  dialogsAfter[43]:=TDialog.create;
+  SetLength(dialogLinesAfter[43],3);
+  dialogLinesAfter[43][0]:=compile('%n: Ich habe mein Werk auf dieser Welt erfüllt. Ich muss gehen.');
+  dialogLinesAfter[43][1]:=compile('Stimme: Nehmt Abschied. Eure Nachfolger werden in Eurem Frieden leben können. Habt Dank, %n.');
+  dialogLinesAfter[43][2]:='Ende.';
+  dialogsAfter[43].lines:=dialogLinesAfter[43];
+  rooms[43].dialogAfterRiddle:=dialogsAfter[43];
+  rooms[43].region:='Prüfung der Erhabenen';
+  rooms[43].backgroundImagePath:='img\J4.jpg';
+
 
   spawnRoom := rooms[1];
   startAdventure;
