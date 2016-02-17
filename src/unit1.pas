@@ -80,6 +80,15 @@ type
   end;
 
 type
+  { TRiddle }
+  TRiddle = class
+    question:string;
+    optionOne,optionTwo,optionThree,optionFour:string;
+    answer:string;
+    constructor create(q,o1,o2,o3,o4,a:string);
+  end;
+
+type
   { TRoom }
   TRoom = class
 
@@ -526,6 +535,17 @@ begin
     afterDialogAfterRiddle;
   end;
 
+end;
+
+{ TRiddle }
+constructor TRiddle.create(q,o1,o2,o3,o4,a:string);
+begin
+  question:=q;
+  optionOne:=o1;
+  optionTwo:=o2;
+  optionThree:=o3;
+  optionFour:=o4;
+  answer:=a;
 end;
 
 { TClickAdventure }
