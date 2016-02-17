@@ -642,7 +642,7 @@ begin
     rooms[i] := TRoom.create; // create all rooms with default values
   end;
 
-  playerName:='Player';
+  playerName:=InputBox('Vorbereitung','Gib einen Namen ein','Peter');
 
   bag := TBag.create;
 
