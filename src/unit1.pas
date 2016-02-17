@@ -708,12 +708,12 @@ begin
   riddlesBoss[3][2]:=TRiddle.create('Probe 808: Zeiteingrenzungsmodul beschädigt. Jahr des Röhm-Putsches gesucht.','1933','1930','1936','1934','1934');
   riddlesBoss[3][3]:=TRiddle.create('Probe 133: Geschichte Deutschlands untersucht. Name des ersten deutschen Kaisers identifizieren.','Otto','Wilhelm','Karl','Leopold','Wilhelm');
   // category 'Musik/Kunst' (4)
-  riddlesEasy[4][1]:=TRiddle.create('','','','','','');
-  riddlesEasy[4][2]:=TRiddle.create('','','','','','');
-  riddlesEasy[4][3]:=TRiddle.create('','','','','','');
-  riddlesBoss[4][1]:=TRiddle.create('','','','','','');
-  riddlesBoss[4][2]:=TRiddle.create('','','','','','');
-  riddlesBoss[4][3]:=TRiddle.create('','','','','','');
+  riddlesEasy[4][1]:=TRiddle.create('Probe 769: Vergleich der Notenschlüssel. Gesucht: Note im Bassschlüssel, die im Violinenschlüssel auf dem kleinen d liegt.','c','d','e','f','f');
+  riddlesEasy[4][2]:=TRiddle.create('Probe 694: Epochen im Vergleich. Älteste der 4 angegebenen Kunstepochen angeben.','Barock','Gotik','Romantik','Impressionismus','Gotik');
+  riddlesEasy[4][3]:=TRiddle.create('Probe 464: Kunstgeschichte erforscht. Jüngsten der angegebenen Künstler identifizieren.','Hundertwasser','Dali','Matisse','Picasso','Hundertwasser');
+  riddlesBoss[4][1]:=TRiddle.create('Probe 110: Musikimpressionen alter Bands. Suche Band, die am frühsten gegründet wurde.','Beatles','Simon & Garfunkel','Rolling Stones','Genesis','Simon & Garfunkel');
+  riddlesBoss[4][2]:=TRiddle.create('Probe 174: Besuch des Vatikans. Benennung des Künstlers der Deckengemälde der Sixtinischen Kapelle.','Dürer','Botticelli','Michelangelo','Rembrandt','Michelangelo');
+  riddlesBoss[4][3]:=TRiddle.create('Probe 065: Goldene Schalplatten eingelesen. Erkennung des meist ausgezeichneten Interpreten.','Elvis Presley','Pink Floyd','Michael Jackson','Beatles','Beatles');
   // category 'Physik' (5)
   riddlesEasy[5][1]:=TRiddle.create('','','','','','');
   riddlesEasy[5][2]:=TRiddle.create('','','','','','');
