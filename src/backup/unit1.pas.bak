@@ -277,7 +277,7 @@ begin
 
       if(room.deathMessage <> '') then
       begin
-        ShowMessage(room.deathMessage);
+        Application.MessageBox(pchar(room.deathMessage)), 'Prüfung der Erhabenen');
       end;
 
       if(room.respawn <> nil) then
@@ -605,7 +605,7 @@ begin
   else
   begin
 
-    ShowMessage('Die Macht der Erhabenen schlägt auf dich zurück. Du bist tot! (Du hast das Rätsel nicht richtig beantwortet)');
+    Application.MessageBox('Die Macht der Erhabenen schlägt auf dich zurück. Du bist tot! (Du hast das Rätsel nicht richtig beantwortet)','Prüfung der Erhabenen');
 
     if(currentRoom.respawn <> nil) then
     begin
@@ -1446,16 +1446,20 @@ begin
   rooms[49].applyRiddle(riddlesEasy[category3][3]);
   rooms[49].labelSouth:='Nächstes Rätsel';
   rooms[49].south:=rooms[50];
+  rooms[49].descriptionBeforeRiddle:=compile('Stimme: Hier ist sie. Die Prüfungsstätte. Ihr werdet eine Legende, %n. %n: Ich werde es tun. Beginnt.');
   // room 50 (43)
   rooms[50].applyRiddle(riddlesBoss[category1][3]);
   rooms[50].labelSouth:='Nächstes Rätsel';
   rooms[50].south:=rooms[51];
+  rooms[50].descriptionBeforeRiddle:=compile('Stimme: Hier ist sie. Die Prüfungsstätte. Ihr werdet eine Legende, %n. %n: Ich werde es tun. Beginnt.');
   // room 51 (43)
   rooms[51].applyRiddle(riddlesBoss[category2][3]);
   rooms[51].labelSouth:='Nächstes Rätsel';
   rooms[51].south:=rooms[52];
+  rooms[51].descriptionBeforeRiddle:=compile('Stimme: Hier ist sie. Die Prüfungsstätte. Ihr werdet eine Legende, %n. %n: Ich werde es tun. Beginnt.');
   // room 52 (43)
   rooms[52].applyRiddle(riddlesBoss[category3][3]);
+  rooms[52].descriptionBeforeRiddle:=compile('Stimme: Hier ist sie. Die Prüfungsstätte. Ihr werdet eine Legende, %n. %n: Ich werde es tun. Beginnt.');
   dialogsAfter[52]:=TDialog.create;
   SetLength(dialogLinesAfter[52],3);
   dialogLinesAfter[52][0]:=compile('%n: Ich habe mein Werk auf dieser Welt erfüllt. Ich muss gehen.');

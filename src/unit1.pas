@@ -277,7 +277,7 @@ begin
 
       if(room.deathMessage <> '') then
       begin
-        ShowMessage(room.deathMessage);
+        Application.MessageBox(pchar(room.deathMessage), 'Prüfung der Erhabenen');
       end;
 
       if(room.respawn <> nil) then
@@ -605,7 +605,7 @@ begin
   else
   begin
 
-    ShowMessage('Die Macht der Erhabenen schlägt auf dich zurück. Du bist tot! (Du hast das Rätsel nicht richtig beantwortet)');
+    Application.MessageBox('Die Macht der Erhabenen schlägt auf dich zurück. Du bist tot! (Du hast das Rätsel nicht richtig beantwortet)','Prüfung der Erhabenen');
 
     if(currentRoom.respawn <> nil) then
     begin

@@ -41894,7 +41894,7 @@ object ClickAdventure: TClickAdventure
   object labelVersion: TLabel
     Left = 1172
     Height = 22
-    Top = 4
+    Top = 8
     Width = 97
     Alignment = taRightJustify
     Caption = 'BETA V.0.1'
