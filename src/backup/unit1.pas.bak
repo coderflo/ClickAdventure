@@ -1462,13 +1462,21 @@ begin
   begin
     rooms[i].respawn:=rooms[1];
   end;
+  rooms[44].respawn:=rooms[1];
   for i := 14 to 29 do
   begin
     rooms[i].respawn:=rooms[14];
   end;
-  for i := 30 to 43 do
+  rooms[45].respawn:=rooms[14];
+  for i := 30 to 34 do
   begin
     rooms[i].respawn:=rooms[30];
+  end;
+  rooms[46].respawn:=rooms[30];
+  rooms[47].respawn:=rooms[30];
+  for i := 35 to 43 do
+  begin
+    rooms[i].respawn:=rooms[35];
   end;
 
   spawnRoom := rooms[1];
