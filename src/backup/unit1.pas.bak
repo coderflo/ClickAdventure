@@ -923,6 +923,7 @@ begin
   rooms[10].backgroundImagePath:='img\S4B.jpg';
   // room 44 (10)
   rooms[44].applyRiddle(riddlesBoss[category1][1]);
+  rooms[44].descriptionBeforeRiddle:=compile('Svaard: Tretet vor. %n: Ich habe Issormir geschlachtet. Hier ist sein Kopf. Svaard: Schweigt. Die Macht der Erhabenen glüht in Euch. Ihr müsst sterben. Für Kralkatorrik.');
   dialogsAfter[44]:=TDialog.create;
   SetLength(dialogLinesAfter[44],3);
   dialogLinesAfter[44][0]:=compile('%n: Was ist passiert? Ich wurde angegriffen, sein Schwert traf mich, aber ich konnte ihn irgendwie besiegen. Es war dasselbe Gefühl, wie bei Issormir.');
@@ -1163,6 +1164,7 @@ begin
   rooms[24].requiredItem:=9;
   // room 45 (24)
   rooms[45].applyRiddle(riddlesBoss[category3][1]);
+  rooms[45].descriptionBeforeRiddle:=compile('%n: Das Totem ist in Flammen aufgegangen. Doch nichts ist passiert. Ich sollte besser hier verschwinden bevor… Gaheron Baelfeuer: Ich kenne Euch nicht, Eindringling. Doch die anderen, die es versucht haben, habt Ihr gerade verbrannt auf dem Boden liegen gesehen. Mir egal. Eine Mahlzeit mehr. %n: Wartet! Ich will Euch nichts tun, Gaheron! Ich habe nur ein paar Fragen. Was könnt Ihr mir über die Erhabenen und Kralkatorrik sagen? Ist das alles nur ein Gerücht? Gaheron Baelfeuer: Die Erhabenen müssen vernichtet werden. Kralkatorriks Diener werden sein Werk vollbringen. %n: (Mein Kopf tut höllisch weh, als würde jemand versuchen, darauf zuzugreifen!) Gaheron Baelfeuer: Erhabener, hier ist die Sackgasse Eurer Reise!');
   rooms[45].backgroundMusicPathAfterRiddle:='music\LavaAGaheron.wav';
   dialogsAfter[45]:=TDialog.create;
   SetLength(dialogLinesAfter[45],1);
@@ -1289,6 +1291,7 @@ begin
   rooms[46].applyRiddle(riddlesBoss[category2][2]);
   rooms[46].labelSouth:='Nächstes Rätsel';
   rooms[46].south:=rooms[47];
+  rooms[46].descriptionBeforeRiddle:=compile('%n: Zeigt Euch! Wer seid ihr?! KRALKATORRIK: ICH BIN ÜBERALL! IHR KÖNNT MICH NICHT BEZWINGEN! IHR ENDET GENAU SO, WIE ES DIE ANDEREN ERHABENEN GETAN HABEN! %n: Ich bin kein Erhabener! Lasst mich gehen! Warum bin ich hier?! KRALKATORRIK: IHR HATTET DIE MACHT, MEINE CHAMPIONS SVAARD UND GAHERON ZU BESIEGEN. NUR EIN ERHABENER BESITZT DIESE MACHT. LASST MICH EUCH AUS DEM WEG RÄUMEN. %n: (Es hat keinen Sinn. Ich muss wohl kämpfen. Bringt es zu Ende! Gaherons Zepter wird mir helfen.) ');
   // room 47 (34)
   rooms[47].applyRiddle(riddlesBoss[category3][2]);
   dialogsAfter[47]:=TDialog.create;
@@ -1304,6 +1307,7 @@ begin
   rooms[47].backgroundImagePath:='img\J2.jpg';
   rooms[47].backgroundMusicPathAfterRiddle:='music\JungleAKralkatorrik.wav';
   rooms[47].north:=rooms[33];
+  rooms[47].descriptionBeforeRiddle:=compile('%n: Zeigt Euch! Wer seid ihr?! KRALKATORRIK: ICH BIN ÜBERALL! IHR KÖNNT MICH NICHT BEZWINGEN! IHR ENDET GENAU SO, WIE ES DIE ANDEREN ERHABENEN GETAN HABEN! %n: Ich bin kein Erhabener! Lasst mich gehen! Warum bin ich hier?! KRALKATORRIK: IHR HATTET DIE MACHT, MEINE CHAMPIONS SVAARD UND GAHERON ZU BESIEGEN. NUR EIN ERHABENER BESITZT DIESE MACHT. LASST MICH EUCH AUS DEM WEG RÄUMEN. %n: (Es hat keinen Sinn. Ich muss wohl kämpfen. Bringt es zu Ende! Gaherons Zepter wird mir helfen.) ');
 
   // room 35
   rooms[35].backgroundMusicPath:='music\Jungle2.wav';
@@ -1437,6 +1441,7 @@ begin
   rooms[48].applyRiddle(riddlesEasy[category2][3]);
   rooms[48].labelSouth:='Nächstes Rätsel';
   rooms[48].south:=rooms[49];
+  rooms[48].descriptionBeforeRiddle:=compile('Stimme: Hier ist sie. Die Prüfungsstätte. Ihr werdet eine Legende, %n. %n: Ich werde es tun. Beginnt.');
   // room 49 (43)
   rooms[49].applyRiddle(riddlesEasy[category3][3]);
   rooms[49].labelSouth:='Nächstes Rätsel';
