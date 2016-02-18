@@ -1272,7 +1272,6 @@ begin
   rooms[46].labelSouth:='Nächstes Rätsel';
   rooms[46].south:=rooms[47];
   // room 47 (34)
-  // TODO: stop music after riddle
   rooms[47].applyRiddle(riddlesBoss[category3][2]);
   dialogsAfter[47]:=TDialog.create;
   SetLength(dialogLinesAfter[47],3);

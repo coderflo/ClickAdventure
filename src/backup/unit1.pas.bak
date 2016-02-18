@@ -1285,7 +1285,7 @@ begin
   rooms[47].labelNorth:='Norden: Domäne des Drachen';
   rooms[47].region:='Kralkatorriks Vermächtnis';
   rooms[47].backgroundImagePath:='img\J2.jpg';
-  rooms[47].backgroundMusicPathAfterRiddle:='music\ JungleAKralkatorrik.wav';
+  rooms[47].backgroundMusicPathAfterRiddle:='music\JungleAKralkatorrik.wav';
   rooms[47].north:=rooms[33];
 
   // room 35
