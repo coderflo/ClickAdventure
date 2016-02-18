@@ -32156,6 +32156,7 @@ object ClickAdventure: TClickAdventure
     Lines.Strings = (
       'riddleText'
     )
+    ParentFont = False
     ReadOnly = True
     TabOrder = 8
   end
@@ -32168,6 +32169,7 @@ object ClickAdventure: TClickAdventure
     Lines.Strings = (
       'roomDescription'
     )
+    ParentFont = False
     TabOrder = 9
   end
   object buttonNorth: TButton
