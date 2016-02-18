@@ -1,7 +1,7 @@
 object ClickAdventure: TClickAdventure
-  Left = 306
+  Left = 337
   Height = 720
-  Top = 123
+  Top = 211
   Width = 1276
   BorderStyle = bsSingle
   Caption = 'Prüfung der Erhabenen'
