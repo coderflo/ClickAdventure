@@ -604,7 +604,16 @@ begin
   end
   else
   begin
-    changeRoom(spawnRoom);
+
+    if(currentRoom.respawn <> nil) then
+    begin
+      changeRoom(currentRoom.respawn);
+    end
+    else
+    begin
+      changeRoom(spawnRoom);
+    end;
+
   end;
 
 end;
