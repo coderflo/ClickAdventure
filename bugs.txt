@@ -3,11 +3,12 @@ Gaheron ohne Item betretbar
 Musik wird immer wieder getriggert beim Betreten eines Raums
 Dialogtext nicht mehr da, beim erneuten Betreten des Raumes
 Boss text muss im nächsten boss raum stehen bleiben -> dialogtext
-Charakter je nach raum einblenden
-Respawn-Messages + Points
+Respawn-Points
 
 4 Fragmente zusammenfügen zu einem Stein -> erst möglich, zu passieren *fixed
 Issormir Dialog After = Dialog vor *fixed: Issormir Dialog danach wird angezeigt
 Svaard Battle Music nicht abgespielt *fixed: Svaard Music wird abgespielt
 Boss-Bilder Kralkatorrik nicht eingeblendet *fixed
 Room 25-26 Osten statt Westen *fixed
+Charakter je nach raum einblenden *fixed
+Respawn-Messages *fixed
