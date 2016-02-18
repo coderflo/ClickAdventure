@@ -5,8 +5,8 @@ object ClickAdventure: TClickAdventure
   Width = 1276
   BorderStyle = bsSingle
   Caption = 'Prüfung der Erhabenen'
-  ClientHeight = 0
-  ClientWidth = 0
+  ClientHeight = 720
+  ClientWidth = 1276
   Font.CharSet = ANSI_CHARSET
   Font.Height = -13
   Font.Name = 'Imperator'
@@ -41910,12 +41910,12 @@ object ClickAdventure: TClickAdventure
   object labelRegion: TLabel
     AnchorSideLeft.Side = asrBottom
     AnchorSideTop.Side = asrBottom
-    Left = 376
+    Left = 488
     Height = 42
     Top = 4
-    Width = 527
+    Width = 278
     Alignment = taCenter
-    Caption = 'GEBIETSNAME - MAPNAME'
+    Caption = 'GEBIETSNAME'
     Font.CharSet = ANSI_CHARSET
     Font.Color = clWhite
     Font.Height = -37

@@ -900,7 +900,7 @@ begin
   dialogLinesBefore[10][1]:=compile('%n: Ich habe Issormir geschlachtet. Hier ist sein Kopf.');
   dialogLinesBefore[10][2]:='Svaard: Schweigt. Die Macht der Erhabenen glüht in Euch. Ihr müsst sterben. Für Kralkatorrik.';
   dialogsBefore[10].lines:=dialogLinesBefore[10];
-  rooms[44].backgroundMusicPath:='music\Svaard.wav';
+  rooms[10].backgroundMusicPath:='music\Svaard.wav';
   rooms[10].dialogBeforeRiddle:=dialogsBefore[10];
   rooms[10].applyRiddle(riddlesEasy[category3][1]);
   rooms[10].labelSouth:='Nächstes Rätsel';
@@ -944,7 +944,7 @@ begin
   dialogsAfter[12]:=TDialog.create;
   SetLength(dialogLinesAfter[12],1);
   dialogLinesAfter[12][0]:=compile('%n: Ich bin nicht tot? Wie habe ich das geschafft? Ich sah Zeichen, logisch anzuordnen. Hängt das mit den ganzen Geschehnissen zusammen? Naja… Issormir ist zumindest enthauptet. Ich nehme besser seinen Kopf mit.');
-  dialogsAfter[12].lines:=dialogLinesBefore[12];
+  dialogsAfter[12].lines:=dialogLinesAfter[12];
   rooms[12].dialogAfterRiddle:=dialogsAfter[12];
   rooms[12].item:=TItem.create(3,'Kopf Issormirs','Ihr erhaltet den Kopf Issormirs. Er sieht sehr wertvoll aus.');
   rooms[12].labelNorth:='Norden: Abgrund der Verzweifelung';
@@ -1170,7 +1170,7 @@ begin
   room25requiredItems[3]:=7;
   rooms[25].requiredItemArray:=room25requiredItems;
   rooms[25].south:=rooms[22];
-  rooms[25].east:=rooms[26];
+  rooms[25].west:=rooms[26];
 
   // room 26
   rooms[26].descriptionBeforeRiddle:=compile('%n: Der Weg spaltet sich schon wieder. Ich glaube, im Norden kann ich den Ausgang aus dieser Hölle hier sehen. Im Westen geht es zwar auch Bergauf, aber wohin genau, weiß ich nicht.');
@@ -1225,7 +1225,7 @@ begin
   rooms[31].labelSouth:='Süden: Exhumierte Anhöhe';
   rooms[31].labelWest:='Westen: Dornengeflecht';
   rooms[31].region:='Rankenwand';
-  rooms[31].backgroundImagePath:='img\L1.jpg';
+  rooms[31].backgroundImagePath:='img\J1.jpg';
   rooms[31].east:=rooms[33];
   rooms[31].south:=rooms[32];
   rooms[31].west:=rooms[30];
@@ -1235,7 +1235,7 @@ begin
   rooms[32].item:=TItem.create(10,'Machete','Ihr nehmt die Machete eines toten Explorators an Euch. Sie sollte stark genug sein, um die restlichen Ranken zu zerschneiden.');
   rooms[32].labelNorth:='Norden: Rankenwand';
   rooms[32].region:='Exhumierte Anhöhe';
-  rooms[32].backgroundImagePath:='img\L1.jpg';
+  rooms[32].backgroundImagePath:='img\J1.jpg';
   rooms[32].requiredItem:=11;
   rooms[32].north:=rooms[31];
 
@@ -1244,7 +1244,7 @@ begin
   rooms[33].labelSouth:='Süden: Kralkatorriks Vermächtnis';
   rooms[33].labelWest:='Westen: Rankenwand';
   rooms[33].region:='Domäne des Drachen';
-  rooms[33].backgroundImagePath:='img\L1.jpg';
+  rooms[33].backgroundImagePath:='img\J1.jpg';
   rooms[33].south:=rooms[34];
   rooms[33].west:=rooms[31];
 
@@ -1263,6 +1263,7 @@ begin
   dialogLinesBefore[34][4]:=compile('%n: (Es hat keinen Sinn. Ich muss wohl kämpfen. Bringt es zu Ende! Gaherons Zepter wird mir helfen.)');
   dialogsBefore[34].lines:=dialogLinesBefore[34];
   rooms[34].dialogBeforeRiddle:=dialogsBefore[34];
+  rooms[33].backgroundImagePath:='img\J2.jpg';
   rooms[34].applyRiddle(riddlesBoss[category1][2]);
   rooms[34].labelSouth:='Nächstes Rätsel';
   rooms[34].south:=rooms[46];
