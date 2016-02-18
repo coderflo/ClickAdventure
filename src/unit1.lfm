@@ -32152,9 +32152,11 @@ object ClickAdventure: TClickAdventure
     Height = 137
     Top = 448
     Width = 396
+    Enabled = False
     Lines.Strings = (
       'riddleText'
     )
+    ParentFont = False
     ReadOnly = True
     TabOrder = 8
   end
@@ -32163,9 +32165,11 @@ object ClickAdventure: TClickAdventure
     Height = 376
     Top = 72
     Width = 396
+    Enabled = False
     Lines.Strings = (
       'roomDescription'
     )
+    ParentFont = False
     TabOrder = 9
   end
   object buttonNorth: TButton
