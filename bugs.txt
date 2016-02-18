@@ -1,4 +1,3 @@
-
 4 Fragmente zusammenfügen zu einem Stein -> erst möglich, zu passieren *fixed
 Issormir Dialog After = Dialog vor *fixed: Issormir Dialog danach wird angezeigt
 Svaard Battle Music nicht abgespielt *fixed: Svaard Music wird abgespielt
