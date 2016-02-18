@@ -5,8 +5,8 @@ object ClickAdventure: TClickAdventure
   Width = 1276
   BorderStyle = bsSingle
   Caption = 'Prüfung der Erhabenen'
-  ClientHeight = 720
-  ClientWidth = 1276
+  ClientHeight = 0
+  ClientWidth = 0
   Font.CharSet = ANSI_CHARSET
   Font.Height = -13
   Font.Name = 'Imperator'
@@ -32159,6 +32159,11 @@ object ClickAdventure: TClickAdventure
     Top = 448
     Width = 396
     Enabled = False
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -13
+    Font.Name = 'Imperator'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
     Lines.Strings = (
       'riddleText'
     )
@@ -32172,6 +32177,11 @@ object ClickAdventure: TClickAdventure
     Top = 72
     Width = 396
     Enabled = False
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -13
+    Font.Name = 'Imperator'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
     Lines.Strings = (
       'roomDescription'
     )
@@ -41874,10 +41884,11 @@ object ClickAdventure: TClickAdventure
     Proportional = True
   end
   object labelVersion: TLabel
-    Left = 1161
+    Left = 1172
     Height = 22
     Top = 4
     Width = 100
+    Alignment = taRightJustify
     Caption = 'BETA V.0.1'
     Font.CharSet = ANSI_CHARSET
     Font.Color = clWhite

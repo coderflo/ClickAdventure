@@ -687,7 +687,7 @@ begin
     rooms[i] := TRoom.create; // create all rooms with default values
   end;
 
-  playerName:=InputBox('Vorbereitung','Gib einen Namen ein','Peter');
+  playerName:=InputBox('Vorbereitung','Gib einen Namen für deinen Charakter ein','Name');
 
   category1 := QuestionDlg('Vorbereitung','Am schnellsten löse ich landesweite Probleme…',mtCustom,[1,'… durch komplexe mathematische Berechnungen und Formeln. (Mathematik)', 2, '… indem ich das politische Geschehen im Land erforsche und partizipiere. (Politik)', 'IsDefault', 3, '… durch Forschungen in der Geschichte des Landes und Rekonstruierung. (Geschichte)', 4, '… durch Bereicherung der Kultur mit Musik und Kunst. (Musik/ Kunst)'],'');
   category2 := QuestionDlg('Vorbereitung','Eine bevorstehende Katastrophe sehe ich voraus, indem ich…',mtCustom,[5,'… Fehlkonstellationen der Sterne und Anomalien in den physikalischen Gesetzen feststelle. (Physik)', 6, '… die Fehlfunktion der Server sowie der Soft- und Hardware erkenne. (Informatik)', 'IsDefault', 7, '… die Ratschläge und Prognosen der Literatur aller Epochen in einen logischen Kontext bringe. (Literatur)', 8, '… besonders die Tektonik und das Wetter untersuche und Unregelmäßigkeiten feststelle. (Erdkunde)'],'');
@@ -1141,6 +1141,7 @@ begin
   rooms[24].dialogBeforeRiddle:=dialogsBefore[24];
   rooms[24].applyRiddle(riddlesBoss[category2][1]);
   rooms[24].labelEast:='Nächstes Rätsel';
+  rooms[24].backgroundImagePath:='img\L4.jpg';
   rooms[24].east:=rooms[45];
   // room 45 (24)
   rooms[45].applyRiddle(riddlesBoss[category3][1]);
