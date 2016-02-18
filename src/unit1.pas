@@ -916,6 +916,7 @@ begin
   rooms[10].applyRiddle(riddlesEasy[category3][1]);
   rooms[10].labelSouth:='Nächstes Rätsel';
   rooms[10].south:=rooms[44];
+  rooms[10].backgroundImagePath:='img\S4B.jpg';
   // room 44 (10)
   rooms[44].applyRiddle(riddlesBoss[category1][1]);
   dialogsAfter[44]:=TDialog.create;
@@ -928,7 +929,7 @@ begin
   rooms[44].item:=TItem.create(2,'Verdorbenes Frostsiegel','Ihr findet das verdorbene Frostsiegel Svaards. Man sagt, sein Besitzer könne alles zu Eis erstarren lassen.');
   rooms[44].labelNorth:='Norden: Gletschergraben';
   rooms[44].region:='Svaards Eisschollenpalast';
-  rooms[44].backgroundImagePath:='img\S4.jpg';
+  rooms[44].backgroundImagePath:='img\S4B.jpg';
   rooms[44].backgroundMusicPathAfterRiddle:='music\SnowASvaard.wav';
   rooms[44].north:=rooms[9];
 
@@ -1415,6 +1416,7 @@ begin
   rooms[42].south:=rooms[43];
 
   // room 43
+  rooms[43].backgroundImagePath:='img\J4.jpg';
   dialogsBefore[43]:=TDialog.create;
   SetLength(dialogLinesBefore[43],2);
   dialogLinesBefore[43][0]:=compile('Stimme: Hier ist sie. Die Prüfungsstätte. Ihr werdet eine Legende, %n.');
