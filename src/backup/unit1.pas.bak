@@ -1155,6 +1155,7 @@ begin
   rooms[24].labelEast:='Nächstes Rätsel';
   rooms[24].backgroundImagePath:='img\L4.jpg';
   rooms[24].east:=rooms[45];
+  rooms[24].requiredItem:=9;
   // room 45 (24)
   rooms[45].applyRiddle(riddlesBoss[category3][1]);
   rooms[45].backgroundMusicPathAfterRiddle:='music\LavaAGaheron.wav';
@@ -1416,6 +1417,7 @@ begin
   rooms[42].south:=rooms[43];
 
   // room 43
+  rooms[43].backgroundImagePath:='img\J4.jpg';
   dialogsBefore[43]:=TDialog.create;
   SetLength(dialogLinesBefore[43],2);
   dialogLinesBefore[43][0]:=compile('Stimme: Hier ist sie. Die Prüfungsstätte. Ihr werdet eine Legende, %n.');

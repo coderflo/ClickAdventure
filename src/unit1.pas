@@ -981,6 +981,7 @@ begin
   rooms[14].labelWest:='Westen: Erdrutsch-Tiefen';
   rooms[14].region:='Dämonenschlund';
   rooms[14].backgroundImagePath:='img\L3.jpg';
+  rooms[14].requiredItem:=2;
   rooms[14].north:=rooms[16];
   rooms[14].south:=rooms[15];
   rooms[14].west:=rooms[13];
@@ -1155,6 +1156,7 @@ begin
   rooms[24].labelEast:='Nächstes Rätsel';
   rooms[24].backgroundImagePath:='img\L4.jpg';
   rooms[24].east:=rooms[45];
+  rooms[24].requiredItem:=9;
   // room 45 (24)
   rooms[45].applyRiddle(riddlesBoss[category3][1]);
   rooms[45].backgroundMusicPathAfterRiddle:='music\LavaAGaheron.wav';

@@ -1,5 +1,3 @@
-Mahlstrom ohne Svaards Item betretbar
-Gaheron ohne Item betretbar
 Musik wird immer wieder getriggert beim Betreten eines Raums
 Dialogtext nicht mehr da, beim erneuten Betreten des Raumes
 Boss text muss im nächsten boss raum stehen bleiben -> dialogtext
@@ -12,3 +10,5 @@ Boss-Bilder Kralkatorrik nicht eingeblendet *fixed
 Room 25-26 Osten statt Westen *fixed
 Charakter je nach raum einblenden *fixed
 Respawn-Messages *fixed
+Gaheron ohne Item betretbar *fixed
+Mahlstrom ohne Svaards Item betretbar *fixed
