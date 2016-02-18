@@ -1496,6 +1496,15 @@ begin
   begin
     imgAppend:='.F.jpg';
   end;
+  for i := 1 to 52 do
+  begin
+
+    if(rooms[i].backgroundImagePath <> '') then
+    begin
+      rooms[i].backgroundImagePath:=rooms[i].backgroundImagePath+imgAppend;
+    end;
+
+  end;
 
   spawnRoom := rooms[1];
   startAdventure;
