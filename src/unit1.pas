@@ -605,6 +605,8 @@ begin
   else
   begin
 
+    ShowMessage('Die Macht der Erhabenen schlägt auf dich zurück. Du bist tot! (Du hast das Rätsel nicht richtig beantwortet)');
+
     if(currentRoom.respawn <> nil) then
     begin
       changeRoom(currentRoom.respawn);
