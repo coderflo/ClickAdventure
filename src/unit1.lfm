@@ -1,13 +1,19 @@
 object ClickAdventure: TClickAdventure
-  Left = -6
+  Left = 306
   Height = 720
-  Top = 1
+  Top = 123
   Width = 1276
+  BorderStyle = bsSingle
   Caption = 'Prüfung der Erhabenen'
-  ClientHeight = 0
-  ClientWidth = 0
+  ClientHeight = 720
+  ClientWidth = 1276
+  Font.CharSet = ANSI_CHARSET
+  Font.Height = -13
+  Font.Name = 'Imperator'
+  Font.Pitch = fpVariable
+  Font.Quality = fqDraft
   OnShow = FormShow
-  LCLVersion = '1.4.4.0'
+  LCLVersion = '1.2.6.0'
   object backgroundImage: TImage
     Left = 0
     Height = 567
@@ -41868,24 +41874,37 @@ object ClickAdventure: TClickAdventure
     Proportional = True
   end
   object labelVersion: TLabel
-    Left = 1150
-    Height = 32
+    Left = 1172
+    Height = 22
     Top = 4
-    Width = 124
-    Caption = 'ALPHA V0.1'
+    Width = 100
+    Alignment = taRightJustify
+    Caption = 'BETA V.0.1'
+    Font.CharSet = ANSI_CHARSET
     Font.Color = clWhite
-    Font.Height = -24
+    Font.Height = -19
+    Font.Name = 'Imperator'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
     ParentColor = False
     ParentFont = False
   end
   object labelRegion: TLabel
-    Left = 400
-    Height = 54
-    Top = -8
-    Width = 488
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Side = asrBottom
+    Left = 376
+    Height = 42
+    Top = 4
+    Width = 527
+    Alignment = taCenter
     Caption = 'GEBIETSNAME - MAPNAME'
+    Font.CharSet = ANSI_CHARSET
     Font.Color = clWhite
-    Font.Height = -40
+    Font.Height = -37
+    Font.Name = 'Imperator'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Layout = tlCenter
     ParentColor = False
     ParentFont = False
   end
