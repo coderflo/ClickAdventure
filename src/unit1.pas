@@ -1457,6 +1457,23 @@ begin
   rooms[52].region:='Prüfung der Erhabenen';
   rooms[52].backgroundImagePath:='img\J4.jpg';
 
+  // set respawn rooms corresponding to biome
+  for i := 1 to 13 do
+  begin
+    rooms[i].respawn:=rooms[1];
+  end;
+  for i := 14 to 29 do
+  begin
+    rooms[i].respawn:=rooms[14];
+  end;
+  for i := 30 to 34 do
+  begin
+    rooms[i].respawn:=rooms[30];
+  end;
+  for i := 35 to 43 do
+  begin
+    rooms[i].respawn:=rooms[35];
+  end;
 
   spawnRoom := rooms[1];
   startAdventure;

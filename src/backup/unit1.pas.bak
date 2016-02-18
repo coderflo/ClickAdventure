@@ -981,6 +981,7 @@ begin
   rooms[14].labelWest:='Westen: Erdrutsch-Tiefen';
   rooms[14].region:='Dämonenschlund';
   rooms[14].backgroundImagePath:='img\L3.jpg';
+  rooms[14].requiredItem:=2;
   rooms[14].north:=rooms[16];
   rooms[14].south:=rooms[15];
   rooms[14].west:=rooms[13];
@@ -1456,6 +1457,19 @@ begin
   rooms[52].region:='Prüfung der Erhabenen';
   rooms[52].backgroundImagePath:='img\J4.jpg';
 
+  // set respawn rooms corresponding to biome
+  for i := 1 to 13 do
+  begin
+    rooms[i].respawn:=rooms[1];
+  end;
+  for i := 14 to 29 do
+  begin
+    rooms[i].respawn:=rooms[14];
+  end;
+  for i := 30 to 43 do
+  begin
+    rooms[i].respawn:=rooms[30];
+  end;
 
   spawnRoom := rooms[1];
   startAdventure;
