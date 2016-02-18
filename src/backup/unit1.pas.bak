@@ -784,7 +784,7 @@ begin
 
   // room 1
   rooms[1].descriptionBeforeRiddle:=compile('%n: Wo bin ich? Was ist passiert? Ich kann mich an nichts mehr erinnern… Ich sollte mich zunächst aus diesem Schneegebiet entfernen. Lange halte ich das wahrscheinlich nicht durch… bei diesen Temperaturen.');
-  rooms[1].labelEast:='Osten: Geht tiefer in den Wald hinein.';
+  rooms[1].labelEast:='Osten: Wintertau-Wald';
   rooms[1].region:='Wintertau-Lichtung';
   rooms[1].backgroundImagePath:='img\S1.jpg';
   rooms[1].backgroundMusicPath:='music\Snow.wav';
@@ -792,8 +792,8 @@ begin
 
   // room 2
   rooms[2].descriptionBeforeRiddle:=compile('%n: Hier gibt es nicht wirklich viele Möglichkeiten, sich zu verlaufen. Der Wald ist viel zu dicht, um Umwege zu gehen. Ich sollte besser dem Weg nach Süden folgen. Hoffentlich finde ich bald eine Antwort auf meine Fragen…');
-  rooms[2].labelSouth:='Süden: Schlagt den Weg zur Doldenvan-Passage ein.';
-  rooms[2].labelWest:='Westen: Geht zurück zur Lichtung, an der Ihr aufgewacht seid.';
+  rooms[2].labelSouth:='Süden: Doldenvan-Passage';
+  rooms[2].labelWest:='Westen: Wintertau-Lichtung';
   rooms[2].region:='Wintertau-Wald';
   rooms[2].backgroundImagePath:='img\S1.jpg';
   rooms[2].south:=rooms[3];
@@ -801,9 +801,9 @@ begin
 
   // room 3
   rooms[3].descriptionBeforeRiddle:=compile('%n: Ein umgestürzter Baum blockiert die Straße nach Süden… Offenbar lichtet sich der Wald dort etwas. Vielleicht kann mir der Besitzer dieses Gehöfts helfen.');
-  rooms[3].labelNorth:='Norden: Geht zurück in den dichten Teil des Waldes.';
-  rooms[3].labelSouth:='Süden: Zerschlage den Baumstamm mit der mystischen Axt und verlasse den Wald.';
-  rooms[3].labelWest:='Westen: Betretet das Gehöft.';
+  rooms[3].labelNorth:='Norden: Wintertau-Wald';
+  rooms[3].labelSouth:='Süden: Eissteppen';
+  rooms[3].labelWest:='Westen: Alpenzur-Gehöft';
   rooms[3].region:='Doldenvan-Passage';
   rooms[3].backgroundImagePath:='img\S1.jpg';
   rooms[3].north:=rooms[2];
@@ -830,16 +830,16 @@ begin
   dialogsAfter[4].lines:=dialogLinesAfter[4];
   rooms[4].dialogAfterRiddle:=dialogsAfter[4];
   rooms[4].item:=TItem.create(1,'Mystische Holzfälleraxt','Ihr erhaltet die mystische Holzfälleraxt aus den Zittergipfeln.');
-  rooms[4].labelEast:='Osten: Verlasst das Gehöft.';
+  rooms[4].labelEast:='Osten: Doldenvan-Passage';
   rooms[4].region:='Alpenzur-Gehöft';
   rooms[4].backgroundImagePath:='img\S1.jpg';
   rooms[4].east:=rooms[3];
 
   // room 5
   rooms[5].descriptionBeforeRiddle:=compile('%n: Gut, dass dieser Wald hinter mir liegt. Ich habe gar nicht bemerkt, dass ich von so hohen Bergen umgeben bin. Mir bereiten nur die Drachen ein wenig Sorge… und dieser Issormir… wahrscheinlich nur dumme Gerüchte.');
-  rooms[5].labelNorth:='Norden: Betretet den Wald.';
-  rooms[5].labelEast:='Osten: Geht in Richtung Maulent-Gipfel.';
-  rooms[5].labelSouth:='Süden: Besteigt die verschneite Anhöhe.';
+  rooms[5].labelNorth:='Norden: Doldenvan-Passage';
+  rooms[5].labelEast:='Osten: Maulent-Gipfel';
+  rooms[5].labelSouth:='Süden: Schneeanstieg';
   rooms[5].requiredItem:=1;
   rooms[5].region:='Eissteppen';
   rooms[5].backgroundImagePath:='img\S3.jpg';
@@ -849,15 +849,15 @@ begin
 
   // room 6
   rooms[6].descriptionBeforeRiddle:=compile('%n: Hier ist es definitiv zu steil. Selbst erfahrene Bergsteiger kommen hier nicht weiter. Ich will auch gar nicht an die Lawinen denken, die hier runter kommen könnten. Besser, ich kehre um.');
-  rooms[6].labelWest:='Westen: Kehrt zur Gabelung zurück.';
+  rooms[6].labelWest:='Westen: Eissteppen';
   rooms[6].region:='Maulent-Gipfel';
   rooms[6].backgroundImagePath:='img\S3.jpg';
   rooms[6].west:=rooms[5];
 
   // room 7
   rooms[7].descriptionBeforeRiddle:=compile('%n: Ich nähere mich dem Gipfel. Der Schnee peitscht mir ins Gesicht. Etwa wieder einer dieser Frostwinde, von denen der Holzfäller gesprochen hat? Ich muss aufs Schlimmste gefasst sein.');
-  rooms[7].labelNorth:='Norden: Geht zur Gabelung zurück.';
-  rooms[7].labelSouth:='Süden: Erklimmt den Hochgipfel.';
+  rooms[7].labelNorth:='Norden: Eissteppen';
+  rooms[7].labelSouth:='Süden: Hochgipfel';
   rooms[7].region:='Schneeanstieg';
   rooms[7].backgroundImagePath:='img\S3.jpg';
   rooms[7].north:=rooms[5];
@@ -865,9 +865,9 @@ begin
 
   // room 8
   rooms[8].descriptionBeforeRiddle:=compile('%n: Tolle Aussicht hier oben. Schnee, Schnee und nochmal Schnee. Im Westen sehe ich einen Gletscher. Sieht bewacht aus. Auf jeden Fall sollte ich dort ohne Rechtfertigung nicht lang.');
-  rooms[8].labelNorth:='Norden: Steigt den Berg in Richtung des Waldes hinab.';
-  rooms[8].labelSouth:='Süden: Seilt Euch in den Abgrund hinab.';
-  rooms[8].labelWest:='Westen: Betretet den bewachten Gletscher.';
+  rooms[8].labelNorth:='Norden: Schneeanstieg';
+  rooms[8].labelSouth:='Süden: Abgrund der Verzweifelung';
+  rooms[8].labelWest:='Westen: Gletschergraben';
   rooms[8].region:='Hochgipfel';
   rooms[8].backgroundImagePath:='img\S3.jpg';
   rooms[8].north:=rooms[7];
@@ -884,8 +884,8 @@ begin
   dialogLinesBefore[9][3]:=compile('%n: (Wer ist Svaard? Ich habe da ein ganz mieses Gefühl…)');
   dialogsBefore[9].lines:=dialogLinesBefore[9];
   rooms[9].dialogBeforeRiddle:=dialogsBefore[9];
-  rooms[9].labelEast:='Osten: Verlasst den Gletescher.';
-  rooms[9].labelSouth:='Süden: Betretet den Palast im Gletscher.';
+  rooms[9].labelEast:='Osten: Hochgipfel';
+  rooms[9].labelSouth:='Süden: Svaards Eisschollenpalast';
   rooms[9].region:='Gletschergraben';
   rooms[9].backgroundImagePath:='img\S4.jpg';
   rooms[9].east:=rooms[8];
@@ -900,6 +900,7 @@ begin
   dialogLinesBefore[10][1]:=compile('%n: Ich habe Issormir geschlachtet. Hier ist sein Kopf.');
   dialogLinesBefore[10][2]:='Svaard: Schweigt. Die Macht der Erhabenen glüht in Euch. Ihr müsst sterben. Für Kralkatorrik.';
   dialogsBefore[10].lines:=dialogLinesBefore[10];
+  rooms[44].backgroundMusicPath:='music\Svaard.wav';
   rooms[10].dialogBeforeRiddle:=dialogsBefore[10];
   rooms[10].applyRiddle(riddlesEasy[category3][1]);
   rooms[10].labelSouth:='Nächstes Rätsel';
@@ -914,18 +915,17 @@ begin
   dialogsAfter[44].lines:=dialogLinesAfter[44];
   rooms[44].dialogAfterRiddle:=dialogsAfter[44];
   rooms[44].item:=TItem.create(2,'Verdorbenes Frostsiegel','Ihr findet das verdorbene Frostsiegel Svaards. Man sagt, sein Besitzer könne alles zu Eis erstarren lassen.');
-  rooms[44].labelNorth:='Norden: Verlasst Svaards Palast.';
+  rooms[44].labelNorth:='Norden: Gletschergraben';
   rooms[44].region:='Svaards Eisschollenpalast';
   rooms[44].backgroundImagePath:='img\S4.jpg';
-  rooms[44].backgroundImagePath:='music\Svaard.wav';
   rooms[44].backgroundMusicPathAfterRiddle:='music\SnowASvaard.wav';
   rooms[44].north:=rooms[9];
 
   // room 11
   rooms[11].descriptionBeforeRiddle:=compile('%n: Es ist ziemlich dunkel hier unten, kaum zu glauben, dass oben alles weiß ist. Von Osten spüre ich eine gewisse Wärme… kann das sein?');
-  rooms[11].labelNorth:='Norden: Erklimmt den Hochgipfel.';
-  rooms[11].labelEast:='Osten: Folgt der Wärme weiter nach unten.';
-  rooms[11].labelSouth:='Süden: Geht in Richtung des Eisklamms.';
+  rooms[11].labelNorth:='Norden: Hochgipfel';
+  rooms[11].labelEast:='Osten: Erdrutsch-Tiefen';
+  rooms[11].labelSouth:='Süden: Nebelriss-Klamm';
   rooms[11].region:='Abgrund der Verzweiflung';
   rooms[11].backgroundImagePath:='img\S2.jpg';
   rooms[11].north:=rooms[8];
@@ -947,15 +947,15 @@ begin
   dialogsAfter[12].lines:=dialogLinesBefore[12];
   rooms[12].dialogAfterRiddle:=dialogsAfter[12];
   rooms[12].item:=TItem.create(3,'Kopf Issormirs','Ihr erhaltet den Kopf Issormirs. Er sieht sehr wertvoll aus.');
-  rooms[12].labelNorth:='Norden: Verlasst den Klamm.';
+  rooms[12].labelNorth:='Norden: Abgrund der Verzweifelung';
   rooms[12].region:='Nebelriss-Klamm';
   rooms[12].backgroundImagePath:='img\S2.jpg';
   rooms[12].north:=rooms[11];
 
   // room 13
   rooms[13].descriptionBeforeRiddle:=compile('%n: Hier ist es erstaunlich heiß für ein verschneites Gebirge. Doch der Weg ist durch einen Erdrutsch versperrt. Hätte ich doch nur etwas, um den Erdrutsch zu entfernen…');
-  rooms[13].labelEast:='Osten: Verwendet Svaards Frostsiegel.';
-  rooms[13].labelWest:='Westen: Kehrt um.';
+  rooms[13].labelEast:='Osten: Dämonenschlund';
+  rooms[13].labelWest:='Westen: Abgrund der Verzweifelung';
   rooms[13].region:='Erdrutsch-Tiefen';
   rooms[13].backgroundImagePath:='img\S2.jpg';
   rooms[13].east:=rooms[14];
@@ -964,9 +964,9 @@ begin
   // room 14
   rooms[14].backgroundMusicPath:='music\Lava.wav';
   rooms[14].descriptionBeforeRiddle:=compile('%n: Der Erdrutsch! Das Siegel hat ihn zu Eis verwandelt, welches dann wegen der Hitze hier geschmolzen ist. Genial! Aber wo bin ich denn jetzt hier gelandet? Ein unterirdischer Vulkan? Ich kann nördlich von hier eine Art Lager erkennen. Vielleicht sollte ich mal nachfragen.');
-  rooms[14].labelNorth:='Norden: Geht zum Basislager.';
-  rooms[14].labelSouth:='Süden: Geht bergauf zum Urteilsfelsen.';
-  rooms[14].labelWest:='Westen: Verlasst das Vulkangebiet.';
+  rooms[14].labelNorth:='Norden: Geheimes Basislager';
+  rooms[14].labelSouth:='Süden: Urteilsfelsen';
+  rooms[14].labelWest:='Westen: Erdrutsch-Tiefen';
   rooms[14].region:='Dämonenschlund';
   rooms[14].backgroundImagePath:='img\L3.jpg';
   rooms[14].north:=rooms[16];
@@ -975,8 +975,8 @@ begin
 
   // room 15
   rooms[15].descriptionBeforeRiddle:=compile('%n: Bei Dwayna! Was ist denn hier passiert? Eine gigantische Rankenwand blockiert den Weg nach Osten. Es ist unmöglich, weiterzugehen. Etwas stimmt hier nicht. Ich sollte später wiederkommen…');
-  rooms[15].labelNorth:='Norden: Geht zurück zum Vulkan.';
-  rooms[15].labelEast:='Osten: Zerschneidet die Rankenwand.';
+  rooms[15].labelNorth:='Norden: Dämonenschlund';
+  rooms[15].labelEast:='Osten: Mattierte Baumkrone';
   rooms[15].region:='Urteilsfelsen';
   rooms[15].backgroundImagePath:='img\L3.jpg';
   rooms[15].north:=rooms[14];
@@ -999,15 +999,15 @@ begin
   dialogLinesBefore[16][10]:=compile('%n: Er erzählte irgendetwas von „Erhabenen“ und „Kralkatorrik“. Wisst Ihr etwas darüber? Mir bereitet das alles ein wenig Sorgen im Moment…');
   dialogLinesBefore[16][11]:='Explorator: Unmöglich. Kralkatorrik ist vor Jahrtausenden ausgestorben. Er war laut Mythos ein Drache, der in den fernen östlichen Wäldern gelebt hat. In welchem Kontext hat Svaard dies zu Euch gesagt?';
   dialogLinesBefore[16][12]:=compile('%n: Naja, er hat mir irgendetwas von den „Erhabenen“ erzählt und mich dann angegriffen, während er „Für Kralkatorrik“ gebrüllt hat. Ich kann mich nur noch daran erinnern, dass er danach tot vor mir lag.');
-  dialogLinesBefore[16][13]:='Explorator: Wenn Ihr die Wahrheit sagt, dann müssen wir hier schleunigst verschwinden. Geht zu meinen 3 Kollegen hier in der Nähe und helft ihnen beim Aufbruch. Wir haben keine Zeit zu verlieren.';
+  dialogLinesBefore[16][13]:='Explorator: Wenn Ihr die Wahrheit sagt, dann müssen wir hier schleunigst verschwinden. Geht zu meinen 3 Kollegen hier in der Nähe und helft ihnen beim Aufbruch. Sie sollten sich in der Aschen-Senke, im Mahlstromkern und in der Mahlstromgalle aufhalten.Wir haben keine Zeit zu verlieren.';
   dialogLinesBefore[16][14]:=compile('%n: Warten Sie, sie haben etwas fallen gelassen… Zu spät. Ich sollte das lieber aufsammeln.');
   dialogsBefore[16].lines:=dialogLinesBefore[16];
   rooms[16].dialogBeforeRiddle:=dialogsBefore[16];
   rooms[16].item:=TItem.create(4,'Flammenbrecher-Fragment 1','Ihr erhaltet ein Flammenbrecher-Fragment.');
-  rooms[16].labelNorth:='Norden: Nähert Euch den Tiefen des Mahlstroms.';
-  rooms[16].labelEast:='Osten: Begebt Euch auf eine nahe gelegene Anhöhe.';
-  rooms[16].labelSouth:='Süden: Verlasst das Basislager.';
-  rooms[16].labelWest:='Westen: Dringt tiefer in die Aschen-Senke vor.';
+  rooms[16].labelNorth:='Norden: Mahlstromkern';
+  rooms[16].labelEast:='Osten: Rußberne';
+  rooms[16].labelSouth:='Süden: Dämonenschlund';
+  rooms[16].labelWest:='Westen: Aschen-Senke';
   rooms[16].region:='Geheimes Basislager';
   rooms[16].backgroundImagePath:='img\L1.jpg';
   rooms[16].north:=rooms[20];
@@ -1017,7 +1017,7 @@ begin
 
   // room 17
   rooms[17].descriptionBeforeRiddle:=compile('%n: Hier hat man einen guten Überblick über das Lager. Im Norden und Westen sehe ich weitere Exploratoren. Ich sollte beim Aufbruch helfen, obwohl ich noch nicht weiß, wozu das alles…');
-  rooms[17].labelWest:='Westen: Kehrt in das Lager zurück.';
+  rooms[17].labelWest:='Westen: Geheimes Basislager';
   rooms[17].region:='Rußberne';
   rooms[17].backgroundImagePath:='img\L3.jpg';
   rooms[17].west:=rooms[16];
@@ -1041,8 +1041,8 @@ begin
   dialogsAfter[18].lines:=dialogLinesAfter[18];
   rooms[18].dialogAfterRiddle:=dialogsAfter[18];
   rooms[18].item:=TItem.create(5,'Flammenbrecher-Fragment 2','Ihr erhaltet ein Flammenbrecher-Fragment.');
-  rooms[18].labelNorth:='Norden: Geht in Richtung der Lava.';
-  rooms[18].labelEast:='Osten: Kehrt zum Hauptlager zurück.';
+  rooms[18].labelNorth:='Norden: Mahlstromgalle';
+  rooms[18].labelEast:='Osten: Geheimes Basislager';
   rooms[18].region:='Aschen-Senke';
   rooms[18].backgroundImagePath:='img\L1.jpg';
   rooms[18].north:=rooms[19];
@@ -1065,8 +1065,8 @@ begin
   dialogsAfter[19].lines:=dialogLinesAfter[19];
   rooms[19].dialogAfterRiddle:=dialogsAfter[19];
   rooms[19].item:=TItem.create(6,'Flammenbrecher-Fragment 3','Ihr erhaltet ein Flammenbrecher-Fragment.');
-  rooms[19].labelEast:='Osten: Folgt dem Strom der Lava.';
-  rooms[19].labelSouth:='Süden: Geht zurück in die Aschen-Senke.';
+  rooms[19].labelEast:='Osten: Mahlstromkern';
+  rooms[19].labelSouth:='Süden: Aschen-Senke';
   rooms[19].region:='Mahlstromgalle';
   rooms[19].backgroundImagePath:='img\L1.jpg';
   rooms[19].east:=rooms[20];
@@ -1089,9 +1089,9 @@ begin
   dialogsAfter[20].lines:=dialogLinesAfter[20];
   rooms[20].dialogAfterRiddle:=dialogsAfter[20];
   rooms[20].item:=TItem.create(7,'Flammenbrecher-Fragment 4','Ihr erhaltet ein Flammenbrecher-Fragment.');
-  rooms[20].labelNorth:='Norden: Geht den Steilpfad neben den Lavafällen hinab.';
-  rooms[20].labelSouth:='Süden: Kehrt ins Basislager zurück.';
-  rooms[20].labelWest:='Westen: Folgt den Lavafällen zum Ursprung.';
+  rooms[20].labelNorth:='Norden: Höllenschlund-Fälle';
+  rooms[20].labelSouth:='Süden: Geheimes Basislager';
+  rooms[20].labelWest:='Westen: Mahlstromgalle';
   rooms[20].region:='Mahlstromkern';
   rooms[20].backgroundImagePath:='img\L1.jpg';
   rooms[20].north:=rooms[21];
@@ -1100,8 +1100,8 @@ begin
 
   // room 21
   rooms[21].descriptionBeforeRiddle:=compile('%n: Hier ist es extrem steil, ich sollte vorsichtig sein. Mir bereiten nur die Informationen von gerade eben ein wenig Kopfschmerzen. Wer ist Gaheron? Und was, wenn ich ihm begegne?');
-  rooms[21].labelEast:='Osten: Geht zum Herz des Vulkans.';
-  rooms[21].labelSouth:='Süden: Steigt den Weg in Richtung Basislager hinauf.';
+  rooms[21].labelEast:='Osten: Herz des Vulkans.';
+  rooms[21].labelSouth:='Süden: Mahlstromkern';
   rooms[21].region:='Höllenschlund-Fälle';
   rooms[21].backgroundImagePath:='img\L2.jpg';
   rooms[21].east:=rooms[22];
@@ -1109,9 +1109,9 @@ begin
 
   // room 22
   rooms[22].descriptionBeforeRiddle:=compile('%n: Hier teilt sich der Weg. Weiter im Osten sehe ich eine monströse Festung… Dürfte wohl Gaherons Festung sein. Der Weg nach Norden ist durch eine Flammenwand versperrt.');
-  rooms[22].labelNorth:='Norden: Fügt Eure Flammenbrecher-Fragmente zu einem Stein zusammen und passiert damit die Flammenwand.';
-  rooms[22].labelEast:='Osten: Betretet die brennende Festung.';
-  rooms[22].labelWest:='Westen: Geht zurück zu den Lavafällen.';
+  rooms[22].labelNorth:='Norden: Trügerische Gaslöcher.';
+  rooms[22].labelEast:='Osten: Igni Castrum.';
+  rooms[22].labelWest:='Westen: Höllenschlund-Fälle.';
   rooms[22].region:='Herz des Vulkans';
   rooms[22].backgroundImagePath:='img\L2.jpg';
   rooms[22].north:=rooms[25];
@@ -1120,8 +1120,8 @@ begin
 
   // room 23
   rooms[23].descriptionBeforeRiddle:=compile('%n: Ein teuflischer Ort. Passend zu einem teuflischen Herrscher. Überall Leichenteile und Feuer. Mir persönlich etwas zu ungemütlich… Ich sehe eine Art Schrein mit leerem Sockel. Da muss sicherlich etwas rein.');
-  rooms[23].labelEast:='Osten: Platziert das Totem im Sockel.';
-  rooms[23].labelWest:='Westen: Verlasst Igni Castrum.';
+  rooms[23].labelEast:='Osten: Gaherons Höllenschrein';
+  rooms[23].labelWest:='Westen: Herz des Vulkans';
   rooms[23].region:='Igni Castrum';
   rooms[23].backgroundImagePath:='img\L2.jpg';
   rooms[23].east:=rooms[24];
@@ -1132,7 +1132,7 @@ begin
   dialogsBefore[24]:=TDialog.create;
   SetLength(dialogLinesBefore[24],6);
   dialogLinesBefore[24][0]:=compile('%n: Das Totem ist in Flammen aufgegangen. Doch nichts ist passiert. Ich sollte besser hier verschwinden bevor…');
-  dialogLinesBefore[24][1]:='Gaheron Baelfeuer: Ich kenne Euch nicht, Eindringling. Doch die anderen, die es versucht haben, habt Ihr gerade verbrannt auf dem Boden liegen gesehen. Mir egal. Eine Mahlzeit mehr.';
+  dialogLinesBefore[24][1]:='Gaheron Baelfeuer: Ich kenne Euch nicht, Eindringling. Doch die anderen, die es versucht haben, habt Ihr gerade verbrannt auf dem Boden liegen gesehen. Gleichgültig. Eine Mahlzeit mehr.';
   dialogLinesBefore[24][2]:=compile('%n: Wartet! Ich will Euch nichts tun, Gaheron! Ich habe nur ein paar Fragen. Was könnt Ihr mir über die Erhabenen und Kralkatorrik sagen? Ist das alles nur ein Gerücht?');
   dialogLinesBefore[24][3]:='Gaheron Baelfeuer: Die Erhabenen müssen vernichtet werden. Kralkatorriks Diener werden sein Werk vollbringen.';
   dialogLinesBefore[24][4]:=compile('%n: (Mein Kopf tut höllisch weh, als würde jemand versuchen, darauf zuzugreifen!)');
@@ -1141,6 +1141,7 @@ begin
   rooms[24].dialogBeforeRiddle:=dialogsBefore[24];
   rooms[24].applyRiddle(riddlesBoss[category2][1]);
   rooms[24].labelEast:='Nächstes Rätsel';
+  rooms[24].backgroundImagePath:='img\L4.jpg';
   rooms[24].east:=rooms[45];
   // room 45 (24)
   rooms[45].applyRiddle(riddlesBoss[category3][1]);
@@ -1151,15 +1152,15 @@ begin
   dialogsAfter[45].lines:=dialogLinesAfter[45];
   rooms[45].dialogAfterRiddle:=dialogsAfter[45];
   rooms[45].item:=TItem.create(8,'Magmatisches Zepter','Ihr findet Gaherons magmatisches Zepter. Ihr spürt seine Macht durch euer Blut fließen. Die Flammen dieses vom Bösen durchflossenen Zepters reichen aus, um jedes Lebewesen zu vernichten.');
-  rooms[45].labelWest:='Westen: Verlasst Gaherons Schrein.';
+  rooms[45].labelWest:='Westen: Igni Castrum';
   rooms[45].region:='Gaherons Höllenschrein';
   rooms[45].backgroundImagePath:='img\L4.jpg';
   rooms[45].west:=rooms[23];
 
   // room 25
   rooms[25].descriptionBeforeRiddle:=compile('%n: Ich wünschte, ich könnte auch ohne den Stein durch Feuer laufen… Vergiss es, %n. Das wird nie passieren. Ich sollte mich mehr auf meine Mission konzentrieren. Die Exploratoren sind schon weit voraus.');
-  rooms[25].labelSouth:='Süden: Passiert die Flammen, um zurück ins Herz des Vulkans zu gelangen.';
-  rooms[25].labelWest:='Westen: Geht in Richtung des Randes des Vulkans.';
+  rooms[25].labelSouth:='Süden: Herz des Vulkans';
+  rooms[25].labelWest:='Westen: Dysphorischer Rand';
   rooms[25].region:='Trügerische Gaslöcher';
   rooms[25].backgroundImagePath:='img\L2.jpg';
   SetLength(room25requiredItems,4);
@@ -1173,9 +1174,9 @@ begin
 
   // room 26
   rooms[26].descriptionBeforeRiddle:=compile('%n: Der Weg spaltet sich schon wieder. Ich glaube, im Norden kann ich den Ausgang aus dieser Hölle hier sehen. Im Westen geht es zwar auch Bergauf, aber wohin genau, weiß ich nicht.');
-  rooms[26].labelNorth:='Norden: Sucht den Ausgang des Vulkans.';
-  rooms[26].labelEast:='Osten: Geht zurück zu der Flammenwand.';
-  rooms[26].labelWest:='Westen: Besteigt den Rand des Vulkans.';
+  rooms[26].labelNorth:='Norden: Vermoderter Pass';
+  rooms[26].labelEast:='Osten: Trügerische Gaslöcher';
+  rooms[26].labelWest:='Westen: Aufstieg des Helden';
   rooms[26].region:='Dysphorischer Rand';
   rooms[26].backgroundImagePath:='img\L1.jpg';
   rooms[26].north:=rooms[29];
@@ -1184,8 +1185,8 @@ begin
 
   // room 27
   rooms[27].descriptionBeforeRiddle:=compile('%n: Ich habe gleich den Gipfel erreicht. Mit jedem Schritt wird es merklich kühler. Ein Segen.');
-  rooms[27].labelNorth:='Norden: Betretet den Signalgipfel.';
-  rooms[27].labelEast:='Osten: Kehrt zur Gabelung zurück.';
+  rooms[27].labelNorth:='Norden: Signalgipfel';
+  rooms[27].labelEast:='Osten: Dysphorischer Rand';
   rooms[27].region:='Aufstieg des Helden';
   rooms[27].backgroundImagePath:='img\L3.jpg';
   rooms[27].north:=rooms[28];
@@ -1194,15 +1195,15 @@ begin
   // room 28
   rooms[28].descriptionBeforeRiddle:=compile('%n: Gipfel und Sackgasse. Weiter komme ich nicht. Was ist denn das da hinten? Etwas Kleines scheint leicht zu glühen. Besser, ich gucke mal nach.');
   rooms[28].item:=TItem.create(9,'Geschnitztes Totem','Ihr hebt ein kleines geschnitztes Totem auf. Es sieht aus, als würde es irgendwo hinein passen.');
-  rooms[28].labelSouth:='Süden: Verlasst den Signalgipfel.';
+  rooms[28].labelSouth:='Süden: Aufstieg des Helden.';
   rooms[28].region:='Signalgipfel';
   rooms[28].backgroundImagePath:='img\L3.jpg';
   rooms[28].south:=rooms[27];
 
   // room 29
   rooms[29].descriptionBeforeRiddle:=compile('%n: Endlich bin ich raus aus dem Vulkan. Östlich von mir sehe ich zum ersten Mal seit langer Zeit wieder etwas Grünes. Wo ist denn nur der Explorator-Trupp hin?');
-  rooms[29].labelEast:='Osten: Betretet den Rankenzorn-Dschungel.';
-  rooms[29].labelSouth:='Süden: Kehrt in den Vulkan zurück.';
+  rooms[29].labelEast:='Osten: Dornengeflecht';
+  rooms[29].labelSouth:='Süden: Dysphorischer Rand';
   rooms[29].region:='Vermoderter Pass';
   rooms[29].backgroundImagePath:='img\L3.jpg';
   rooms[29].east:=rooms[30];
@@ -1211,8 +1212,8 @@ begin
   // room 30
   rooms[30].backgroundMusicPath:='music\Jungle.wav';
   rooms[30].descriptionBeforeRiddle:=compile('%n: Autsch, überall Dornen. Alles halb verdorrt. Nach einem gesunden Dschungel sieht mir das aber nicht aus. Ich habe auch wieder leichte Kopfschmerzen. Hoffentlich finde ich bald die Exploratoren wieder…');
-  rooms[30].labelEast:='Osten: Geht tiefer in den Dschungel hinein.';
-  rooms[30].labelWest:='Westen: Verlasst den Dschungel.';
+  rooms[30].labelEast:='Osten: Rankenwand';
+  rooms[30].labelWest:='Westen: Vermoderter Pass';
   rooms[30].region:='Dornengeflecht';
   rooms[30].backgroundImagePath:='img\J1.jpg';
   rooms[30].east:=rooms[31];
@@ -1220,9 +1221,9 @@ begin
 
   // room 31
   rooms[31].descriptionBeforeRiddle:=compile('%n: Schon wieder eine Rankenwand im Süden?? Das kann nichts Gutes verheißen. Die Kopfschmerzen werden stärker. Ich nähere mich wohl dem Bösen. Vielleicht beendet dies meine Reise… Vielleicht muss ich mich einfach meinem Schicksal stellen.');
-  rooms[31].labelEast:='Osten: Geht in das Herz des Rankenzorn-Dschungels hinein.';
-  rooms[31].labelSouth:='Süden: Blast in Eure Flöte und lasst die Rankenwand verschwinden.';
-  rooms[31].labelWest:='Westen: Kehrt um in Richtung Vulkan.';
+  rooms[31].labelEast:='Osten: Domäne des Drachen';
+  rooms[31].labelSouth:='Süden: Exhumierte Anhöhe';
+  rooms[31].labelWest:='Westen: Dornengeflecht';
   rooms[31].region:='Rankenwand';
   rooms[31].backgroundImagePath:='img\L1.jpg';
   rooms[31].east:=rooms[33];
@@ -1232,7 +1233,7 @@ begin
   // room 32
   rooms[32].descriptionBeforeRiddle:=compile('%n: Das verbirgt sich also hinter den Ranken! Tausende Leichen. Kralkatorrik hat wahllos unschuldige Menschen umgebracht. Da liegen auch die vier Exploratoren! Völlig zerfetzt. Sie haben es nicht geschafft. Kralkatorrik hat seinen Tribut gezahlt. Aber ich bin aus der Sache noch nicht draußen. Am besten schaue ich mal, was ich mir hier Nützliches mitnehmen kann.');
   rooms[32].item:=TItem.create(10,'Machete','Ihr nehmt die Machete eines toten Explorators an Euch. Sie sollte stark genug sein, um die restlichen Ranken zu zerschneiden.');
-  rooms[32].labelNorth:='Norden: Verlasst den Leichenhügel.';
+  rooms[32].labelNorth:='Norden: Rankenwand';
   rooms[32].region:='Exhumierte Anhöhe';
   rooms[32].backgroundImagePath:='img\L1.jpg';
   rooms[32].requiredItem:=11;
@@ -1240,8 +1241,8 @@ begin
 
   // room 33
   rooms[33].descriptionBeforeRiddle:=compile('%n: Ich spüre es. Südlich von mir ist etwas. Etwas Mächtiges. Etwas Lebendiges. Meine Kopfschmerzen sind nicht auszuhalten. Ich sollte nicht ohne entsprechende Waffe fortfahren. Sonst könnte wirklich mein letztes Stündchen geschlagen haben.');
-  rooms[33].labelSouth:='Süden: Betretet die Quelle Eurer Kopfschmerzen.';
-  rooms[33].labelWest:='Westen: Geht zurück in den Dschungel.';
+  rooms[33].labelSouth:='Süden: Kralkatorriks Vermächtnis';
+  rooms[33].labelWest:='Westen: Rankenwand';
   rooms[33].region:='Domäne des Drachen';
   rooms[33].backgroundImagePath:='img\L1.jpg';
   rooms[33].south:=rooms[34];
@@ -1280,7 +1281,7 @@ begin
   dialogsAfter[47].lines:=dialogLinesAfter[47];
   rooms[47].dialogAfterRiddle:=dialogsAfter[47];
   rooms[47].item:=TItem.create(11,'Rankenzorn-Flöte','Die Ranken, aus denen das Abbild Kralkatorriks zusammengesetzt war, formen sich zu einer Flöte. Mit ihr lässt sich die nächstgelegene Rankenwand entfernen.');
-  rooms[47].labelNorth:='Norden: Verlasst den Ort Kralkatorriks.';
+  rooms[47].labelNorth:='Norden: Domäne des Drachen';
   rooms[47].region:='Kralkatorriks Vermächtnis';
   rooms[47].backgroundImagePath:='img\J2.jpg';
   rooms[47].north:=rooms[33];
@@ -1288,8 +1289,8 @@ begin
   // room 35
   rooms[35].backgroundMusicPath:='music\Jungle2.wav';
   rooms[35].descriptionBeforeRiddle:=compile('%n: Das hat sich also hier verborgen! Ein weiterer Wald? Zumindest die Baumkronen. Ein Weg führt nach unten. Mal sehen, wo er hin führt…');
-  rooms[35].labelNorth:='Norden: Geht den Weg hinab.';
-  rooms[35].labelWest:='Westen: Kehrt um in Richtung des Vulkans.';
+  rooms[35].labelNorth:='Norden: Güldener Abstieg';
+  rooms[35].labelWest:='Westen: Urteilsfelsen';
   rooms[35].region:='Mattierte Baumkrone';
   rooms[35].backgroundImagePath:='img\J3.jpg';
   rooms[35].requiredItem:=10;
@@ -1303,8 +1304,8 @@ begin
   dialogLinesBefore[36][1]:=compile('%n: Das klingt Spannend. Doch wo führt mich diese Stimme hin? Etwa dieser kleine Tempel vor mir?');
   dialogsBefore[36].lines:=dialogLinesBefore[36];
   rooms[36].dialogBeforeRiddle:=dialogsBefore[36];
-  rooms[36].labelEast:='Osten: Betretet Tarir.';
-  rooms[36].labelSouth:='Süden: Geht den Weg wieder hinauf.';
+  rooms[36].labelEast:='Osten: Tarir Die Vergessene Stadt';
+  rooms[36].labelSouth:='Süden: Mattierte Baumkrone';
   rooms[36].region:='Güldener Abstieg';
   rooms[36].backgroundImagePath:='img\J3.jpg';
   rooms[36].east:=rooms[37];
@@ -1322,9 +1323,9 @@ begin
   dialogLinesBefore[37][6]:='Stimme: Sieh dich in Ruhe um und erfahre mehr über die Vergangenheit und dein Dasein. Ich erwarte dich bei der Prüfung, südlich der zentralen Kammer.';
   dialogsBefore[37].lines:=dialogLinesBefore[37];
   rooms[37].dialogBeforeRiddle:=dialogsBefore[37];
-  rooms[37].labelNorth:='Norden: Betretet die vergoldete Senke.';
-  rooms[37].labelEast:='Osten: Geht in die zentrale Kammer.';
-  rooms[37].labelWest:='Westen: Verlasst Tarir.';
+  rooms[37].labelNorth:='Norden: Vergoldete Senke';
+  rooms[37].labelEast:='Osten: Zentrale Kammer';
+  rooms[37].labelWest:='Westen: Güldener Abstieg';
   rooms[37].region:='Tarir Die Vergessene Stadt';
   rooms[37].backgroundImagePath:='img\J4.jpg';
   rooms[37].north:=rooms[38];
@@ -1338,9 +1339,9 @@ begin
   dialogLinesBefore[38][1]:='Stimme: Kralkatorrik an sich starb vor langer Zeit durch die Kriegerin Dwayna. Er riss sie mit in den Tod. Sie wurde daraufhin als Göttin des Schutzes und des Lebens wiedergeboren; Kralkatorriks Böser Geist ruhte jedoch weiterhin in der Welt und befiel verschiedene Wesen. Die Gestalt, die Ihr im Dschungel besiegt habt, waren Kralkatorriks letzte Überreste. Das Gleichgewicht in der Welt wird sich wieder einpendeln. Fragt sich nur, in welchem Jahrtausend nach unserer Zeit das geschehen wird.';
   dialogsBefore[38].lines:=dialogLinesBefore[38];
   rooms[38].dialogBeforeRiddle:=dialogsBefore[38];
-  rooms[38].labelNorth:='Norden: Geht die Treppe hinab.';
-  rooms[38].labelEast:='Osten: Betretet die Halle der Gefallenen.';
-  rooms[38].labelSouth:='Süden: Geht zum Eingang von Tarir.';
+  rooms[38].labelNorth:='Norden: Versiegelter Durchgang';
+  rooms[38].labelEast:='Osten: Halle der Gefallenen';
+  rooms[38].labelSouth:='Süden: Tarir Die Vergessene Stadt';
   rooms[38].region:='Vergoldete Senke';
   rooms[38].backgroundImagePath:='img\J4.jpg';
   rooms[38].north:=rooms[39];
@@ -1355,8 +1356,8 @@ begin
   dialogLinesBefore[39][2]:=compile('%n: Mache ich.');
   dialogsBefore[39].lines:=dialogLinesBefore[39];
   rooms[39].dialogBeforeRiddle:=dialogsBefore[39];
-  rooms[39].labelSouth:='Süden: Geht die Treppe wieder hoch.';
-  rooms[39].labelWest:='Westen: Betretet die Thronhalle der Luminatin.';
+  rooms[39].labelSouth:='Süden: Vergoldete Senke';
+  rooms[39].labelWest:='Westen: Thron der Luminatin';
   rooms[39].region:='Versiegelter Durchgang';
   rooms[39].backgroundImagePath:='img\J4.jpg';
   rooms[39].south:=rooms[38];
@@ -1365,7 +1366,7 @@ begin
   // room 40
   rooms[40].descriptionBeforeRiddle:=compile('%n: Dieser Raum ist prächtig geschmückt. Die Erhabenen hatten so viel Besitz. Heutzutage überhaupt nicht mehr vorstellbar. Sieht so aus, als wäre der Thron hohl. Vielleicht verbirgt sich darin etwas.');
   rooms[40].item:=TItem.create(12,'merkwürdige Inschrift','Ihr findet eine merkwürdige Inschrift: 01010010 01100101 01100001 01100100 01101101 01100101');
-  rooms[40].labelEast:='Osten: Verlasst den Thronsaal.';
+  rooms[40].labelEast:='Osten: Versiegelter Durchgang';
   rooms[40].region:='Thron der Luminatin';
   rooms[40].backgroundImagePath:='img\J4.jpg';
   rooms[40].east:=rooms[39];
@@ -1378,8 +1379,8 @@ begin
   dialogLinesBefore[41][2]:=compile('%n: Mein Vater… Lord-%n. Er war also auch hier…');
   dialogsBefore[41].lines:=dialogLinesBefore[41];
   rooms[41].dialogBeforeRiddle:=dialogsBefore[41];
-  rooms[41].labelSouth:='Süden: Betretet die zentrale Kammer.';
-  rooms[41].labelWest:='Westen: Geht in die vergoldete Senke.';
+  rooms[41].labelSouth:='Süden: Zentrale Kammer';
+  rooms[41].labelWest:='Westen: Vergoldete Senke';
   rooms[41].region:='Halle der Gefallenen';
   rooms[41].backgroundImagePath:='img\J4.jpg';
   rooms[41].south:=rooms[42];
@@ -1394,9 +1395,9 @@ begin
   dialogLinesBefore[42][3]:='Stimme: Das Schicksal schreibt es vor. Kralkatorrik hat Narben der Finsternis bei Euch hinterlassen. Sie dürfen sich nicht erneut entflammen. Deswegen müsst Ihr auch die Prüfung ablegen. Folgt mir in den letzten Raum Tarirs. Wir werden das Ritual gemeinsam Ablegen und den Erhabenen ihre verdiente Ruhe gewähren.';
   dialogsBefore[42].lines:=dialogLinesBefore[42];
   rooms[42].dialogBeforeRiddle:=dialogsBefore[42];
-  rooms[42].labelNorth:='Norden: Betretet die Halle der Gefallenen.';
-  rooms[42].labelSouth:='Süden: Legt die Prüfung der Erhabenen ab.';
-  rooms[42].labelWest:='Westen: Geht zurück zum Eingang von Tarir.';
+  rooms[42].labelNorth:='Norden: Halle der Gefallenen';
+  rooms[42].labelSouth:='Süden: Prüfung der Erhabenen';
+  rooms[42].labelWest:='Westen: Tarir Die Vergessene Stadt';
   rooms[42].region:='Zentrale Kammer';
   rooms[42].backgroundImagePath:='img\J4.jpg';
   rooms[42].south:=rooms[43];

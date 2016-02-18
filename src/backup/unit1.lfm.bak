@@ -32158,9 +32158,11 @@ object ClickAdventure: TClickAdventure
     Height = 137
     Top = 448
     Width = 396
+    Color = clWhite
     Enabled = False
     Font.CharSet = ANSI_CHARSET
-    Font.Height = -13
+    Font.Color = clBlack
+    Font.Height = -15
     Font.Name = 'Imperator'
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
@@ -32176,9 +32178,11 @@ object ClickAdventure: TClickAdventure
     Height = 376
     Top = 72
     Width = 396
+    Color = clWhite
     Enabled = False
     Font.CharSet = ANSI_CHARSET
-    Font.Height = -13
+    Font.Color = clBlack
+    Font.Height = -15
     Font.Name = 'Imperator'
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
@@ -32194,6 +32198,7 @@ object ClickAdventure: TClickAdventure
     Top = 616
     Width = 240
     Caption = 'Go north'
+    Color = clWhite
     OnClick = onRoomNavigationButtonClicked
     TabOrder = 0
   end
@@ -32203,6 +32208,7 @@ object ClickAdventure: TClickAdventure
     Top = 616
     Width = 240
     Caption = 'Go east'
+    Color = clWhite
     OnClick = onRoomNavigationButtonClicked
     TabOrder = 1
   end
@@ -32212,6 +32218,7 @@ object ClickAdventure: TClickAdventure
     Top = 616
     Width = 240
     Caption = 'Go south'
+    Color = clWhite
     OnClick = onRoomNavigationButtonClicked
     TabOrder = 2
   end
@@ -32221,6 +32228,7 @@ object ClickAdventure: TClickAdventure
     Top = 616
     Width = 240
     Caption = 'Go west'
+    Color = clWhite
     OnClick = onRoomNavigationButtonClicked
     TabOrder = 3
   end

@@ -1,12 +1,12 @@
 object ClickAdventure: TClickAdventure
-  Left = 229
+  Left = 306
   Height = 720
-  Top = 95
+  Top = 123
   Width = 1276
   BorderStyle = bsSingle
   Caption = 'Prüfung der Erhabenen'
-  ClientHeight = 720
-  ClientWidth = 1276
+  ClientHeight = 0
+  ClientWidth = 0
   Font.CharSet = ANSI_CHARSET
   Font.Height = -13
   Font.Name = 'Imperator'
@@ -32158,7 +32158,14 @@ object ClickAdventure: TClickAdventure
     Height = 137
     Top = 448
     Width = 396
+    Color = clWhite
     Enabled = False
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -15
+    Font.Name = 'Imperator'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
     Lines.Strings = (
       'riddleText'
     )
@@ -32171,7 +32178,14 @@ object ClickAdventure: TClickAdventure
     Height = 376
     Top = 72
     Width = 396
+    Color = clWhite
     Enabled = False
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -15
+    Font.Name = 'Imperator'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
     Lines.Strings = (
       'roomDescription'
     )
@@ -32184,6 +32198,7 @@ object ClickAdventure: TClickAdventure
     Top = 616
     Width = 240
     Caption = 'Go north'
+    Color = clWhite
     OnClick = onRoomNavigationButtonClicked
     TabOrder = 0
   end
@@ -32193,6 +32208,7 @@ object ClickAdventure: TClickAdventure
     Top = 616
     Width = 240
     Caption = 'Go east'
+    Color = clWhite
     OnClick = onRoomNavigationButtonClicked
     TabOrder = 1
   end
@@ -32202,6 +32218,7 @@ object ClickAdventure: TClickAdventure
     Top = 616
     Width = 240
     Caption = 'Go south'
+    Color = clWhite
     OnClick = onRoomNavigationButtonClicked
     TabOrder = 2
   end
@@ -32211,6 +32228,7 @@ object ClickAdventure: TClickAdventure
     Top = 616
     Width = 240
     Caption = 'Go west'
+    Color = clWhite
     OnClick = onRoomNavigationButtonClicked
     TabOrder = 3
   end
@@ -41874,14 +41892,15 @@ object ClickAdventure: TClickAdventure
     Proportional = True
   end
   object labelVersion: TLabel
-    Left = 1150
-    Height = 27
+    Left = 1172
+    Height = 22
     Top = 4
-    Width = 141
-    Caption = 'ALPHA V0.1'
+    Width = 100
+    Alignment = taRightJustify
+    Caption = 'BETA V.0.1'
     Font.CharSet = ANSI_CHARSET
     Font.Color = clWhite
-    Font.Height = -24
+    Font.Height = -19
     Font.Name = 'Imperator'
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
@@ -41889,17 +41908,21 @@ object ClickAdventure: TClickAdventure
     ParentFont = False
   end
   object labelRegion: TLabel
-    Left = 400
-    Height = 46
-    Top = -8
-    Width = 571
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Side = asrBottom
+    Left = 376
+    Height = 42
+    Top = 4
+    Width = 527
+    Alignment = taCenter
     Caption = 'GEBIETSNAME - MAPNAME'
     Font.CharSet = ANSI_CHARSET
     Font.Color = clWhite
-    Font.Height = -40
+    Font.Height = -37
     Font.Name = 'Imperator'
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
+    Layout = tlCenter
     ParentColor = False
     ParentFont = False
   end

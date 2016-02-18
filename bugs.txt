@@ -1,0 +1,4 @@
+Mahlstrom ohne Svaard betretbar
+Issormir Dialog After = Dialog vor
+Svaard Battle Music nicht abgespielt *fixed
+Musik wird immer wieder getriggert beim Betreten eines Raums
